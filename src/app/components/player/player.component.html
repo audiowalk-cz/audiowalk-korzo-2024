@@ -1,0 +1,23 @@
+<div class="player p-4 pb-2" [class.light]="mode === 'light'" [class.dark]="mode === 'dark'">
+  <app-player-progress [progress]="progress" [totalTime]="totalTime" [currentTime]="currentTime"></app-player-progress>
+
+  <app-player-controls
+    [status]="status"
+    [showMenu]="!!menu"
+    (playpause)="playPause()"
+    (next)="nextChapter.emit()"
+    (rewind)="rewind()"
+    (menu)="showMenu = !showMenu"
+    class="mt-3"
+  ></app-player-controls>
+
+  <p *ngIf="error && !offline" class="error text-warning">{{ error }}</p>
+  <p *ngIf="offline && !track.isDownloaded" class="error text-warning">Nejste připojeni k internetu</p>
+</div>
+
+<div *ngIf="showMenu" class="menu-backdrop" (click)="showMenu = false"></div>
+<div *ngIf="showMenu" class="menu" (click)="showMenu = false">
+  <ng-content select="app-player-menu"></ng-content>
+</div>
+
+<audio #audioPlayer>Your browser does not support the audio tag.</audio>

@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: 'Roboto Flex';
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+}
+
+img {
+  border-radius: 12px;
+}

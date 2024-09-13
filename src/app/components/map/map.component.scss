@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.map {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(28, 28, 28);
+
+  #wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    transition: opacity 2s .5s ease-in-out;
+
+    #outputSvg,
+    #outputGps,
+    #mapImg {
+      height: 1504.5px;
+      width: 1301.75px;
+      position: absolute;
+      transition-timing-function: ease-in-out;
+      transform: matrix(1, 0, 0, 1, 0, 0);
+      transform-origin: 0px 0px;
+    }
+
+
+    svg {
+      z-index: 1;
+    }
+
+    #outputGps {
+      z-index: 2;
+    }
+
+    img {}
+
+    #outputSvgClone,
+    #outputCanvas {
+      display: none;
+    }
+
+  }
+
+  #wrapper.active {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest",
+  "name": "Audiowalk Studentská revolta ‘89",
+  "short_name": "Studentská revolta ‘89",
+  "theme_color": "#000000",
+  "background_color": "#000",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "orientation": "portrait"
+}
