@@ -92,10 +92,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "studentska-revolta:build:production"
+              "buildTarget": "studentska-revolta:build:production"
             },
             "development": {
-              "browserTarget": "studentska-revolta:build:development"
+              "buildTarget": "studentska-revolta:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +103,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "studentska-revolta:build"
+            "buildTarget": "studentska-revolta:build"
           }
         }
       }
