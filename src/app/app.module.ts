@@ -17,6 +17,7 @@ import { PlayerControlsComponent } from "./components/player-controls/player-con
 import { PlayerMenuItemComponent } from "./components/player-menu-item/player-menu-item.component";
 import { PlayerMenuComponent } from "./components/player-menu/player-menu.component";
 import { PlayerPlayButtonComponent } from "./components/player-play-button/player-play-button.component";
+import { PlayerProgressComponent } from "./components/player-progress/player-progress.component";
 import { PlayerComponent } from "./components/player/player.component";
 import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
 import { TutorialAttentionComponent } from "./components/tutorial-attention/tutorial-attention.component";
@@ -35,7 +36,8 @@ import { TestComponent } from "./pages/test/test.component";
 import { TutorialComponent } from "./pages/tutorial/tutorial.component";
 import { WalkComponent } from "./pages/walk/walk.component";
 import { TimePipe } from "./pipes/time.pipe";
-import { PlayerProgressComponent } from './components/player-progress/player-progress.component';
+
+import { WalkPlayerComponent } from "@audiowalk/components";
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import { PlayerProgressComponent } from './components/player-progress/player-pro
     PlayerProgressComponent,
   ],
   imports: [
+    WalkPlayerComponent,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
