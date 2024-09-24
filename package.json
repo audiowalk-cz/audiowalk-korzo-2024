@@ -22,7 +22,6 @@
     "@angular/platform-browser-dynamic": "^17.3.12",
     "@angular/router": "^17.3.12",
     "@angular/service-worker": "^17.3.12",
-    "@meddv/ngx-pinch-zoom": "^16.0.0",
     "@ngneat/until-destroy": "^10.0.0",
     "axios": "^1.6.0",
     "bootstrap": "^5.3.2",
@@ -36,7 +35,7 @@
     "@angular-devkit/build-angular": "^17.3.9",
     "@angular/cli": "^17.3.9",
     "@angular/compiler-cli": "^17.3.12",
-    "typescript": "~5.4.5",
-    "conventional-changelog-cli": "^5.0.0"
+    "conventional-changelog-cli": "^5.0.0",
+    "typescript": "~5.4.5"
   }
 }
