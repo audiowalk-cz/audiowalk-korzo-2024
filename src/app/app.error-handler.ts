@@ -1,5 +1,5 @@
 import { ErrorHandler, Injectable } from "@angular/core";
-import { AnalyticsService } from "./services/analytics.service";
+import { AnalyticsService } from "./shared/services/analytics.service";
 
 @Injectable()
 export class AppErrorHandler implements ErrorHandler {

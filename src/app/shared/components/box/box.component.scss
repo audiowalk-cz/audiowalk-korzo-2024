@@ -1,0 +1,7 @@
+@import "src/styles/theme.scss";
+
+:host {
+  display: block;
+  border: 3px solid $box-border;
+  text-align: left;
+}
