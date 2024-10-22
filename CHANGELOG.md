@@ -1,3 +1,9 @@
+## [0.1.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.1.0...v0.1.1) (2024-10-22)
+
+### Bug Fixes
+
+fix package import
+
 ## [0.1.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.0.2...v0.1.0) (2024-10-22)
 
 ### Features
