@@ -40,7 +40,8 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
-              "base": "dist/studentska-revolta"
+              "base": "dist",
+              "browser": ""
             },
             "index": "src/index.html",
             "polyfills": [
