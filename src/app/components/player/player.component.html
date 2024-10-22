@@ -1,8 +1,12 @@
-<div class="player p-4 pb-2" [class.light]="mode === 'light'" [class.dark]="mode === 'dark'">
-  <app-player-progress [progress]="progress" [totalTime]="totalTime" [currentTime]="currentTime"></app-player-progress>
+<div *ngIf="player" class="player p-4 pb-2" [class.light]="mode === 'light'" [class.dark]="mode === 'dark'">
+  <app-player-progress
+    [progress]="player.progress | async"
+    [totalTime]="player.totalTime | async"
+    [currentTime]="player.currentTime | async"
+  ></app-player-progress>
 
   <app-player-controls
-    [status]="status"
+    [status]="player.status | async"
     [showMenu]="!!menu"
     (playpause)="playPause()"
     (next)="nextChapter.emit()"
@@ -20,4 +24,4 @@
   <ng-content select="app-player-menu"></ng-content>
 </div>
 
-<awc-walk-player [file]="track.url"></awc-walk-player>
+<audio #audio [src]="track.url"></audio>

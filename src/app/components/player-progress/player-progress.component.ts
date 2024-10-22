@@ -6,7 +6,7 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./player-progress.component.scss"],
 })
 export class PlayerProgressComponent {
-  @Input() progress: number = 0;
-  @Input() totalTime?: number;
-  @Input() currentTime?: number;
+  @Input() progress: number | null = null;
+  @Input() totalTime: number | null = null;
+  @Input() currentTime: number | null = null;
 }
