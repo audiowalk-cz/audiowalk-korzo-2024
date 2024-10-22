@@ -5,6 +5,7 @@ export type TypePipeOptions = {
   skipSpace: boolean;
   randomizeInterval: boolean;
   randomizationFactor: number;
+  cursor: boolean;
 };
 
 @Pipe({
@@ -22,6 +23,7 @@ export class TypePipe implements PipeTransform {
     skipSpace: true,
     randomizeInterval: true,
     randomizationFactor: 4,
+    cursor: true,
   };
 
   private options = this.defaultOptions;
@@ -38,7 +40,7 @@ export class TypePipe implements PipeTransform {
       this.nextLetter();
     }
 
-    return this.currentValue;
+    return this.currentValue + (this.options.cursor ? "_" : "");
   }
 
   nextLetter() {
