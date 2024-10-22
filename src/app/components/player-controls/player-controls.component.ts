@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { PlayerStatus } from "../player/player.component";
+import { PlayerStatus } from "@audiowalk/sdk";
 
 @Component({
   selector: "app-player-controls",
@@ -8,7 +8,7 @@ import { PlayerStatus } from "../player/player.component";
 })
 export class PlayerControlsComponent {
   @Input() showMenu?: boolean = false;
-  @Input() status: PlayerStatus = PlayerStatus.paused;
+  @Input() status: PlayerStatus | null = null;
 
   @Output() playpause = new EventEmitter<void>();
   @Output() next = new EventEmitter<void>();
