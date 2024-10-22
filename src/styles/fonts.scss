@@ -4,3 +4,31 @@
   font-style: normal;
   font-weight: normal;
 }
+
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("/assets/fonts/UbuntuMono-Regular.ttf ");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("/assets/fonts/UbuntuMono-Bold.ttf ");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("/assets/fonts/UbuntuMono-BoldItalic.ttf ");
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("/assets/fonts/UbuntuMono-Italic.ttf ");
+  font-style: italic;
+  font-weight: normal;
+}
