@@ -4,7 +4,7 @@ html {
   margin: 0;
   background-color: #000;
   color: #fff;
-  font-family: "Roboto Slab";
+  font-family: "JustMeAgainDownHere";
   width: 100%;
   height: 100%;
   overscroll-behavior-y: contain;
@@ -32,7 +32,6 @@ h6 {
   margin: 0;
 }
 
-
 .btn {
   cursor: pointer;
   padding: 8px 20px;
@@ -40,7 +39,6 @@ h6 {
   text-transform: uppercase;
   font-family: "Roboto Flex";
 }
-
 
 .btn-primary {
   background-color: white;
@@ -50,12 +48,12 @@ h6 {
   font-family: "Roboto Flex";
   // text-transform: uppercase;
   font-weight: 600;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .btn-primary:hover {
   background-color: white;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, .5);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
   border: none;
   color: black;
 }
@@ -65,22 +63,21 @@ h6 {
   border-radius: 48px;
   color: white;
   font-weight: 600;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .btn-outline-primary:hover {
   border-color: white;
   background-color: white;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, .5);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
   color: black;
 }
-
 
 .btn-link {
   color: white;
   font-family: "Roboto Flex";
   font-weight: 600;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   text-decoration: none;
 }
 
@@ -110,9 +107,8 @@ h6 {
   user-select: auto;
 }
 
-
 .card.bg-light {
-  background-color: rgba(0, 0, 0, .7) !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
   color: white;
 
   backdrop-filter: blur(10px);
@@ -120,7 +116,7 @@ h6 {
 }
 
 .fs-0 {
-  font-size: 72px
+  font-size: 72px;
 }
 
 .fs-8 {
