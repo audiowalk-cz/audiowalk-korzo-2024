@@ -1,3 +1,9 @@
+## [0.2.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.1.1...v0.2.0) (2024-10-22)
+
+### Features
+
+* intro, refactor ([7ce9a98](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/7ce9a98c059f15cc904d9a1f3da8c70f9093c431))
+* page title ([44cfc43](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/44cfc43a61953da4f198e7ef2e46c77e144f9d01))
 ## [0.1.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.1.0...v0.1.1) (2024-10-22)
 
 ### Bug Fixes
