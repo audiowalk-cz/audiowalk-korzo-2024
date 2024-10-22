@@ -39,6 +39,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
+            "sourceMap": {
+              "scripts": true,
+              "styles": true,
+              "hidden": false,
+              "vendor": true
+            },
             "outputPath": "dist/studentska-revolta",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -50,7 +57,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/audiowalk.json",
+              {
+                "glob": "**/*",
+                "input": "dist/service-worker",
+                "output": "/"
+              }
             ],
             "styles": [
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",

@@ -1,8 +1,6 @@
-import { ErrorHandler, NgModule, isDevMode } from "@angular/core";
+import { ErrorHandler, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { ServiceWorkerModule } from "@angular/service-worker";
-import { PinchZoomModule } from "@meddv/ngx-pinch-zoom";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AppErrorHandler } from "./app.error-handler";
@@ -17,6 +15,7 @@ import { PlayerControlsComponent } from "./components/player-controls/player-con
 import { PlayerMenuItemComponent } from "./components/player-menu-item/player-menu-item.component";
 import { PlayerMenuComponent } from "./components/player-menu/player-menu.component";
 import { PlayerPlayButtonComponent } from "./components/player-play-button/player-play-button.component";
+import { PlayerProgressComponent } from "./components/player-progress/player-progress.component";
 import { PlayerComponent } from "./components/player/player.component";
 import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
 import { TutorialAttentionComponent } from "./components/tutorial-attention/tutorial-attention.component";
@@ -31,11 +30,9 @@ import { EndComponent } from "./pages/end/end.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { LegalComponent } from "./pages/legal/legal.component";
 import { ShareComponent } from "./pages/share/share.component";
-import { TestComponent } from "./pages/test/test.component";
 import { TutorialComponent } from "./pages/tutorial/tutorial.component";
 import { WalkComponent } from "./pages/walk/walk.component";
 import { TimePipe } from "./pipes/time.pipe";
-import { PlayerProgressComponent } from './components/player-progress/player-progress.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +53,6 @@ import { PlayerProgressComponent } from './components/player-progress/player-pro
     PlayerMenuComponent,
     PlayerMenuItemComponent,
     VideoComponent,
-    TestComponent,
     ShareComponent,
     TutorialNavigationComponent,
     TutorialSoundComponent,
@@ -71,17 +67,7 @@ import { PlayerProgressComponent } from './components/player-progress/player-pro
     PlayerControlsComponent,
     PlayerProgressComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register("ngsw-worker.js", {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: "registerWhenStable:30000",
-    }),
-    PinchZoomModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [{ provide: ErrorHandler, useClass: AppErrorHandler }],
   bootstrap: [AppComponent],
 })

@@ -4,6 +4,8 @@
   "scripts": {
     "dev": "ng serve",
     "build": "ng build",
+    "dev:service-worker": "tsc -p ./tsconfig.sw.json --watch",
+    "build:service-worker": "tsc -p ./tsconfig.sw.json",
     "version": "npm run version:changelog && git add -A",
     "version:changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && code CHANGELOG.md --wait",
     "release": "git switch release && git merge master --ff-only && git push --follow-tags && git switch master",
