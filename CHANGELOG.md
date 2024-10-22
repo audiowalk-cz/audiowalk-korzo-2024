@@ -1,3 +1,8 @@
+## [0.2.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.0...v0.2.1) (2024-10-22)
+
+### Features
+
+* add ubuntu font ([4806de0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/4806de0284de57cc98e057d0e920a354b79e244a))
 ## [0.2.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.1.1...v0.2.0) (2024-10-22)
 
 ### Features
