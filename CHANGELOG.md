@@ -1,3 +1,9 @@
+## [0.2.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.1...v0.2.2) (2024-10-22)
+
+### Features
+
+* auto cursor underscore for type pipe ([6f6fab8](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/6f6fab898f784bafeb257ea28557c6cbd9662037))
+* update theme colors ([162ddb2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/162ddb2cb86090e6ab44603a97afade6cee439be))
 ## [0.2.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.0...v0.2.1) (2024-10-22)
 
 ### Features
