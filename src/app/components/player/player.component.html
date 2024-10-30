@@ -1,0 +1,28 @@
+<div *ngIf="player" class="player p-4 pb-2" [class.light]="mode === 'light'" [class.dark]="mode === 'dark'">
+  <app-player-progress
+    [progress]="player.progress | async"
+    [totalTime]="player.totalTime | async"
+    [currentTime]="player.currentTime | async"
+  ></app-player-progress>
+
+  <app-player-controls
+    [status]="player.status | async"
+    [showMenu]="!!menu"
+    (play)="play()"
+    (pause)="pause()"
+    (next)="nextChapter.emit()"
+    (rewind)="rewind()"
+    (menu)="showMenu = !showMenu"
+    class="mt-3"
+  ></app-player-controls>
+
+  <p *ngIf="error && !offline" class="error text-warning">{{ error }}</p>
+  <p *ngIf="offline && !track.isDownloaded" class="error text-warning">Nejste připojeni k internetu</p>
+</div>
+
+<div *ngIf="showMenu" class="menu-backdrop" (click)="showMenu = false"></div>
+<div *ngIf="showMenu" class="menu" (click)="showMenu = false">
+  <ng-content select="app-player-menu"></ng-content>
+</div>
+
+<audio #audioEl [src]="track.url"></audio>

@@ -1,0 +1,18 @@
+@if(loading){
+<app-loading (end)="loading = false"></app-loading>
+} @else {
+<app-page>
+  <app-page-content align="center">
+    <h1>Sejdeme se u koníčka?</h1>
+    <h2>Audiowalk k oslavám 17. listopadu</h2>
+
+    @if(isMobile){
+    <app-button routerLink="/tutorial">Otevřít audiowalk</app-button>
+    <br /><br />
+    <a (click)="isMobile = false">Nejsem na mobilu</a>
+    } @else {
+    <app-button>::QR kód na aplikaci::</app-button>
+    <a (click)="isMobile = true">Jsem na mobilu</a> }
+  </app-page-content>
+</app-page>
+}

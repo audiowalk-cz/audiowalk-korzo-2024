@@ -1,0 +1,58 @@
+@import "src/styles/theme.scss";
+
+:host {
+  text-transform: uppercase;
+
+  padding: 0.5em 1em;
+
+  position: relative;
+
+  --pixelborder-width: 5px;
+
+  background-color: $secondary;
+
+  margin: --pixelborder-width;
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s;
+
+  .pixelborder {
+    position: absolute;
+    background-color: $secondary;
+    transition: background-color 0.3s;
+  }
+
+  .pixelborder-left {
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    width: var(--pixelborder-width);
+  }
+  .pixelborder-top {
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: var(--pixelborder-width);
+  }
+  .pixelborder-right {
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    width: var(--pixelborder-width);
+  }
+  .pixelborder-bottom {
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: var(--pixelborder-width);
+  }
+}
+
+:host:hover {
+  background-color: $primary;
+  color: $secondary;
+
+  .pixelborder {
+    background-color: $primary;
+  }
+}
