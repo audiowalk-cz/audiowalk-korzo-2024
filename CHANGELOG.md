@@ -1,3 +1,8 @@
+## [0.3.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.3...v0.3.0) (2024-10-31)
+
+### Features
+
+* basic logic with landing page and tutorial ([473fcfc](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/473fcfcf4947b43a74173148b1dec26b2abe185a))
 ## [0.2.3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.2...v0.2.3) (2024-10-31)
 
 ### Bug Fixes
