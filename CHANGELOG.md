@@ -1,3 +1,8 @@
+## [0.3.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.3.0...v0.3.1) (2024-10-31)
+
+### Bug Fixes
+
+* update @audiowalk/sdk ([28fdef0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/28fdef0f1916692e81e499c218f7ef5c162ea730))
 ## [0.3.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.3...v0.3.0) (2024-10-31)
 
 ### Features
