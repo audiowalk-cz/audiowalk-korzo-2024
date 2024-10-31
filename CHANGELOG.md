@@ -1,3 +1,8 @@
+## [0.2.3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.2...v0.2.3) (2024-10-31)
+
+### Bug Fixes
+
+* **player:** fix build error ([6f73931](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/6f739315f0430e799caa625297414ca807411d08))
 ## [0.2.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.2.1...v0.2.2) (2024-10-22)
 
 ### Features
