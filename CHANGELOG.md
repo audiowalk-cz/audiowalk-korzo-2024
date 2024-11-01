@@ -1,3 +1,8 @@
+## [0.4.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.3.1...v0.4.0) (2024-11-01)
+
+### Features
+
+* landing page, qr code, download media ([6428506](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/64285063dc3927598b2ef1cb653985b6b371924b))
 ## [0.3.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.3.0...v0.3.1) (2024-10-31)
 
 ### Bug Fixes
