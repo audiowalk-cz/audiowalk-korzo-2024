@@ -4,13 +4,18 @@ body,
 html {
   padding: 0;
   margin: 0;
-  background-color: #000;
-  color: #fff;
-  font-family: "JustMeAgainDownHere";
+  background-color: var($body-bg);
+  color: var($primary);
+  font-family: "UbuntuMono";
   width: 100%;
   height: 100%;
   overscroll-behavior-y: contain;
   user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PixelifySans";
+  font-weight: bold;
 }
 
 .code {

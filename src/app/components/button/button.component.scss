@@ -7,11 +7,11 @@
 
   padding: 0.5em 1em;
 
+  background-color: $secondary-dark;
+
   position: relative;
 
   --pixelborder-width: 5px;
-
-  background-color: $secondary;
 
   margin: calc(var(--pixelborder-width));
   cursor: pointer;
@@ -22,7 +22,7 @@
 
   .pixelborder {
     position: absolute;
-    background-color: $secondary;
+    background-color: $secondary-dark;
     transition: background-color 0.3s;
   }
 
@@ -54,7 +54,7 @@
 
 :host:hover {
   background-color: $primary;
-  color: $secondary;
+  color: $secondary-dark;
 
   .pixelborder {
     background-color: $primary;

@@ -1,16 +1,9 @@
-<div class="row">
-  <div class="col">
-    <i class="bi bi-cloud-download fs-0"></i>
-    <div class="mt-3">
-      <h2>Stažení audiowalku</h2>
-      <p class="mt-3">Nyní si stáhněte audiowalk do vašeho zařízení.</p>
+<h1>Stažení audiowalku</h1>
+<p class="mt-3">Nyní si stáhněte audiowalk do vašeho zařízení.</p>
 
-      <app-media-download
-        [showDelete]="false"
-        (status)="this.downloaded = $event === 'downloaded'"
-      ></app-media-download>
+<app-media-download
+  [showDelete]="false"
+  (status)="this.downloaded = $event === 'downloaded'"
+></app-media-download>
 
-      <app-button *ngIf="downloaded" (click)="next.emit()">Pokračovat</app-button>
-    </div>
-  </div>
-</div>
+<app-button *ngIf="downloaded" (click)="next.emit()">Pokračovat</app-button>
