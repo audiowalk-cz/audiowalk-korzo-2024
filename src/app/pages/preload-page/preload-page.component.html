@@ -1,0 +1,14 @@
+<app-container [padding]="true">
+  <h2>Stáhnout předem</h2>
+
+  <p class="mt-3">Audiowalk si můžete stáhnout do mobilního zařízení předem, například doma na WiFi.</p>
+  <p class="mt-1">
+    Stažení můžete provést předem,<br />audiowalk zůstane uložený i když zavřete webový prohlížeč. Dejte si ale pozor,
+    abyste neměli audiowalk spuštěný ve vestavěném prohlížeči jiné aplikace (např. WhatsApp, Messenger), v takovém
+    případě se po zavření může smazat.
+  </p>
+
+  <app-media-download></app-media-download>
+
+  <app-button routerLink="/" [queryParams]="{ loading: 'false' }">Zpět na úvodní stránku</app-button>
+</app-container>

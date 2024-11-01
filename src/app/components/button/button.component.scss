@@ -1,6 +1,8 @@
 @import "src/styles/theme.scss";
 
 :host {
+  display: inline-block;
+
   text-transform: uppercase;
 
   padding: 0.5em 1em;
@@ -11,10 +13,12 @@
 
   background-color: $secondary;
 
-  margin: --pixelborder-width;
+  margin: calc(var(--pixelborder-width));
   cursor: pointer;
 
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 
   .pixelborder {
     position: absolute;

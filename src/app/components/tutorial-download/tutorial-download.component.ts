@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Output } from "@angular/core";
-import { AnalyticsService } from "src/app/services/analytics.service";
-import { MediaService } from "src/app/services/media.service";
 import { TutorialStepComponent } from "../tutorial-container/tutorial-container.component";
 
 @Component({
@@ -11,18 +9,5 @@ import { TutorialStepComponent } from "../tutorial-container/tutorial-container.
 export class TutorialDownloadComponent implements TutorialStepComponent {
   @Output() next = new EventEmitter<void>();
 
-  public downloadStatus = this.mediaService.downloadStatus;
-  public downloadProgress = this.mediaService.downloadProgress;
-
-  constructor(private mediaService: MediaService, private analytics: AnalyticsService) {}
-
-  async download() {
-    this.analytics.trackEvent("downloadTracks", {});
-    await this.mediaService.downloadTracks();
-  }
-
-  async delete() {
-    this.analytics.trackEvent("deleteTracks", {});
-    await this.mediaService.deleteTracks();
-  }
+  downloaded = false;
 }

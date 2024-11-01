@@ -1,0 +1,40 @@
+<div class="mt-3" *ngIf="downloadStatus | async as state">
+  @switch (state) {
+    @case ("not-downloaded") {
+      <div *ngIf="state === 'not-downloaded'">
+        <button class="btn btn-outline-primary" (click)="download()">Stáhnout <i class="bi bi-download"></i></button>
+        <p class="text-secondary">(cca 70MB)</p>
+      </div>
+    }
+
+    @case ("downloading") {
+      <p *ngIf="state === 'downloading'">
+        <i class="bi bi-hourglass-split"></i><br />Stahuji... {{ downloadProgress | async | percent }}
+      </p>
+    }
+
+    @case ("checking") {
+      <p *ngIf="state === 'checking'"><i class="bi bi-hourglass-split"></i> Kontroluji...</p>
+    }
+
+    @case ("downloaded") {
+      <p class="text-success">
+        <i class="bi bi-check-circle"></i> Hotovo, audiowalk je připraven pro&nbsp;offline použití!
+      </p>
+
+      @if (showDelete) {
+        <p>
+          <a class="text-danger clickable" (click)="delete()">Smazat uložený audiowalk</a>
+        </p>
+      }
+    }
+
+    @case ("error") {
+      <p *ngIf="state === 'error'" class="text-warning mt-2">
+        <i class="bi bi-emoji-frown"></i>
+        Nastala Chyba při stahování.<br />
+        <button class="btn btn-outline-primary" (click)="download()">Zkusit znovu</button>
+      </p>
+    }
+  }
+</div>

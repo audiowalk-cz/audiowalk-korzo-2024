@@ -9,7 +9,8 @@
         "@schematics/angular:component": {
           "standalone": false,
           "style": "scss",
-          "skipTests": true
+          "skipTests": true,
+          "path": "src/app/components"
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -30,7 +31,8 @@
           "skipTests": true
         },
         "@schematics/angular:service": {
-          "skipTests": true
+          "skipTests": true,
+          "path": "src/app/services"
         }
       },
       "root": "",

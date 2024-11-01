@@ -1,18 +1,30 @@
-@if(loading){
-<app-loading (end)="loading = false"></app-loading>
+@if (loading) {
+  <app-loading (end)="loading = false"></app-loading>
 } @else {
-<app-page>
-  <app-page-content align="center">
+  <app-container [padding]="true">
     <h1>Sejdeme se u koníčka?</h1>
-    <h2>Audiowalk k oslavám 17. listopadu</h2>
+    <p>Audiowalk k oslavám 17. listopadu</p>
 
-    @if(isMobile){
-    <app-button routerLink="/tutorial">Otevřít audiowalk</app-button>
-    <br /><br />
-    <a (click)="isMobile = false">Nejsem na mobilu</a>
+    @if (isMobile) {
+      <app-button routerLink="/download">Stáhnout data předem</app-button>
+      <br /><br />
+      <app-button routerLink="/tutorial">Otevřít audiowalk</app-button>
+      <br /><br />
+      <a (click)="isMobile = false">Nejsem na mobilu</a>
     } @else {
-    <app-button>::QR kód na aplikaci::</app-button>
-    <a (click)="isMobile = true">Jsem na mobilu</a> }
-  </app-page-content>
-</app-page>
+      <h3>Co budete potřebovat?</h3>
+      <ul>
+        <li>Mobilní telefon</li>
+        <li>Sluchátka</li>
+        <li>Datový tarif s cca 100&nbsp;MB nebo si stáhnout data předem (data si stáhneta na mobilním telefonu)</li>
+      </ul>
+      <p>
+        Otevřete si audiowalk na mobilním telefonu prostřednictvím QR kódu níže, nebo otevřete na mobilním telefonu
+        adresu {{ mobileUrl }}:
+      </p>
+      <qrcode [qrdata]="mobileUrl" [width]="200"></qrcode>
+
+      <a (click)="isMobile = true">Jsem na mobilu</a>
+    }
+  </app-container>
 }

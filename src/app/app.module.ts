@@ -1,5 +1,6 @@
 import { ErrorHandler, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { QRCodeModule } from "angularx-qrcode";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AppErrorHandler } from "./app.error-handler";
@@ -7,10 +8,10 @@ import { BoxComponent } from "./components/box/box.component";
 import { ButtonComponent } from "./components/button/button.component";
 import { ChapterInfoComponent } from "./components/chapter-info/chapter-info.component";
 import { ChapterPhotoComponent } from "./components/chapter-photo/chapter-photo.component";
+import { ContainerComponent } from "./components/container/container.component";
 import { LoadingComponent } from "./components/loading/loading.component";
-import { PageContentComponent } from "./components/page-content/page-content.component";
+import { MediaDownloadComponent } from "./components/media-download/media-download.component";
 import { PageFooterComponent } from "./components/page-footer/page-footer.component";
-import { PageComponent } from "./components/page/page.component";
 import { PlayerButtonComponent } from "./components/player-button/player-button.component";
 import { PlayerControlsComponent } from "./components/player-controls/player-controls.component";
 import { PlayerMenuItemComponent } from "./components/player-menu-item/player-menu-item.component";
@@ -30,13 +31,14 @@ import { AuthorsComponent } from "./pages/authors/authors.component";
 import { ChaptersComponent } from "./pages/chapters/chapters.component";
 import { EndComponent } from "./pages/end/end.component";
 import { IntroComponent } from "./pages/intro/intro.component";
+import { LandingPageComponent } from "./pages/landing-page/landing-page.component";
 import { LegalComponent } from "./pages/legal/legal.component";
+import { PreloadPageComponent } from "./pages/preload-page/preload-page.component";
 import { ShareComponent } from "./pages/share/share.component";
 import { TutorialPageComponent } from "./pages/tutorial-page/tutorial-page.component";
 import { WalkComponent } from "./pages/walk/walk.component";
 import { TimePipe } from "./pipes/time.pipe";
 import { TypePipe } from "./pipes/type.pipe";
-import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +50,10 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     ButtonComponent,
     ChapterInfoComponent,
     ChapterPhotoComponent,
-    PageComponent,
-    PageContentComponent,
+    ContainerComponent,
     PageFooterComponent,
-    PlayerComponent,
     PlayerButtonComponent,
+    PlayerComponent,
     PlayerControlsComponent,
     PlayerMenuComponent,
     PlayerMenuItemComponent,
@@ -61,9 +62,10 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     ProgressBarComponent,
     StoryContainerComponent,
     TutorialAttentionComponent,
+    TutorialContainerComponent,
     TutorialDownloadComponent,
-    TutorialSoundComponent,
     TutorialPlaceComponent,
+    TutorialSoundComponent,
     VideoComponent,
 
     AuthorsComponent,
@@ -75,10 +77,11 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     ShareComponent,
     TutorialPageComponent,
     WalkComponent,
-    TutorialContainerComponent,
     LandingPageComponent,
+    MediaDownloadComponent,
+    PreloadPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, QRCodeModule],
   providers: [{ provide: ErrorHandler, useClass: AppErrorHandler }],
   bootstrap: [AppComponent],
 })

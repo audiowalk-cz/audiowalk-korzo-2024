@@ -18,7 +18,7 @@ export class LoadingComponent implements LoadingComponent {
   ngOnInit(): void {
     setTimeout(() => {
       this.loadingStep = 1;
-    }, 2000);
+    }, 1500);
   }
 
   openApp() {
