@@ -10,7 +10,6 @@
           "standalone": false,
           "style": "scss",
           "skipTests": true,
-          "path": "src/app/components"
         },
         "@schematics/angular:class": {
           "skipTests": true

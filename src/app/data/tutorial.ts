@@ -1,8 +1,8 @@
-import { TutorialAttentionComponent } from "../components/tutorial-attention/tutorial-attention.component";
-import { TutorialStep } from "../components/tutorial-container/tutorial-container.component";
-import { TutorialDownloadComponent } from "../components/tutorial-download/tutorial-download.component";
-import { TutorialPlaceComponent } from "../components/tutorial-place/tutorial-place.component";
-import { TutorialSoundComponent } from "../components/tutorial-sound/tutorial-sound.component";
+import { TutorialStep } from "../tutorial/components/tutorial-container/tutorial-container.component";
+import { TutorialAttentionComponent } from "../tutorial/tutorial-components/tutorial-attention/tutorial-attention.component";
+import { TutorialDownloadComponent } from "../tutorial/tutorial-components/tutorial-download/tutorial-download.component";
+import { TutorialPlaceComponent } from "../tutorial/tutorial-components/tutorial-place/tutorial-place.component";
+import { TutorialSoundComponent } from "../tutorial/tutorial-components/tutorial-sound/tutorial-sound.component";
 
 export const TutorialSteps: TutorialStep[] = [
   TutorialPlaceComponent,
