@@ -1,7 +1,9 @@
-<app-container align="center">
-  <h1>Intro příběhu</h1>
-
-  <p>...Ahoj, tak píěbrefh, JE STŘEDA 1.</p>
-
-  <app-button>Začít</app-button>
+<app-container [flex]="true" [flexColumn]="true">
+  <app-container-body>
+    <h1>Intro příběhu</h1>
+    <p>...Ahoj, tak píěbrefh, JE STŘEDA 1.</p>
+  </app-container-body>
+  <app-container-footer>
+    <app-button>Začít</app-button>
+  </app-container-footer>
 </app-container>

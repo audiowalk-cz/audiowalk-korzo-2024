@@ -39,6 +39,8 @@ import { TutorialPageComponent } from "./pages/tutorial-page/tutorial-page.compo
 import { WalkComponent } from "./pages/walk/walk.component";
 import { TimePipe } from "./pipes/time.pipe";
 import { TypePipe } from "./pipes/type.pipe";
+import { ContainerBodyComponent } from "./components/container-body/container-body.component";
+import { ContainerFooterComponent } from "./components/container-footer/container-footer.component";  
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { TypePipe } from "./pipes/type.pipe";
     TimePipe,
     TypePipe,
 
+    ContainerBodyComponent,
+    ContainerFooterComponent,
     BoxComponent,
     ButtonComponent,
     ChapterInfoComponent,

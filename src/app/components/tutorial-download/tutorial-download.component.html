@@ -7,3 +7,4 @@
 ></app-media-download>
 
 <app-button *ngIf="downloaded" (click)="next.emit()">Pokračovat</app-button>
+<app-button *ngIf="!downloaded" (click)="next.emit()">Pokračovat bez stažení</app-button>
