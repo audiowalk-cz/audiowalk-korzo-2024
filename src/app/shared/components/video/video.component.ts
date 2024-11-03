@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Track } from "src/app/data/tracks";
+import { Track } from "../../services/media.service";
 
 @Component({
   selector: "app-video",

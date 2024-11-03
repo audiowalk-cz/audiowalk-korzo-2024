@@ -1,6 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { EndComponent } from "../core/pages/end/end.component";
 import { ShareComponent } from "../core/pages/share/share.component";
 import { ChapterInfoComponent } from "../story/components/chapter-info/chapter-info.component";
 import { ChapterPhotoComponent } from "../story/components/chapter-photo/chapter-photo.component";
@@ -34,7 +33,6 @@ import { TypePipe } from "./pipes/type.pipe";
     ChapterInfoComponent,
     ChapterPhotoComponent,
     ContainerComponent,
-    EndComponent,
     LoadingComponent,
     MediaDownloadComponent,
     PageFooterComponent,
@@ -61,7 +59,6 @@ import { TypePipe } from "./pipes/type.pipe";
     ChapterInfoComponent,
     ChapterPhotoComponent,
     ContainerComponent,
-    EndComponent,
     LoadingComponent,
     MediaDownloadComponent,
     PageFooterComponent,

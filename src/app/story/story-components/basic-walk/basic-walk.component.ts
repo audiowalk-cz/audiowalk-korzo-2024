@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { ChapterData } from "src/app/data/chapters";
+import { TrackId } from "src/app/data/tracks";
 import { ChapterComponent } from "../../components/story-container/story-container.component";
 
 @Component({
@@ -7,7 +7,9 @@ import { ChapterComponent } from "../../components/story-container/story-contain
   templateUrl: "./basic-walk.component.html",
   styleUrl: "./basic-walk.component.scss",
 })
-export class BasicWalkComponent implements ChapterComponent<ChapterData> {
-  @Input() data!: ChapterData;
+export class BasicWalkComponent implements ChapterComponent {
+  @Input() data!: {
+    track: TrackId;
+  };
   @Output() end = new EventEmitter<void>();
 }

@@ -4,7 +4,7 @@ import { StoryController } from "@audiowalk/sdk";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AppErrorHandler } from "./app.error-handler";
-import { Chapters } from "./data/chapters";
+import { story } from "./data/chapters";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +13,7 @@ import { Chapters } from "./data/chapters";
     { provide: ErrorHandler, useClass: AppErrorHandler },
     {
       provide: StoryController,
-      useFactory: () => new StoryController(Chapters),
+      useFactory: () => new StoryController(story, { stateStorageKey: "story-main" }),
     },
   ],
   bootstrap: [AppComponent],

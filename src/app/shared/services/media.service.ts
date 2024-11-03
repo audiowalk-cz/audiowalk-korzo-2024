@@ -1,11 +1,45 @@
 import { Injectable } from "@angular/core";
 import axios from "axios";
 import { BehaviorSubject, Subject } from "rxjs";
-import { Track, TrackDefinition, TrackId, Tracks } from "../../data/tracks";
+import { TrackId, Tracks } from "../../data/tracks";
 import { FileStorageService } from "./file-storage.service";
 import { LocalStorageService } from "./local-storage.service";
 
 export type DownloadStatus = "checking" | "not-downloaded" | "downloading" | "downloaded" | "error";
+
+export interface BaseTrackDefinition {
+  id: string;
+  url: string;
+  type: string;
+  mimeType: string;
+  placeholderImage?: string;
+  title?: string;
+}
+
+export interface AudioTrackDefinition extends BaseTrackDefinition {
+  id: string;
+  url: string;
+  type: "audio";
+  mimeType: string;
+  placeholderImage?: string;
+}
+
+export interface VideoTrackDefinition extends BaseTrackDefinition {
+  id: string;
+  url: string;
+  type: "video";
+  mimeType: string;
+  placeholderImage: string;
+}
+
+export type TrackDefinition = AudioTrackDefinition | VideoTrackDefinition;
+
+export interface TrackMeta {
+  isDownloaded?: boolean;
+  progress?: number;
+}
+
+export type Track = TrackDefinition & TrackMeta;
 
 @Injectable({
   providedIn: "root",

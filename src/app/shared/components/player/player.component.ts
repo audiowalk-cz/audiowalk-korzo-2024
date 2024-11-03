@@ -13,7 +13,8 @@ import {
   ViewChild,
 } from "@angular/core";
 import { PlayerController } from "@audiowalk/sdk";
-import { Track } from "src/app/data/tracks";
+import { TrackId } from "src/app/data/tracks";
+import { MediaService, Track } from "../../services/media.service";
 import { PlayerMenuComponent } from "../player-menu/player-menu.component";
 
 @Component({
@@ -22,13 +23,19 @@ import { PlayerMenuComponent } from "../player-menu/player-menu.component";
   styleUrls: ["./player.component.scss"],
 })
 export class PlayerComponent implements AfterViewInit, OnChanges, OnDestroy {
-  @Input() track!: Track;
+  @Input("track") trackId!: TrackId;
   @Input() startProgress?: number;
   @Input() autoPlay: boolean = false;
   @Input() mode: "light" | "dark" = "dark";
+  @Input() showUI: boolean = true;
+
+  @Input() title?: string;
+  @Input() artwork?: MediaImage[];
 
   @Output("progress") onProgress = new EventEmitter<number>();
   @Output("next") nextChapter = new EventEmitter<void>();
+
+  track?: Track;
 
   error?: string;
   offline: boolean = !navigator.onLine;
@@ -41,11 +48,14 @@ export class PlayerComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   @ContentChild(PlayerMenuComponent) menu?: PlayerMenuComponent;
 
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(
+    private cdRef: ChangeDetectorRef,
+    private mediaService: MediaService,
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes["track"]) {
-      if (this.track && this.player) this.loadTrack(this.track);
+      if (this.trackId && this.player) this.loadTrack(this.trackId);
     }
   }
 
@@ -55,7 +65,7 @@ export class PlayerComponent implements AfterViewInit, OnChanges, OnDestroy {
       autoSave: false,
     });
 
-    if (this.track) this.loadTrack(this.track);
+    if (this.trackId) this.loadTrack(this.trackId);
 
     this.cdRef.detectChanges();
   }
@@ -64,19 +74,23 @@ export class PlayerComponent implements AfterViewInit, OnChanges, OnDestroy {
     this.player?.close();
   }
 
-  async loadTrack(track: Track) {
-    await this.player?.open(track.url);
+  async loadTrack(trackId: TrackId) {
+    // this.track = await this.mediaService.getTrack(trackId)
+
+    this.track = {
+      id: trackId,
+      title: "Track title",
+      url: "assets/audio/spejbl-1.mp3",
+      mimeType: "audio/mpeg",
+      type: "audio",
+    };
+
+    await this.player?.open(this.track.url);
 
     this.player?.setMetadata({
-      title: this.track.title ?? "Track",
-      album: "Studentská revolta '89",
-      artwork: [
-        {
-          src: "https://studentskarevolta89.cz/assets/img/media-bg.jpg",
-          sizes: "512x512",
-          type: "image/jpeg",
-        },
-      ],
+      title: this.track.title,
+      album: this.title,
+      artwork: this.artwork,
     });
   }
 
