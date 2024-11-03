@@ -4,13 +4,11 @@ import { Component, Input } from "@angular/core";
   selector: "app-container",
   templateUrl: "./container.component.html",
   styleUrl: "./container.component.scss",
-  host: {
-    "[class]": "'container width-' + width + ' align-' + align",
-    "[class.p-5]": "padding",
-  },
+  host: {},
 })
 export class ContainerComponent {
   @Input() align?: "center" | "left" = "left";
-  @Input() padding: boolean = false;
+  @Input() padding: boolean = true;
   @Input() width: "full" | "mobile" = "full";
+  @Input() justify: "center" | "space-between" | "flex-start" = "center";
 }

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { story } from "src/app/data/chapters";
+import { story } from "src/app/data/story";
 import { MediaService } from "src/app/shared/services/media.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { MediaService } from "src/app/shared/services/media.service";
   styleUrls: ["./chapters.component.scss"],
 })
 export class ChaptersComponent {
-  chapters = story.chapters;
+  chapters = Object.values(story.chapters).filter((chapter) => !!chapter.metadata.respawn);
 
   constructor(private mediaService: MediaService) {}
 }

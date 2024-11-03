@@ -5,7 +5,13 @@ import { TrackId, Tracks } from "../../data/tracks";
 import { FileStorageService } from "./file-storage.service";
 import { LocalStorageService } from "./local-storage.service";
 
-export type DownloadStatus = "checking" | "not-downloaded" | "downloading" | "downloaded" | "error";
+export enum DownloadStatus {
+  Checking = "checking",
+  NotDownloaded = "not-downloaded",
+  Downloading = "downloading",
+  Downloaded = "downloaded",
+  Error = "error",
+}
 
 export interface BaseTrackDefinition {
   id: string;
@@ -45,7 +51,7 @@ export type Track = TrackDefinition & TrackMeta;
   providedIn: "root",
 })
 export class MediaService {
-  downloadStatus = new BehaviorSubject<DownloadStatus>("not-downloaded");
+  downloadStatus = new BehaviorSubject<DownloadStatus>(DownloadStatus.NotDownloaded);
   downloadProgress = new BehaviorSubject<number>(0);
 
   constructor(
@@ -76,19 +82,19 @@ export class MediaService {
   }
 
   async updateDownloadStatus(): Promise<void> {
-    this.downloadStatus.next("checking");
+    this.downloadStatus.next(DownloadStatus.Checking);
 
     const downloadStatus = await this.getTracks()
       .catch(() => [])
       .then((tracks) => tracks.every((track) => track.isDownloaded));
 
-    this.downloadStatus.next(downloadStatus ? "downloaded" : "not-downloaded");
+    this.downloadStatus.next(downloadStatus ? DownloadStatus.Downloaded : DownloadStatus.NotDownloaded);
   }
 
   async downloadTracks() {
     const trackDefs = Object.values(Tracks);
 
-    this.downloadStatus.next("downloading");
+    this.downloadStatus.next(DownloadStatus.Downloading);
     this.downloadProgress.next(0);
 
     try {
@@ -100,9 +106,9 @@ export class MediaService {
 
         await this.downloadTrack(track, trackProgress);
       }
-      this.downloadStatus.next("downloaded");
+      this.downloadStatus.next(DownloadStatus.Downloaded);
     } catch (e) {
-      this.downloadStatus.next("error");
+      this.downloadStatus.next(DownloadStatus.Error);
     }
   }
 

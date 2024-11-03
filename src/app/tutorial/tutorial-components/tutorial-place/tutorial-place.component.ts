@@ -1,5 +1,5 @@
 import { Component, output } from "@angular/core";
-import { TutorialStepComponent } from "../tutorial-container/tutorial-container.component";
+import { TutorialStepComponent } from "../../components/tutorial-container/tutorial-container.component";
 
 @Component({
   selector: "app-tutorial-place",

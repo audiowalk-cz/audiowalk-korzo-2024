@@ -16,6 +16,6 @@ export class TutorialPageComponent {
   constructor(private readonly router: Router) {}
 
   endTutorial() {
-    this.router.navigate(["/intro"]);
+    this.router.navigate(["/walk"]);
   }
 }

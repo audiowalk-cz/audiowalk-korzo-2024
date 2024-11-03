@@ -1,9 +1,21 @@
-<h1>Stažení audiowalku</h1>
-<p class="mt-3">Nyní si stáhněte audiowalk do vašeho zařízení.</p>
+<app-container align="center" justify="space-between">
+  <div class="p-5">
+    <h1>Stažení audiowalku</h1>
+    <p class="mt-3">Nyní si stáhněte audiowalk do vašeho zařízení.</p>
+  </div>
+  <app-page-footer>
+    <app-media-download-status></app-media-download-status>
 
-<app-media-download
-  [showDelete]="false"
-  (status)="this.downloaded = $event === 'downloaded'"
-></app-media-download>
+    @switch (downloadStatus | async) {
+      @case ("downloaded") {
+        <app-button (click)="next.emit()">Pokračovat</app-button>
+      }
 
-<app-button *ngIf="downloaded" (click)="next.emit()">Pokračovat</app-button>
+      @default {
+        <app-button (click)="download()">Stáhnout</app-button>
+      }
+    }
+    <br /><br />
+    <app-button (click)="next.emit()">Přeskočit</app-button>
+  </app-page-footer>
+</app-container>

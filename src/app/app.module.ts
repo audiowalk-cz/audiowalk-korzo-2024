@@ -4,7 +4,7 @@ import { StoryController } from "@audiowalk/sdk";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AppErrorHandler } from "./app.error-handler";
-import { story } from "./data/chapters";
+import { story } from "./data/story";
 
 @NgModule({
   declarations: [AppComponent],

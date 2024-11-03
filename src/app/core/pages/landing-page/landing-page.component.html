@@ -1,30 +1,48 @@
 @if (loading) {
   <app-loading (end)="loading = false"></app-loading>
 } @else {
-  <app-container [padding]="true">
-    <h1>Sejdeme se<br>u koníčka?</h1>
-    <p>Audiowalk k oslavám 17. listopadu</p>
+  <app-container align="center" justify="flex-start">
+    <div class="p-5">
+      <h1>Sejdeme se u Koníčka?</h1>
+      <p>Interaktivní audiowalk za začátku akademického roku 1989/90</p>
 
-    @if (isMobile) {
-      <app-button routerLink="/download">Stáhnout data předem</app-button>
-      <br /><br />
-      <app-button routerLink="/tutorial">Otevřít audiowalk</app-button>
-      <br /><br />
-      <a (click)="isMobile = false">Nejsem na mobilu</a>
-    } @else {
-      <h3>Co budete potřebovat?</h3>
-      <ul>
-        <li>Mobilní telefon</li>
-        <li>Sluchátka</li>
-        <li>Datový tarif s cca 100&nbsp;MB nebo si stáhnout data předem (data si stáhneta na mobilním telefonu)</li>
-      </ul>
-      <p>
-        Otevřete si audiowalk na mobilním telefonu prostřednictvím QR kódu níže, nebo otevřete na mobilním telefonu
-        adresu {{ mobileUrl }}:
-      </p>
-      <qrcode [qrdata]="mobileUrl" [width]="200"></qrcode>
+      @if (isMobile) {
+        <h2>Vítejte.</h2>
 
-      <a (click)="isMobile = true">Jsem na mobilu</a>
-    }
+        <app-button routerLink="/download">Stáhnout data předem</app-button>
+        <br /><br />
+        <app-button routerLink="/tutorial">Otevřít audiowalk</app-button>
+        <br /><br />
+        <a (click)="isMobile = false">Nejsem na mobilu</a>
+      } @else {
+        <p>
+          Jaké to bylo studovat na vysoké škole těsně před Sametovou revolucí? Debaty nad společenskými problémy, psaní
+          článků i spousta schůzek po hospodách… Přestože nás od událostí roku 1989 dělí již pětatřicet let, tehdejší
+          studentský život byl v mnohém podobný tomu dnešnímu.
+        </p>
+        <p>
+          V audiowalku se projdeme pražským centrem a stanete jedním ze studujících v období těsně před Sametovou
+          revolucí. Jak moc se zapojíte do studentského života a aktivit, které vedly k manifestaci 17. listopadu, je
+          jen na vás.
+        </p>
+        <p>
+          Audiowalk vás provede centrem Prahy, kde potkáte různé studenty a studentky, se kterými budete v rámci
+          aplikace komunikovat. A kdo ví, jakou roli v příběhu budete hrát vy?
+        </p>
+        <p>K procházce potřebujete: nabitý telefon s aplikací, sluchátka.</p>
+        <p>Délka: cca 60 minut</p>
+        <p>
+          Audiowalk začíná před hlavní budovou Filozofické fakulty (adresa Palachovo náměstí 1, praha 1) a absolvovat ho
+          lze v jakoukoliv dobu. Doporučujeme na něj vyrazit samostatně, jeho trasa se může pro každého lišit na základě
+          vašich rozhodnutí v průběhu.
+        </p>
+
+        <p>Chcete si audiowalk projít? Otevřete si následující okno na telefonu, s kterým ji hodláte absolvovat.</p>
+
+        <qrcode [qrdata]="mobileUrl" [width]="200"></qrcode>
+
+        <a (click)="isMobile = true">Jsem na mobilu</a>
+      }
+    </div>
   </app-container>
 }

@@ -1,17 +1,25 @@
 :host {
-  display: block;
-  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  overflow: auto;
 }
 
-:host.align-center {
-  margin: 0 auto;
+.content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-:host.width-mobile {
+.content.align-center {
+  margin: 0 auto;
+  align-items: center;
+}
+
+.content.width-mobile {
   max-width: 576px;
 }

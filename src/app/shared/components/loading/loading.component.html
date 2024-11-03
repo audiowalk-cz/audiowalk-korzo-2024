@@ -1,21 +1,20 @@
 <app-container align="center" width="mobile">
-  @if(loadingStep === 0){
-  <h1 class="mt-3">potkáme se u koníčka?</h1>
+  @if (loadingStep === 0) {
+    <h1 class="mt-3">potkáme se u koníčka?</h1>
 
-  <p>
-    vytvořeno s podporou
-    <br />
-    KORZO NÁRODNÍ
-    <br />
-    <img src="/assets/images/star_filled.svg" style="width: 50px" />
-  </p>
-  } @else if (loadingStep === 1){
-
-  <div class="px-5 text-start w-100">
-    <app-box class="px-2 py-1 d-inline-block code"> EVA </app-box>
-    <app-box class="p-2 py-1 code w-100">
-      <p>{{ "potkame se u konicka?" | type : { onEnd: openApp.bind(this) } }}</p>
-    </app-box>
-  </div>
+    <p>
+      vytvořeno s podporou
+      <br />
+      KORZO NÁRODNÍ
+      <br />
+      <img src="/assets/images/star_filled.svg" style="width: 50px" />
+    </p>
+  } @else if (loadingStep === 1) {
+    <div class="px-5 text-start w-100">
+      <app-box class="px-2 py-1 d-inline-block code"> EVA </app-box>
+      <app-box class="p-2 py-1 code w-100">
+        <p>{{ "potkame se u konicka?" | type: { onEnd: openApp.bind(this) } }}</p>
+      </app-box>
+    </div>
   }
 </app-container>

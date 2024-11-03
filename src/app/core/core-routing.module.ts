@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ChaptersComponent } from "./pages/chapters/chapters.component";
+import { ChaptersComponent } from "../story/components/chapters/chapters.component";
 import { IntroComponent } from "./pages/intro/intro.component";
 import { LandingPageComponent } from "./pages/landing-page/landing-page.component";
 import { PreloadPageComponent } from "./pages/preload-page/preload-page.component";

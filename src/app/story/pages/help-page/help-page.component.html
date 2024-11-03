@@ -1,0 +1,19 @@
+<app-container align="left" justify="space-between">
+  <div class="p-5">
+    <h2>Ztratil jsem se</h2>
+    @if (currentChapter | async; as chapter) {
+      <div class="my-5">
+        <p>Máte být na následujícím místě:</p>
+        <p>{{ chapter.metadata.respawn!.location }}</p>
+        <a [href]="chapter.metadata.respawn!.locationMapUrl">Otevřít v mapě</a>
+      </div>
+    }
+
+    <h2>Zvolit kapitolu</h2>
+    <app-chapters></app-chapters>
+  </div>
+
+  <div class="text-center">
+    <app-button routerLink="/walk">Zpět do příběhu</app-button>
+  </div>
+</app-container>

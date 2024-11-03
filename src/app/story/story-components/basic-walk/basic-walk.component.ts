@@ -10,6 +10,10 @@ import { ChapterComponent } from "../../components/story-container/story-contain
 export class BasicWalkComponent implements ChapterComponent {
   @Input() data!: {
     track: TrackId;
+    imageUrl: string;
+    storyDate: string;
+    text?: string;
+    mapUrl?: string;
   };
   @Output() end = new EventEmitter<void>();
 }

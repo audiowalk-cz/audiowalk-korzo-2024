@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { MediaService } from "src/app/shared/services/media.service";
 
 @Component({
   selector: "app-landing-page",
@@ -13,7 +14,10 @@ export class LandingPageComponent {
 
   mobileUrl = `${window.location.origin}`;
 
-  constructor(route: ActivatedRoute) {
+  constructor(
+    route: ActivatedRoute,
+    public mediaService: MediaService,
+  ) {
     route.queryParams.subscribe((params) => {
       if (params["loading"] === "false") this.loading = false;
     });

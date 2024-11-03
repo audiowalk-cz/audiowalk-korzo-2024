@@ -1,1 +1,8 @@
-<p>basic-walk works!</p>
+<app-container align="center" justify="space-between">
+  <h1>{{ data.storyDate }}</h1>
+  <img [src]="data.imageUrl" />
+
+  <app-page-footer class="p-3">
+    <app-player [track]="data.track"></app-player>
+  </app-page-footer>
+</app-container>

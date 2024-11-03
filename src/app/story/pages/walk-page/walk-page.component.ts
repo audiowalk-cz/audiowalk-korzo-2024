@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { story } from "src/app/data/chapters";
+import { story } from "src/app/data/story";
 
 @Component({
   selector: "app-walk-page",
