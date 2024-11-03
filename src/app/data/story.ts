@@ -734,7 +734,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_betlemske,
-        question: "", // FIXMEL
+        question: "", // FIXME: Add question
         answerProperty: "interakce_betlemske_2",
         options: [
           {
