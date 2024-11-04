@@ -141,7 +141,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_konicek: {
     id: TrackId["ambient_konicek"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -279,7 +279,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_klementinum: {
     id: TrackId["ambient_klementinum"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -303,7 +303,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_betlemske: {
     id: TrackId["ambient_betlemske"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -399,7 +399,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_bartolomejska: {
     id: TrackId["ambient_bartolomejska"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -435,7 +435,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_roh_narodni: {
     id: TrackId["ambient_roh_narodni"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
   },

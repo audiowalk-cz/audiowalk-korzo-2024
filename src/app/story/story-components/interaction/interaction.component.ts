@@ -60,7 +60,7 @@ export class InteractionComponent implements ChapterComponent, OnDestroy {
 
     if (option.track) await this.playAnswerTrack(option.track);
 
-    // this.end.emit();
+    this.end.emit();
   }
 
   async playAnswerTrack(trackId: TrackId) {
