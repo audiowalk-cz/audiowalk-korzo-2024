@@ -4,16 +4,19 @@
     @if (currentChapter | async; as chapter) {
       <div class="my-5">
         <p>Máte být na následujícím místě:</p>
-        <p>{{ chapter.metadata.respawn!.location }}</p>
-        <a [href]="chapter.metadata.respawn!.locationMapUrl">Otevřít v mapě</a>
+        <p>{{ chapter.metadata.respawn?.location }}</p>
+        <a [href]="chapter.metadata.respawn?.locationMapUrl">Otevřít v mapě</a>
       </div>
     }
 
-    <h2>Zvolit kapitolu</h2>
-    <app-chapters></app-chapters>
+    <h2 class="mt-5">Zvolit kapitolu</h2>
+    <app-chapters (select)="selectChapter($event)"></app-chapters>
+
+    <h2 class="mt-5">Začít od začátku</h2>
+    <a (click)="resetStory()">Začít příběh od začátku</a>
   </div>
 
-  <div class="text-center">
+  <app-page-footer>
     <app-button routerLink="/walk">Zpět do příběhu</app-button>
-  </div>
+  </app-page-footer>
 </app-container>

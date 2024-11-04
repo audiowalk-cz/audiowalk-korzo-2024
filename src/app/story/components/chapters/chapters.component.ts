@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { story } from "src/app/data/story";
+import { Component, EventEmitter, Output } from "@angular/core";
+import { ChapterId, story } from "src/app/data/story";
 import { MediaService } from "src/app/shared/services/media.service";
 
 @Component({
@@ -8,7 +8,13 @@ import { MediaService } from "src/app/shared/services/media.service";
   styleUrls: ["./chapters.component.scss"],
 })
 export class ChaptersComponent {
+  @Output() select = new EventEmitter<ChapterId>();
+
   chapters = Object.values(story.chapters).filter((chapter) => !!chapter.metadata.respawn);
 
   constructor(private mediaService: MediaService) {}
+
+  selectChapter(chapterId: ChapterId): void {
+    this.select.emit(chapterId);
+  }
 }

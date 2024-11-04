@@ -52,7 +52,7 @@
   }
 }
 
-:host:hover {
+:host.touching {
   background-color: $primary;
   color: $secondary-dark;
 

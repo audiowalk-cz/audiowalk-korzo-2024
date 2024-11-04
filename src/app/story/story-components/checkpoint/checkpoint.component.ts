@@ -12,4 +12,6 @@ export class CheckpointComponent implements ChapterComponent {
   };
 
   @Output() end = new EventEmitter<void>();
+
+  showConfirmButton: boolean = false;
 }

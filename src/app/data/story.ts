@@ -9,7 +9,7 @@ import { TrackId } from "./tracks";
 
 export enum ChapterId {
   "intro_1_1" = "intro_1_1",
-  "interakce_FF" = "interakce_FF",
+  "interakce_ff" = "interakce_ff",
   "prechod_1_2" = "prechod_1_2",
   "prechod_1_3" = "prechod_1_3",
   "interakce_park" = "interakce_park",
@@ -114,10 +114,10 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
             "https://en.mapy.cz/zakladni?source=coor&id=14.415489122623967%2C50.08903446030233&x=14.4158585&y=50.0889730&z=17",
         },
       },
-      nextChapter: ChapterId.interakce_FF,
+      nextChapter: ChapterId.interakce_ff,
     }),
 
-    interakce_FF: new Chapter(ChapterId.interakce_FF, {
+    interakce_ff: new Chapter(ChapterId.interakce_ff, {
       component: InteractionComponent,
       data: {
         ambientTrack: TrackId.ambient_FF,
@@ -126,7 +126,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         options: [
           {
             label: "Jasně!",
-            value: "Jasně!",
+            value: "a",
           },
         ],
       },
@@ -162,7 +162,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 1.3",
       },
-      nextChapter: ChapterId.interakce_FF,
+      nextChapter: ChapterId.interakce_park,
     }),
 
     interakce_park: new Chapter(ChapterId.interakce_park, {
@@ -289,6 +289,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     materialy_1A: new Chapter(ChapterId.materialy_1A, {
       component: MaterialsComponent,
       data: {
+        track: TrackId.ambient_materialy_1,
         quote: "Prohlédni si materiály:", // TODO: ma tam byt tohle?
         materials: [],
       },
@@ -301,6 +302,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     materialy_1B: new Chapter(ChapterId.materialy_1B, {
       component: MaterialsComponent,
       data: {
+        track: TrackId.ambient_materialy_1,
         quote: "Prohlédni si materiály:", // TODO: ma tam byt tohle?
         materials: [],
       },
@@ -602,7 +604,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         track: TrackId.prechod_2A_4,
         storyDate: "16/11/1989",
       },
-      nextChapter: null,
+      nextChapter: ChapterId.checkpoint_materialy_2,
     }),
 
     prechod_2B_2: new Chapter(ChapterId.prechod_2B_2, {
@@ -615,7 +617,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         track: TrackId.prechod_2B_2,
         storyDate: "16/11/1989",
       },
-      nextChapter: null,
+      nextChapter: ChapterId.checkpoint_klementinum_b,
     }),
 
     checkpoint_klementinum_b: new Chapter(ChapterId.checkpoint_klementinum_b, {
@@ -784,6 +786,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.6",
       },
       data: {
+        track: TrackId.ambient_marianske, // TODO: https://docs.google.com/document/d/1XgQHhSezD6bL1NA4zuAGw63U6Wbe-XiEirFcn7MPBYo/edit?disco=AAABX6hBb-s
         quote: "Prohlédni si materiály:",
         materials: [],
       },
@@ -1002,6 +1005,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 4.2",
       },
       data: {
+        track: TrackId.ambient_roh_narodni,
         quote: "Co ty?",
         materials: [
           // TODO: doplnit fotku

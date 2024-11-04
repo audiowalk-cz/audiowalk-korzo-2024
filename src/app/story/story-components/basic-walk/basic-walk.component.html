@@ -3,6 +3,16 @@
   <img [src]="data.imageUrl" />
 
   <app-page-footer class="p-3">
-    <app-player [track]="data.track"></app-player>
+    <div class="row">
+      <div class="col">
+        <app-help-button></app-help-button>
+      </div>
+      <div class="col">
+        <app-player [track]="data.track" [autoPlay]="true" [autoSave]="true" (stop)="end.emit()"></app-player>
+      </div>
+      <div class="col">
+        <a (click)="end.emit()">Skip</a>
+      </div>
+    </div>
   </app-page-footer>
 </app-container>

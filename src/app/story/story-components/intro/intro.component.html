@@ -1,5 +1,7 @@
-<main></main>
+<app-container>
+  <main></main>
 
-<div class="text-center">
-  <app-player [track]="data.track" [autoPlay]="true" (next)="end.emit()"></app-player>
-</div>
+  <app-page-footer>
+    <app-player [track]="data.track" [autoPlay]="true"></app-player>
+  </app-page-footer>
+</app-container>

@@ -127,6 +127,7 @@ export class MediaService {
   }
 
   private async downloadTrack(trackDef: TrackDefinition, progress: Subject<number>) {
+    console.debug("Downloading track", trackDef.id, trackDef.url);
     const res = await axios.get<ArrayBuffer>(trackDef.url, {
       responseType: "arraybuffer",
       onDownloadProgress: (e: any) => {

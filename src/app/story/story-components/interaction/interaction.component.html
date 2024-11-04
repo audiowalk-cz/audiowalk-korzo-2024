@@ -1,1 +1,9 @@
-<app-box> </app-box>
+<app-container>
+  <app-question-box [question]="data.question" (end)="showOptions = true"></app-question-box>
+
+  @if (showOptions) {
+    <app-question-options [options]="data.options" (select)="selectOption($event)"></app-question-options>
+  }
+</app-container>
+
+<app-player [track]="data.ambientTrack" [showUI]="false" [autoPlay]="true" />

@@ -12,7 +12,7 @@ export class ChapterComponent {
 
 export class Chapter<
   ChapterId extends string,
-  Component extends typeof ChapterComponent,
+  Component extends new (...args: any[]) => ChapterComponent,
   StoryState extends {} = {},
   Metadata = never,
 > {

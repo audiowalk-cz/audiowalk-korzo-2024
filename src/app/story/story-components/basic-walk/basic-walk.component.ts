@@ -16,4 +16,6 @@ export class BasicWalkComponent implements ChapterComponent {
     mapUrl?: string;
   };
   @Output() end = new EventEmitter<void>();
+
+  openHelp() {}
 }

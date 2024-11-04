@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { StoryState } from "src/app/data/story";
+import { StoryController } from "@audiowalk/sdk";
+import { ChapterId, StoryState } from "src/app/data/story";
 import { TrackId } from "src/app/data/tracks";
 import { ChapterComponent } from "../../components/story-container/story-container.component";
 
@@ -17,4 +18,16 @@ export class InteractionComponent implements ChapterComponent {
   };
 
   @Output() end = new EventEmitter<void>();
+
+  showOptions = false;
+
+  constructor(private storyController: StoryController<ChapterId, StoryState>) {}
+
+  async selectOption(value: string) {
+    await this.storyController.updateState({
+      [this.data.answerProperty]: value,
+    });
+
+    this.end.emit();
+  }
 }

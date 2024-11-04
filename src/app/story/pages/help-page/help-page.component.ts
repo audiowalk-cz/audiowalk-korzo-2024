@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { StoryController } from "@audiowalk/sdk";
 import { ChapterId, ChapterMetadata, StoryState } from "src/app/data/story";
 import { Chapter } from "../../components/story-container/story-container.component";
@@ -14,10 +15,25 @@ export class HelpPageComponent {
   currentChapter = this.storyController.currentChapter;
 
   constructor(
-    private storyController: StoryController<
+    private readonly storyController: StoryController<
       ChapterId,
       StoryState,
       Chapter<ChapterId, any, StoryState, ChapterMetadata>
     >,
+    private readonly router: Router,
   ) {}
+
+  async resetStory() {
+    // TODO: better confirmation dialog
+    const confirmation = window.confirm("Opravdu chcete resetovat příběh?");
+    if (!confirmation) return;
+
+    await this.storyController.resetStory();
+
+    this.router.navigate(["/walk"]);
+  }
+
+  async selectChapter(chapterId: ChapterId) {
+    await this.storyController.setChapter(chapterId);
+  }
 }

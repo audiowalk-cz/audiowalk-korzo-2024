@@ -13,6 +13,8 @@ import { IntroComponent } from "./story-components/intro/intro.component";
 import { MapWalkComponent } from "./story-components/map-walk/map-walk.component";
 import { MaterialsComponent } from "./story-components/materials/materials.component";
 import { StoryRoutingModule } from "./story-routing.module";
+import { QuestionBoxComponent } from './components/question-box/question-box.component';
+import { QuestionOptionsComponent } from './components/question-options/question-options.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { StoryRoutingModule } from "./story-routing.module";
     ChaptersComponent,
     CheckpointComponent,
     MapWalkComponent,
+    QuestionBoxComponent,
+    QuestionOptionsComponent,
   ],
   imports: [CommonModule, StoryRoutingModule, SharedModule],
 })

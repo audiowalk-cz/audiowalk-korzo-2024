@@ -1,1 +1,8 @@
-<p>checkpoint works!</p>
+<app-container>
+  <app-box>
+    <app-type-text [text]="data.question" (end)="showConfirmButton = true" />
+  </app-box>
+  <div class="mt-5">
+    <app-button *ngIf="showConfirmButton" (click)="end.emit()">Jsem na místě!</app-button>
+  </div>
+</app-container>

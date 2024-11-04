@@ -11,11 +11,13 @@
         <app-button (click)="next.emit()">Pokračovat</app-button>
       }
 
+      @case ("error") {
+        <app-button (click)="download()">Zkusit znovu</app-button>
+      }
+
       @default {
         <app-button (click)="download()">Stáhnout</app-button>
       }
     }
-    <br /><br />
-    <app-button (click)="next.emit()">Přeskočit</app-button>
   </app-page-footer>
 </app-container>

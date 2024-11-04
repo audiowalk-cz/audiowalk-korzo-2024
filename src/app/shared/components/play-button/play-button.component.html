@@ -1,0 +1,16 @@
+<app-button>
+  <img
+    id="play"
+    src="assets/images/icons/player/play.svg"
+    alt="Play"
+    [class.active]="status !== 'playing'"
+    (click)="play.emit()"
+  />
+  <img
+    id="pause"
+    src="assets/images/icons/player/pause.svg"
+    alt="Pause"
+    [class.active]="status === 'playing'"
+    (click)="pause.emit()"
+  />
+</app-button>
