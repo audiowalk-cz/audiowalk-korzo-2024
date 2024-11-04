@@ -1,3 +1,12 @@
+## [0.5.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.5.1...v0.5.2) (2024-11-04)
+
+### Features
+
+* answer sounds ([c6030b3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/c6030b38e05fc21b58a9fc9fda30913c8b85ed26))
+
+### Bug Fixes
+
+* numerous fixes ([b8887e6](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/b8887e6d65af88f47f9f5046751072a5c0f99ca1))
 ## [0.5.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.5.0...v0.5.1) (2024-11-04)
 
 update SDK
