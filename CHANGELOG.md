@@ -1,3 +1,7 @@
+## [0.5.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.5.0...v0.5.1) (2024-11-04)
+
+update SDK
+
 ## [0.5.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.4.0...v0.5.0) (2024-11-04)
 
 ### Features
