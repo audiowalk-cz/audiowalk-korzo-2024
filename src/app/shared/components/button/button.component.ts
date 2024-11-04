@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "app-button",
@@ -8,9 +8,12 @@ import { Component } from "@angular/core";
     "[class.touching]": "buttonTouching",
     "(touchstart)": "onTouchStart()",
     "(touchend)": "onTouchEnd()",
+    "[class.active]": "active",
   },
 })
 export class ButtonComponent {
+  @Input() active: boolean = true;
+
   buttonTouching: boolean = false;
 
   onTouchStart() {

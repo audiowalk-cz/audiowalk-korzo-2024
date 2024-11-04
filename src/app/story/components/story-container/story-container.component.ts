@@ -3,7 +3,7 @@ import { outputToObservable } from "@angular/core/rxjs-interop";
 import { BasicStoryState, StoryController, StoryDefinition } from "@audiowalk/sdk";
 import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 
-import { first } from "rxjs";
+import { take } from "rxjs";
 
 export class ChapterComponent {
   data!: any;
@@ -81,7 +81,7 @@ export class StoryContainerComponent {
     component.instance.data = chapter.data;
 
     outputToObservable(component.instance.end)
-      .pipe(first())
+      .pipe(take(1))
       .subscribe(() => {
         this.storyController.nextChapter();
       });

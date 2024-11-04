@@ -30,7 +30,7 @@ export class HelpPageComponent {
 
     await this.storyController.resetStory();
 
-    this.router.navigate(["/walk"]);
+    this.router.navigate(["/story"]);
   }
 
   async selectChapter(chapterId: ChapterId) {

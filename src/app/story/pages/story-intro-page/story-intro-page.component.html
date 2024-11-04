@@ -6,6 +6,12 @@
     </p>
   </div>
   <app-page-footer>
-    <app-button (click)="next.emit()">Spustit audiowalk</app-button>
+    @if (isFromBeginning) {
+      <app-button (click)="startStory()">Spustit audiowalk</app-button>
+    } @else {
+      <a (click)="resetStory()">Spustit od začátku</a>
+      <br /><br />
+      <app-button (click)="startStory()">Pokračovat v příběhu</app-button>
+    }
   </app-page-footer>
 </app-container>

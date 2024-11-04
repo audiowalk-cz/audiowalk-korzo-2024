@@ -1,6 +1,7 @@
 import { TrackDefinition } from "../shared/services/media.service";
 
 export enum TrackId {
+  "jingle" = "jingle",
   "tutorial_test" = "tutorial_test",
   "intro_1_1" = "intro_1_1",
   "ambient_FF" = "ambient_FF",
@@ -66,6 +67,12 @@ export enum TrackId {
 }
 
 export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
+  jingle: {
+    id: TrackId["jingle"],
+    url: "assets/audio/jingle.mp3",
+    type: "audio",
+    mimeType: "audio/mpeg",
+  },
   tutorial_test: {
     id: TrackId["tutorial_test"],
     url: "assets/audio/placeholder.mp3", // TODO: chybi track
@@ -80,7 +87,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_FF: {
     id: TrackId["ambient_FF"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
   },

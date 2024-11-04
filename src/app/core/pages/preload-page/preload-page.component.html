@@ -15,6 +15,10 @@
     @if ((downloadStatus | async) !== "downloaded") {
       <app-button (click)="download()">Stáhnout</app-button>
     }
+
+    @if ((downloadStatus | async) === "downloaded") {
+      <a (click)="delete()" class="text-danger">Smazat stažená data</a>
+    }
     <br /><br />
     <app-button routerLink="/" [queryParams]="{ loading: 'false' }">Zpět na úvodní stránku</app-button>
   </app-page-footer>

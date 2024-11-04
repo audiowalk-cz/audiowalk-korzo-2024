@@ -2,8 +2,18 @@
   <app-question-box [question]="data.question" (end)="showOptions = true"></app-question-box>
 
   @if (showOptions) {
-    <app-question-options [options]="data.options" (select)="selectOption($event)"></app-question-options>
+    <app-question-options
+      [options]="data.options"
+      [value]="selectedOption?.value"
+      (select)="selectOption($event)"
+    ></app-question-options>
+  }
+
+  @if (selectedOption) {
+    <a (click)="end.emit()">Skip</a>
   }
 </app-container>
 
-<app-player [track]="data.ambientTrack" [showUI]="false" [autoPlay]="true" />
+<app-jingle />
+
+<app-player [track]="data.ambientTrack" [autoPlay]="true" [hideUI]="true" [loop]="true" />

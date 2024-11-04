@@ -1,6 +1,6 @@
 @for (option of options; track option.value) {
   <div class="p-3">
-    <app-button (click)="select.emit(option.value)" class="w-100 my-3">
+    <app-button (click)="select.emit(option.value)" [active]="value === option.value" class="w-100 my-3">
       <p>{{ option.label }}</p>
     </app-button>
   </div>

@@ -1,4 +1,4 @@
-@if (showUI) {
+@if (!hideUI) {
   <div class="d-inline-block">
     <app-play-button [status]="player?.status | async" (play)="play()" (pause)="pause()"></app-play-button>
 
@@ -6,5 +6,3 @@
     <p *ngIf="offline && !track?.isDownloaded" class="error text-warning">Nejste připojeni k internetu</p>
   </div>
 }
-
-<audio #audioEl></audio>

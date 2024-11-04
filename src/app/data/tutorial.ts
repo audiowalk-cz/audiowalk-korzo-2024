@@ -4,7 +4,6 @@ import { TutorialDownloadComponent } from "../tutorial/tutorial-components/tutor
 import { TutorialInteractions2Component } from "../tutorial/tutorial-components/tutorial-interactions-2/tutorial-interactions-2.component";
 import { TutorialInteractionsComponent } from "../tutorial/tutorial-components/tutorial-interactions/tutorial-interactions.component";
 import { TutorialIntroComponent } from "../tutorial/tutorial-components/tutorial-intro/tutorial-intro.component";
-import { TutorialOutroComponent } from "../tutorial/tutorial-components/tutorial-outro/tutorial-outro.component";
 import { TutorialPlaceComponent } from "../tutorial/tutorial-components/tutorial-place/tutorial-place.component";
 import { TutorialSoundComponent } from "../tutorial/tutorial-components/tutorial-sound/tutorial-sound.component";
 
@@ -16,5 +15,4 @@ export const TutorialSteps: TutorialStep[] = [
   TutorialInteractions2Component,
   TutorialDownloadComponent,
   TutorialAttentionComponent,
-  TutorialOutroComponent,
 ];

@@ -4,8 +4,8 @@
     @if (currentChapter | async; as chapter) {
       <div class="my-5">
         <p>Máte být na následujícím místě:</p>
-        <p>{{ chapter.metadata.respawn?.location }}</p>
-        <a [href]="chapter.metadata.respawn?.locationMapUrl">Otevřít v mapě</a>
+        <p>{{ chapter.metadata.locationText }}</p>
+        <a [href]="chapter.metadata.locationMapUrl">Otevřít v mapě</a>
       </div>
     }
 
@@ -17,6 +17,6 @@
   </div>
 
   <app-page-footer>
-    <app-button routerLink="/walk">Zpět do příběhu</app-button>
+    <app-button routerLink="/story/walk">Zpět do příběhu</app-button>
   </app-page-footer>
 </app-container>

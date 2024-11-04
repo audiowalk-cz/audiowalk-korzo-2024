@@ -7,6 +7,7 @@ import { BoxComponent } from "./components/box/box.component";
 import { ButtonComponent } from "./components/button/button.component";
 import { ContainerComponent } from "./components/container/container.component";
 import { HelpButtonComponent } from "./components/help-button/help-button.component";
+import { JingleComponent } from "./components/jingle/jingle.component";
 import { LoadingComponent } from "./components/loading/loading.component";
 import { MediaDownloadComponent } from "./components/media-download-status/media-download-status.component";
 import { PageFooterComponent } from "./components/page-footer/page-footer.component";
@@ -37,6 +38,7 @@ import { TypePipe } from "./pipes/type.pipe";
     VideoComponent,
     HelpButtonComponent,
     TypeTextComponent,
+    JingleComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -57,6 +59,7 @@ import { TypePipe } from "./pipes/type.pipe";
     VideoComponent,
     HelpButtonComponent,
     TypeTextComponent,
+    JingleComponent,
   ],
 })
 export class SharedModule {}

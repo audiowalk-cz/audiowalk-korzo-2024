@@ -10,7 +10,7 @@ import { MediaService } from "src/app/shared/services/media.service";
 export class ChaptersComponent {
   @Output() select = new EventEmitter<ChapterId>();
 
-  chapters = Object.values(story.chapters).filter((chapter) => !!chapter.metadata.respawn);
+  chapters = Object.values(story.chapters).filter((chapter) => !!chapter.metadata.chapterStart);
 
   constructor(private mediaService: MediaService) {}
 

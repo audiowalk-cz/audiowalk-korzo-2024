@@ -52,7 +52,8 @@
   }
 }
 
-:host.touching {
+:host.touching,
+:host.active {
   background-color: $primary;
   color: $secondary-dark;
 

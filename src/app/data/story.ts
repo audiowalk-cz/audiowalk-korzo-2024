@@ -65,6 +65,7 @@ export enum ChapterId {
 }
 
 export interface StoryState extends BasicStoryState<ChapterId> {
+  storyStartedAt?: string;
   interakce_FF?: string;
   interakce_park?: string;
   interakce_konicek?: "a" | "b";
@@ -84,14 +85,16 @@ export interface StoryState extends BasicStoryState<ChapterId> {
 }
 
 export interface ChapterMetadata {
-  /** Titulek se zobrazi v prehravaci na zamknute obrazovce */
+  /** Titulek a obrazek se zobrazi v prehravaci na zamknute obrazovce */
   title: string;
+  image?: string;
 
-  /** Zobrazit v seznamu kapitol pro spusteni v napovede */
-  respawn?: {
-    location: string;
-    locationMapUrl: string;
-  };
+  /** Zobrazit misto v napovede */
+  locationText?: string;
+  locationMapUrl?: string;
+
+  //** zobrazit v seznamu kapitol */
+  chapterStart?: boolean;
 }
 
 export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
@@ -101,18 +104,17 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
   chapters: {
     intro_1_1: new Chapter(ChapterId.intro_1_1, {
       component: BasicWalkComponent,
+      metadata: {
+        title: "1. kapitola",
+        image: "assets/images/chapters/ff.png",
+        locationText: "před Fildou",
+        locationMapUrl:
+          "https://en.mapy.cz/zakladni?source=coor&id=14.415489122623967%2C50.08903446030233&x=14.4158585&y=50.0889730&z=17",
+      },
       data: {
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.intro_1_1,
         storyDate: "16/11/1989",
-      },
-      metadata: {
-        title: "1. kapitola",
-        respawn: {
-          location: "před Fildou",
-          locationMapUrl:
-            "https://en.mapy.cz/zakladni?source=coor&id=14.415489122623967%2C50.08903446030233&x=14.4158585&y=50.0889730&z=17",
-        },
       },
       nextChapter: ChapterId.interakce_ff,
     }),
@@ -177,14 +179,17 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         options: [
           {
             label: "Takže se to snažíte reformovat zevnitř, postupně… To dává smysl…",
+            track: TrackId.interakce_1_3_a,
             value: "a",
           },
           {
             label: "Taky mi nepřijde dobrý spolupracovat se svazákama!",
+            track: TrackId.interakce_1_3_b,
             value: "b",
           },
           {
             label: "(Nic neříkám.)",
+            track: TrackId.interakce_1_3_c,
             value: "c",
           },
         ],

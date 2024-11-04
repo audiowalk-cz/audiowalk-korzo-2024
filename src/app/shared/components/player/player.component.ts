@@ -1,17 +1,5 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnDestroy,
-  Output,
-  SimpleChanges,
-  ViewChild,
-} from "@angular/core";
-import { PlayerController } from "@audiowalk/sdk";
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from "@angular/core";
+import { MediaControlsController, PlayerController, PlayerStatus } from "@audiowalk/sdk";
 import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 import { TrackId } from "src/app/data/tracks";
 import { MediaService, Track } from "../../services/media.service";
@@ -22,16 +10,22 @@ import { MediaService, Track } from "../../services/media.service";
   templateUrl: "./player.component.html",
   styleUrls: ["./player.component.scss"],
 })
-export class PlayerComponent implements AfterViewInit, OnChanges, OnDestroy {
+export class PlayerComponent implements OnInit, OnChanges, OnDestroy {
   @Input("track") trackId!: TrackId;
-  @Input() startProgress?: number;
-  @Input() autoPlay: boolean = false;
-  @Input() mode: "light" | "dark" = "dark";
-  @Input() showUI: boolean = true;
-  @Input() autoSave: boolean = false;
 
-  @Input() title?: string;
-  @Input() artwork?: MediaImage[];
+  @Input() status: PlayerStatus = PlayerStatus.paused;
+
+  @Input() autoPlay: boolean = false;
+  @Input() loop: boolean = false;
+  @Input() autoSave: boolean = false;
+  @Input() hideUI: boolean = false;
+  @Input() crossfade: boolean = false;
+  @Input() fadeIn: boolean = false;
+  @Input() fadeOut: boolean = false;
+  @Input() mediaControls: boolean = false;
+
+  @Input() startAt?: number;
+  @Input() fadeInterval: number = 2000;
 
   @Output("progress") onProgress = new EventEmitter<number>();
   @Output("stop") onStop = new EventEmitter<void>();
@@ -41,52 +35,59 @@ export class PlayerComponent implements AfterViewInit, OnChanges, OnDestroy {
   error?: string;
   offline: boolean = !navigator.onLine;
 
-  @ViewChild("audioEl") audioEl!: ElementRef<HTMLAudioElement>;
-
   public player?: PlayerController;
 
   constructor(
-    private cdRef: ChangeDetectorRef,
     private mediaService: MediaService,
+    private mediaControlsController: MediaControlsController,
   ) {}
+
+  ngOnInit(): void {
+    if (this.trackId) this.loadTrack(this.trackId);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes["track"]) {
-      if (this.trackId && this.player) this.loadTrack(this.trackId);
+      if (this.trackId) this.loadTrack(this.trackId);
+    }
+
+    if (changes["status"]) {
+      if (this.player) {
+        if (this.status === PlayerStatus.playing) this.play();
+        if (this.status === PlayerStatus.paused) this.pause();
+      }
     }
   }
 
-  ngAfterViewInit(): void {
-    this.player = new PlayerController(this.audioEl.nativeElement, {
-      playOnInit: this.autoPlay,
-      autoSave: this.autoSave,
-    });
-
-    this.player.onStop.pipe(untilDestroyed(this)).subscribe(() => this.onStop.emit());
-
-    if (this.trackId) this.loadTrack(this.trackId);
-
-    this.cdRef.detectChanges();
-  }
-
   ngOnDestroy(): void {
-    this.player?.close();
+    this.player?.destroy();
   }
 
   async loadTrack(trackId: TrackId) {
+    this.player?.destroy(); // do not wait to enable crossfading
+
     this.track = await this.mediaService.getTrack(trackId);
 
-    await this.player?.open(this.track.id, this.track.url);
-
-    this.player?.setMetadata({
-      title: this.track.title,
-      album: this.title,
-      artwork: this.artwork,
+    this.player = new PlayerController(this.track.id, this.track.url, {
+      autoSave: this.autoSave,
+      loop: this.loop,
+      fadeIn: this.crossfade || this.fadeIn,
+      fadeOut: this.crossfade || this.fadeOut,
+      fadeInterval: this.fadeInterval,
     });
+
+    if (this.mediaControlsController) {
+      this.mediaControlsController.attachPlayer(this.player);
+    }
+
+    this.player.onStop.pipe(untilDestroyed(this)).subscribe(() => this.onStop.emit());
+
+    if (this.autoPlay) this.play();
   }
 
   async play() {
     if (!this.player) return;
+
     this.player.play();
   }
 

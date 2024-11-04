@@ -1,1 +1,15 @@
-<p>map-walk works!</p>
+<app-container justify="space-between">
+  <div>
+    <app-box>
+      <app-type-text [text]="data.text"></app-type-text>
+    </app-box>
+
+    <a [href]="data.mapUrl" target="_blank"></a>
+  </div>
+
+  <app-page-footer>
+    <app-button (click)="end.emit()">Jsem tu</app-button>
+  </app-page-footer>
+</app-container>
+
+<app-jingle />

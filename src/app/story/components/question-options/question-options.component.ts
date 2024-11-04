@@ -11,5 +11,7 @@ export class QuestionOptionsComponent {
     value: string;
   }[];
 
+  @Input() value?: string;
+
   @Output() select = new EventEmitter<string>();
 }
