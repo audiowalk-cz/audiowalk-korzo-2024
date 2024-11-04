@@ -1,3 +1,15 @@
+## [0.5.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.4.0...v0.5.0) (2024-11-04)
+
+### Features
+
+* finish story, add quote to materials component ([3a665fb](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/3a665fbaee330b453f4a53dbebc08cd8859e52af))
+* story logic ([75803aa](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/75803aa346bd5205abb8afa2640a698435ef2fed))
+* story up to 2B including story components ([8574872](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/85748728cbbf14ba3aaeb4adc1c52ea6f3785403))
+* update button styles, enhance layout structure, and improve font usage ([0e43dc8](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/0e43dc8dc1fd15d4e6997a04819e91906aac7410))
+
+### Bug Fixes
+
+* layout, design, tracks etc ([248cf8f](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/248cf8f413447020113864a1cb896132e4024676))
 ## [0.4.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.3.1...v0.4.0) (2024-11-01)
 
 ### Features
