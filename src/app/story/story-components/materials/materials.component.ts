@@ -8,6 +8,7 @@ import { ChapterComponent } from "../../components/story-container/story-contain
 })
 export class MaterialsComponent implements ChapterComponent {
   @Input() data!: {
+    quote: string;
     materials: { label: string; url: string }[];
   };
 

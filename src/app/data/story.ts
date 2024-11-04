@@ -46,30 +46,28 @@ export enum ChapterId {
   "interakce_betlemske_2" = "interakce_betlemske_2",
   "prechod_2B_5" = "prechod_2B_5",
   "prechod_2B_6" = "prechod_2B_6",
+  "checkpoint_materialy_2" = "checkpoint_materialy_2",
   "materialy_2" = "materialy_2",
-  // "prechod_3A_1" = "prechod_3A_1",
-  // "interakce_3A_1_a" = "interakce_3A_1_a",
-  // "interakce_3A_1_b" = "interakce_3A_1_b",
-  // "prechod_3A_2" = "prechod_3A_2",
-  // "prechod_3B_1" = "prechod_3B_1",
-  // "interakce_3B_1_a" = "interakce_3B_1_a",
-  // "interakce_3B_1_b" = "interakce_3B_1_b",
-  // "prechod_3B_2" = "prechod_3B_2",
-  // "prechod_3_3" = "prechod_3_3",
-  // "interakce_bartolomejska" = "interakce_bartolomejska",
-  // "interakce_3_3_a" = "interakce_3_3_a",
-  // "interakce_3_3_b" = "interakce_3_3_b",
-  // "prechod_4_1" = "prechod_4_1",
-  // "prechod_4_2A" = "prechod_4_2A",
-  // "prechod_4_2B" = "prechod_4_2B",
-  // "interakce_roh_narodni" = "interakce_roh_narodni",
-  // "prechod_5" = "prechod_5",
+  "prechod_3A_1" = "prechod_3A_1",
+  "interakce_cigo_A" = "interakce_cigo_A",
+  "prechod_3A_2" = "prechod_3A_2",
+  "prechod_3B_1" = "prechod_3B_1",
+  "interakce_cigo_B" = "interakce_cigo_B",
+  "prechod_3B_2" = "prechod_3B_2",
+  "prechod_3_3" = "prechod_3_3",
+  "checkpoint_bartolomejska" = "checkpoint_bartolomejska",
+  "interakce_bartolomejska" = "interakce_bartolomejska",
+  "prechod_4_1" = "prechod_4_1",
+  "prechod_4_2A" = "prechod_4_2A",
+  "prechod_4_2B" = "prechod_4_2B",
+  "interakce_roh_narodni" = "interakce_roh_narodni",
+  "prechod_5" = "prechod_5",
 }
 
 export interface StoryState extends BasicStoryState<ChapterId> {
   interakce_FF?: string;
   interakce_park?: string;
-  interakce_konicek?: string;
+  interakce_konicek?: "a" | "b";
   interakce_marianske?: string;
   interakce_damu_1?: string;
   interakce_damu_2?: string;
@@ -81,6 +79,8 @@ export interface StoryState extends BasicStoryState<ChapterId> {
   interakce_roh_narodni?: string;
   interakce_betlemske_1?: string;
   interakce_betlemske_2?: string;
+  interakce_cigo_A?: string;
+  interakce_cigo_B?: string;
 }
 
 export interface ChapterMetadata {
@@ -289,6 +289,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     materialy_1A: new Chapter(ChapterId.materialy_1A, {
       component: MaterialsComponent,
       data: {
+        quote: "Prohlédni si materiály:", // TODO: ma tam byt tohle?
         materials: [],
       },
       metadata: {
@@ -300,6 +301,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     materialy_1B: new Chapter(ChapterId.materialy_1B, {
       component: MaterialsComponent,
       data: {
+        quote: "Prohlédni si materiály:", // TODO: ma tam byt tohle?
         materials: [],
       },
       metadata: {
@@ -734,7 +736,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_betlemske,
-        question: "", // FIXME: Add question
+        question: "Co si o tom myslíš ty?",
         answerProperty: "interakce_betlemske_2",
         options: [
           {
@@ -762,7 +764,18 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         track: TrackId.prechod_2B_6,
         storyDate: "16/11/1989",
       },
-      nextChapter: null,
+      nextChapter: ChapterId.checkpoint_materialy_2,
+    }),
+
+    checkpoint_materialy_2: new Chapter(ChapterId.checkpoint_materialy_2, {
+      component: CheckpointComponent,
+      metadata: {
+        title: "Kapitola 2.6",
+      },
+      data: {
+        question: "Sedíš na lavičce?",
+      },
+      nextChapter: ChapterId.materialy_2,
     }),
 
     materialy_2: new Chapter(ChapterId.materialy_2, {
@@ -771,7 +784,241 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.6",
       },
       data: {
+        quote: "Prohlédni si materiály:",
         materials: [],
+      },
+      nextChapter: (state) => {
+        switch (state.interakce_konicek) {
+          default:
+          case "a":
+            return ChapterId.prechod_3A_1;
+          case "b":
+            return ChapterId.prechod_3B_1;
+        }
+      },
+    }),
+
+    prechod_3A_1: new Chapter(ChapterId.prechod_3A_1, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 3.1",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_3A_1,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: ChapterId.interakce_cigo_A,
+    }),
+
+    interakce_cigo_A: new Chapter(ChapterId.interakce_cigo_A, {
+      component: InteractionComponent,
+      metadata: {
+        title: "Kapitola 3.1",
+      },
+      data: {
+        ambientTrack: TrackId.ambient_betlemske,
+        question: "Co odpovíš?",
+        answerProperty: "interakce_cigo_A",
+        options: [
+          {
+            label: "Co, tady? Před kaplí, kde kázal Jan Hus?",
+            track: TrackId.interakce_3A_1_a,
+            value: "a",
+          },
+          {
+            label: "Jasně, na, tady máš sirky/zapík.  (škrtá, zapaluje si cígo)", // TODO: https://docs.google.com/document/d/1XgQHhSezD6bL1NA4zuAGw63U6Wbe-XiEirFcn7MPBYo/edit?disco=AAABX6hBb80
+            track: TrackId.interakce_3A_1_b,
+            value: "b",
+          },
+        ],
+      },
+      nextChapter: ChapterId.prechod_3A_2,
+    }),
+
+    prechod_3A_2: new Chapter(ChapterId.prechod_3A_2, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 3.2",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_3A_2,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: ChapterId.prechod_3_3,
+    }),
+
+    prechod_3B_1: new Chapter(ChapterId.prechod_3B_1, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 3.1",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_3B_1,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: ChapterId.interakce_cigo_B,
+    }),
+
+    interakce_cigo_B: new Chapter(ChapterId.interakce_cigo_B, {
+      component: InteractionComponent,
+      metadata: {
+        title: "Kapitola 3.1",
+      },
+      data: {
+        ambientTrack: TrackId.ambient_betlemske,
+        question: "Co odpovíš?",
+        answerProperty: "interakce_cigo_B",
+        options: [
+          {
+            label: "Co, tady? Před kaplí, kde kázal Jan Hus?",
+            track: TrackId.interakce_3B_1_a,
+            value: "a",
+          },
+          {
+            label: "Jasně, na, tady máš sirky/zapík.  (škrtá, zapaluje si cígo)", // TODO: https://docs.google.com/document/d/1XgQHhSezD6bL1NA4zuAGw63U6Wbe-XiEirFcn7MPBYo/edit?disco=AAABX6hBb80
+            track: TrackId.interakce_3B_1_b,
+            value: "b",
+          },
+        ],
+      },
+      nextChapter: ChapterId.prechod_3B_2,
+    }),
+
+    prechod_3B_2: new Chapter(ChapterId.prechod_3B_2, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 3.2",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_3B_2,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: ChapterId.prechod_3_3,
+    }),
+
+    prechod_3_3: new Chapter(ChapterId.prechod_3_3, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 3.3",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_3_3,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: ChapterId.checkpoint_bartolomejska,
+    }),
+
+    checkpoint_bartolomejska: new Chapter(ChapterId.checkpoint_bartolomejska, {
+      component: CheckpointComponent,
+      metadata: {
+        title: "Kapitola 3.3",
+      },
+      data: {
+        question: "Stojíš na Bartolomějské ulici?",
+      },
+      nextChapter: ChapterId.interakce_bartolomejska,
+    }),
+
+    interakce_bartolomejska: new Chapter(ChapterId.interakce_bartolomejska, {
+      component: InteractionComponent,
+      metadata: {
+        title: "Kapitola 3.3",
+      },
+      data: {
+        ambientTrack: TrackId.ambient_bartolomejska,
+        question: "DAVID: Co si o tom myslíš?",
+        answerProperty: "interakce_bartolomejska",
+        options: [
+          {
+            label: "Jo, udělejte to s SSM. Když to bude oficiální a legální, tak přijde víc lidí.",
+            track: TrackId.interakce_3_3_a,
+            value: "a",
+          },
+          {
+            label: "Ne, jestli bude demonstrace pod SSM, spíš to lidi odradí.",
+            track: TrackId.interakce_3_3_b,
+            value: "b",
+          },
+        ],
+      },
+      nextChapter: ChapterId.prechod_4_1,
+    }),
+
+    prechod_4_1: new Chapter(ChapterId.prechod_4_1, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 4.1",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_4_1,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: (state) => {
+        switch (state.interakce_bartolomejska) {
+          default:
+          case "a":
+            return ChapterId.prechod_4_2A;
+          case "b":
+            return ChapterId.prechod_4_2B;
+        }
+      },
+    }),
+
+    prechod_4_2A: new Chapter(ChapterId.prechod_4_2A, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 4.2",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_4_2A,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: ChapterId.interakce_roh_narodni,
+    }),
+
+    prechod_4_2B: new Chapter(ChapterId.prechod_4_2B, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 4.2",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_4_2B,
+        storyDate: "16/11/1989",
+      },
+      nextChapter: ChapterId.interakce_roh_narodni,
+    }),
+
+    interakce_roh_narodni: new Chapter(ChapterId.interakce_roh_narodni, {
+      component: MaterialsComponent,
+      metadata: {
+        title: "Kapitola 4.2",
+      },
+      data: {
+        quote: "Co ty?",
+        materials: [
+          // TODO: doplnit fotku
+        ],
+      },
+      nextChapter: ChapterId.prechod_5,
+    }),
+
+    prechod_5: new Chapter(ChapterId.prechod_5, {
+      component: BasicWalkComponent,
+      metadata: {
+        title: "Kapitola 5",
+      },
+      data: {
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_5,
+        storyDate: "16/11/1989",
       },
       nextChapter: null,
     }),
