@@ -1,3 +1,8 @@
+## [0.6.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.5.2...v0.6.0) (2024-11-06)
+
+### Features
+
+* **audio:** add new tracks, replace placeholder ([2595ff9](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/2595ff9dec4bacc8bc439df05694a163caa588f0))
 ## [0.5.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.5.1...v0.5.2) (2024-11-04)
 
 ### Features
