@@ -1,3 +1,7 @@
+## [0.6.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.6.0...v0.6.1) (2024-11-06)
+
+add version tag
+
 ## [0.6.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.5.2...v0.6.0) (2024-11-06)
 
 ### Features
