@@ -267,13 +267,13 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   prechod_2B_2: {
     id: TrackId["prechod_2B_2"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.2.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_2B_3: {
     id: TrackId["prechod_2B_3"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.3.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -285,19 +285,19 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   interakce_2B_3_a: {
     id: TrackId["interakce_2B_3_a"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.3.int.a.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_2B_3_b: {
     id: TrackId["interakce_2B_3_b"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.3.int.b.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_2B_4: {
     id: TrackId["prechod_2B_4"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.4.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -309,91 +309,91 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   interakce_2B_4_int1_a: {
     id: TrackId["interakce_2B_4_int1_a"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.4.int1.a.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_2B_4_int1_b: {
     id: TrackId["interakce_2B_4_int1_b"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.4.int1.b.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_2B_5: {
     id: TrackId["prechod_2B_5"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.5.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_2B_5_int2_a: {
     id: TrackId["interakce_2B_5_int2_a"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.5.int2.a.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_2B_5_int2_b: {
     id: TrackId["interakce_2B_5_int2_b"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.5.int2.b.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_2B_6: {
     id: TrackId["prechod_2B_6"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2B.6.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_3A_1: {
     id: TrackId["prechod_3A_1"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3A.1.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_3A_1_a: {
     id: TrackId["interakce_3A_1_a"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3A.1.int.a.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_3A_1_b: {
     id: TrackId["interakce_3A_1_b"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3A.1.int.b.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_3A_2: {
     id: TrackId["prechod_3A_2"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3A.2.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_3B_1: {
     id: TrackId["prechod_3B_1"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3B.1.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_3B_1_a: {
     id: TrackId["interakce_3B_1_a"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3B.1.int.a.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_3B_1_b: {
     id: TrackId["interakce_3B_1_b"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3B.1.int.b.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_3B_2: {
     id: TrackId["prechod_3B_2"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3B.2.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_3_3: {
     id: TrackId["prechod_3_3"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3.3.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
