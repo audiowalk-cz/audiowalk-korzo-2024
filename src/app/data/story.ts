@@ -382,7 +382,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 2.2",
       },
-      nextChapter: ChapterId.interakce_damu_1,
+      nextChapter: ChapterId.checkpoint_damu,
     }),
 
     checkpoint_damu: new Chapter(ChapterId.checkpoint_damu, {
@@ -558,7 +558,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
           case "a":
             return ChapterId.prechod_2A_4;
           case "b":
-            return ChapterId.prechod_2A_3_klementinum;
+            return ChapterId.prechod_2A_3_ke_klementinu;
         }
       },
     }),
@@ -684,7 +684,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         track: TrackId.prechod_2B_4,
         storyDate: "16/11/1989",
       },
-      nextChapter: ChapterId.interakce_betlemske_1,
+      nextChapter: ChapterId.checkpoint_betlemske,
     }),
 
     checkpoint_betlemske: new Chapter(ChapterId.checkpoint_betlemske, {
