@@ -120,7 +120,11 @@ export interface ChapterMetadata {
 /**
  * Zde je popsaná celá logika příběhu, tedy jaké komponenty (obrazovky) budou použity a co se na nich ukáže.
  * @param initialState - původní stav příběhu na začátku
- * @param
+ * @param chapters - seznam všech kapitol v příběhu a logika přechodu z jedné kapitoly do druhé
+ *   component - komponenta, která se má zobrazit
+ *   metadata - metadata kapitoly (každá kapitola má stejné, viz ChapterMetadata výše)
+ *   data - data, která se mají poslat do komponenty (podle typu komponenty/obrazovky)
+ *   nextChapter - logika přechodu do další kapitoly (může být buď přímo ID další kapitoly, nebo funkce, která toto ID vrátí na základě stau příběhu StoryState)
  */
 export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
   initialState: {
