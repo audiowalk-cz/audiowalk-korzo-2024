@@ -7,6 +7,12 @@ import { MapWalkComponent } from "../story/story-components/map-walk/map-walk.co
 import { MaterialsComponent } from "../story/story-components/materials/materials.component";
 import { TrackId } from "./tracks";
 
+/**
+ * Seznam všech kapitol v příběhu. Každá kapitola má své jedinečné ID, které je definováno v tomto výčtu.
+ * první záznam je to, co se používá v kódu, druhý je to, co se uloží do stavu aplikace. Jsou zpravidla stejné,
+ * ale mohou se lišit, pokud by bylo potřeba něco přejmenovat, ale zároveň to nerozbít divákům co již mají
+ * ve stavu příběhu uloženou starou hodnotu.
+ */
 export enum ChapterId {
   "intro_1_1" = "intro_1_1",
   "interakce_ff" = "interakce_ff",
@@ -64,8 +70,17 @@ export enum ChapterId {
   "prechod_5" = "prechod_5",
 }
 
+/**
+ * Všechny interakce v příběhu jsou uloženy v objektu StoryState. Tento objekt vypadá takto:
+ */
 export interface StoryState extends BasicStoryState<ChapterId> {
+  /** Kdy divák zahájil příběh. A také jestli vůbec už zahájil příběh - pokud ne, bude to prázdné. */
   storyStartedAt?: string;
+
+  /**
+   * Výsledky jednotlivých interakcí. U interakce je vždy nastavení answerProperty, které určuje kam do stavu se odpověď uloží.
+   * V nextChapter se pak zase hdonota odsud použije pro rozhodnutí, kam dál.
+   */
   interakce_FF?: string;
   interakce_park?: string;
   interakce_konicek?: "a" | "b";
@@ -84,6 +99,11 @@ export interface StoryState extends BasicStoryState<ChapterId> {
   interakce_cigo_B?: string;
 }
 
+/**
+ * Každá kapitola má nějaké vlastnisti, například titulek (title), který se zobrazí v prehravaci na zamknute obrazovce,
+ * nebo odkaz na mapu (locationMapUrl), kde se divák má nacházet.
+ * Všechny vlastnosti kapitol vypadají takto:
+ */
 export interface ChapterMetadata {
   /** Titulek a obrazek se zobrazi v prehravaci na zamknute obrazovce */
   title: string;
@@ -97,6 +117,11 @@ export interface ChapterMetadata {
   chapterStart?: boolean;
 }
 
+/**
+ * Zde je popsaná celá logika příběhu, tedy jaké komponenty (obrazovky) budou použity a co se na nich ukáže.
+ * @param initialState - původní stav příběhu na začátku
+ * @param
+ */
 export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
   initialState: {
     currentChapter: ChapterId.intro_1_1,
