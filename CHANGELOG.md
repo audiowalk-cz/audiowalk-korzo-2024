@@ -1,3 +1,8 @@
+## [0.7.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.6.2...v0.7.0) (2024-11-09)
+
+### Features
+
+* update story ([f3f29b7](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/f3f29b73f2c1aed0e290078d50b879c35579d944))
 ## [0.6.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.6.1...v0.6.2) (2024-11-09)
 
 ### Features
