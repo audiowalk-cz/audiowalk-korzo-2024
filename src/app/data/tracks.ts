@@ -399,7 +399,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_bartolomejska: {
     id: TrackId["ambient_bartolomejska"],
-    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -417,31 +417,31 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   prechod_4_1: {
     id: TrackId["prechod_4_1"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/4.1.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_4_2A: {
     id: TrackId["prechod_4_2A"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/4.A.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_4_2B: {
     id: TrackId["prechod_4_2B"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/4.2B.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   ambient_roh_narodni: {
     id: TrackId["ambient_roh_narodni"],
-    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE PARK ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   prechod_5: {
     id: TrackId["prechod_5"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/5.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },

@@ -145,7 +145,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.intro_1_1,
-        storyDate: "3/10/1989",
+        storyDate: "2/10/1989",
       },
       nextChapter: ChapterId.interakce_ff,
     }),
@@ -180,7 +180,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         note: "Jdeš do parku u&nbsp;Staroměstské radnice.",
         imageUrl: "assets/images/chapters/1_2.png",
         track: TrackId.prechod_1_2,
-        storyDate: "3/10/1989",
+        storyDate: "2/10/1989",
       },
       metadata: {
         title: "Kapitola 1.2",
@@ -209,7 +209,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/1_3.png",
         track: TrackId.prechod_1_3,
-        storyDate: "3/10/1989",
+        storyDate: "2/10/1989",
       },
       metadata: {
         title: "Kapitola 1.3",
@@ -256,7 +256,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         note: "Jdeš ke Koníčkovi.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_4,
-        storyDate: "3/10/1989",
+        storyDate: "2/10/1989",
       },
       metadata: {
         title: "Kapitola 1.4",
@@ -284,7 +284,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_5,
-        storyDate: "3/10/1989",
+        storyDate: "2/10/1989",
       },
       metadata: {
         title: "Kapitola 1.5",
@@ -333,7 +333,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         note: "Jdeš s Davidem noční Prahou směrem na&nbsp;Mariánské náměstí.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_6A,
-        storyDate: "3/10/1989",
+        storyDate: "2/10/1989",
       },
       metadata: {
         title: "Kapitola 1.6",
@@ -349,7 +349,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         note: "Jdeš s Terezou noční Prahou směrem na&nbsp;Mariánské náměstí.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_6B,
-        storyDate: "3/10/1989",
+        storyDate: "2/10/1989",
       },
       metadata: {
         title: "Kapitola 1.6",
