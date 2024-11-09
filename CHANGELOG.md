@@ -1,3 +1,15 @@
+## [0.6.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.6.1...v0.6.2) (2024-11-09)
+
+### Features
+
+* add browserslist ([d8a56f4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/d8a56f4a175a13d3840e3c64af5dbbdf419d898c))
+* tutorial updates ([59ea55e](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/59ea55e3eb826b49c49a4b3455ee04ba43d9a2d3))
+* update intro paes texts ([21d5778](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/21d5778a83f394a85439a9de214a19210dcaca18))
+
+### Bug Fixes
+
+* add missing interaction tracks ([733dff3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/733dff35a2bcf92492a628310b49906042295bd7))
+* checkpoints story logic ([4c1f786](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/4c1f7868d678cd6ad9105fe992e5636dd6e6771d))
 ## [0.6.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.6.0...v0.6.1) (2024-11-06)
 
 add version tag
