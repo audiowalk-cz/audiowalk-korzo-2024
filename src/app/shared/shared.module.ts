@@ -8,7 +8,6 @@ import { ButtonComponent } from "./components/button/button.component";
 import { ContainerComponent } from "./components/container/container.component";
 import { HelpButtonComponent } from "./components/help-button/help-button.component";
 import { JingleComponent } from "./components/jingle/jingle.component";
-import { LoadingComponent } from "./components/loading/loading.component";
 import { MediaDownloadComponent } from "./components/media-download-status/media-download-status.component";
 import { PageFooterComponent } from "./components/page-footer/page-footer.component";
 import { PlayButtonComponent } from "./components/play-button/play-button.component";
@@ -31,7 +30,6 @@ import { TypePipe } from "./pipes/type.pipe";
     ButtonComponent,
     ChapterPhotoComponent,
     ContainerComponent,
-    LoadingComponent,
     MediaDownloadComponent,
     PageFooterComponent,
     PlayerComponent,
@@ -55,7 +53,6 @@ import { TypePipe } from "./pipes/type.pipe";
     ButtonComponent,
     ChapterPhotoComponent,
     ContainerComponent,
-    LoadingComponent,
     MediaDownloadComponent,
     PageFooterComponent,
     PlayerComponent,
