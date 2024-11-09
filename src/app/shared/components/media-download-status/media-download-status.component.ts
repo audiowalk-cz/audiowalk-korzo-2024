@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { DownloadStatus, MediaService } from "src/app/shared/services/media.service";
 
 @Component({
@@ -7,8 +7,6 @@ import { DownloadStatus, MediaService } from "src/app/shared/services/media.serv
   styleUrl: "./media-download-status.component.scss",
 })
 export class MediaDownloadComponent {
-  @Input() showDelete = true;
-
   @Output() status = new EventEmitter<DownloadStatus>();
 
   public downloadStatus = this.mediaService.downloadStatus;

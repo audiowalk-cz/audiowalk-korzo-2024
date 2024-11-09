@@ -1,7 +1,40 @@
-<app-container align="center">
-  <h1>Intro příběhu</h1>
+<app-container align="center" justify="flex-start">
+  <div class="p-5">
+    <h1>Sejdeme se u Koníčka?</h1>
 
-  <p>...Ahoj, tak píěbrefh, JE STŘEDA 1.</p>
+    <p>Před začátkem si audiowalk stáhni, zůstane uložený i když zavřeš webový prohlížeč.</p>
 
-  <app-button>Začít</app-button>
+    <app-media-download-status></app-media-download-status>
+
+    @if (isInAppBrowser) {
+      <p>
+        ⚠️ Pozor, vypadá to, že si otevíráš audiowalk prostřednictvím prohlížeče jiné aplikace (Instagram, Facebook).
+        Otevři si prosím adresu <code>{{ currentUrl }}</code> v normálním prohlížeči.
+      </p>
+    }
+
+    @switch (mediaService.downloadStatus | async) {
+      @case ("downloaded") {
+        <a (click)="delete()" class="text-danger">Smazat stažená data</a>
+        <br /><br />
+      }
+      @case ("downloading") {}
+      @default {
+        <app-button (click)="download()">Stáhnout audiowalk</app-button>
+      }
+    }
+
+    <p>Audiowalk začíná nám. Jana Palacha 1/2, Praha 1 před budovou Filozofické fakulty UK</p>
+    <br /><br />
+
+    @if ((mediaService.downloadStatus | async) === "downloaded") {
+      @if (storyStateExists | async) {
+        <app-button (click)="resetStory()">Spustit od začátku</app-button>
+        <br /><br />
+        <app-button routerLink="/story/walk">Pokračovat v příběhu</app-button>
+      } @else {
+        <app-button routerLink="/tutorial">Spustit audiowalk</app-button>
+      }
+    }
+  </div>
 </app-container>

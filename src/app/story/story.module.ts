@@ -3,8 +3,6 @@ import { NgModule } from "@angular/core";
 
 import { SharedModule } from "../shared/shared.module";
 import { ChaptersComponent } from "./components/chapters/chapters.component";
-import { QuestionBoxComponent } from "./components/question-box/question-box.component";
-import { QuestionOptionsComponent } from "./components/question-options/question-options.component";
 import { StoryContainerComponent } from "./components/story-container/story-container.component";
 import { HelpPageComponent } from "./pages/help-page/help-page.component";
 import { StoryIntroPageComponent } from "./pages/story-intro-page/story-intro-page.component";
@@ -29,8 +27,6 @@ import { StoryRoutingModule } from "./story-routing.module";
     ChaptersComponent,
     CheckpointComponent,
     MapWalkComponent,
-    QuestionBoxComponent,
-    QuestionOptionsComponent,
     StoryIntroPageComponent,
   ],
   imports: [CommonModule, StoryRoutingModule, SharedModule],

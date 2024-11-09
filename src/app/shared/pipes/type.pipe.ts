@@ -26,6 +26,8 @@ export class TypePipe implements PipeTransform {
   private cursor = true;
   private onEnd?: () => void;
 
+  private space_regex = /\s/;
+
   constructor(private cdRef: ChangeDetectorRef) {}
 
   transform(value: string, options: Partial<TypePipeOptions> = {}): string {
@@ -55,7 +57,7 @@ export class TypePipe implements PipeTransform {
 
     this.currentValue += this.value[this.currentValue.length];
 
-    if (this.skipSpace && this.value[this.currentValue.length] === " ") {
+    while (this.skipSpace && this.space_regex.test(this.value[this.currentValue.length])) {
       this.currentValue += this.value[this.currentValue.length];
     }
 

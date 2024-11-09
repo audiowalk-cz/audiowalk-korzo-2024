@@ -12,7 +12,7 @@ import { Component, Input } from "@angular/core";
   },
 })
 export class ButtonComponent {
-  @Input() active: boolean = true;
+  @Input() active: boolean = false;
 
   buttonTouching: boolean = false;
 

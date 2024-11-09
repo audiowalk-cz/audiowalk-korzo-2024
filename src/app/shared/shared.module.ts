@@ -14,6 +14,9 @@ import { PageFooterComponent } from "./components/page-footer/page-footer.compon
 import { PlayButtonComponent } from "./components/play-button/play-button.component";
 import { PlayerComponent } from "./components/player/player.component";
 import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
+import { QuestionBoxComponent } from "./components/question-box/question-box.component";
+import { QuestionOptionsComponent } from "./components/question-options/question-options.component";
+import { QuestionComponent } from "./components/question/question.component";
 import { TypeTextComponent } from "./components/type-text/type-text.component";
 import { VideoComponent } from "./components/video/video.component";
 import { TimePipe } from "./pipes/time.pipe";
@@ -39,6 +42,9 @@ import { TypePipe } from "./pipes/type.pipe";
     HelpButtonComponent,
     TypeTextComponent,
     JingleComponent,
+    QuestionBoxComponent,
+    QuestionOptionsComponent,
+    QuestionComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -60,6 +66,9 @@ import { TypePipe } from "./pipes/type.pipe";
     HelpButtonComponent,
     TypeTextComponent,
     JingleComponent,
+    QuestionBoxComponent,
+    QuestionOptionsComponent,
+    QuestionComponent,
   ],
 })
 export class SharedModule {}

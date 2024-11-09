@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { PlayerController } from "@audiowalk/sdk";
+import { Tracks } from "src/app/data/tracks";
 import { TutorialStepComponent } from "../../components/tutorial-container/tutorial-container.component";
 
 @Component({
@@ -6,6 +8,16 @@ import { TutorialStepComponent } from "../../components/tutorial-container/tutor
   templateUrl: "./tutorial-interactions.component.html",
   styleUrl: "./tutorial-interactions.component.scss",
 })
-export class TutorialInteractionsComponent implements TutorialStepComponent {
+export class TutorialInteractionsComponent implements TutorialStepComponent, OnInit {
   @Output() next = new EventEmitter<void>();
+
+  private readonly jingleSound = new PlayerController("jingle", Tracks["jingle"].url);
+
+  ngOnInit(): void {
+    this.playJingle();
+  }
+
+  playJingle() {
+    this.jingleSound.play();
+  }
 }

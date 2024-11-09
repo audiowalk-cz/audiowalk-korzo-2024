@@ -1,17 +1,15 @@
 <app-container align="center" justify="space-between">
-  <div class="p-5">
-    <h2>Výborně!</h2>
+  <div class="p-5 text-center">
+    <h2>Poslouchej instrukce postav v audiu</h2>
 
-    <p class="mb-5">Vítej v krátkém tutoriálu, který tě provede aplikací.</p>
+    <p>Řeknou ti, kdy vyrazit na cestu, kdy se zastavit nebo kterým směrem jít.</p>
+    <p>Poslouchej také zvuk kroků, znamenají, že se máš někam přesouvat.</p>
+    <p>Pokud budeš mít pocit, že nevíš, kudy jít, použij tlačítko nápovědy.</p>
 
-    <p class="mb-5">
-      Navigace: pomocí instrukcí postav v audiu, poslouchej je. Pokud by ses ztratil, tady je tlačítko mapy.
-    </p>
-
-    <p>Vypadá takhle:</p>
+    <app-help-button></app-help-button>
   </div>
 
   <app-page-footer>
-    <app-button (click)="next.emit()">Chápu</app-button>
+    <app-button (click)="next.emit()">ROZUMÍM</app-button>
   </app-page-footer>
 </app-container>

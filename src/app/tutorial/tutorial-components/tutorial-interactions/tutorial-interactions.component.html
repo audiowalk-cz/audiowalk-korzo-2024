@@ -1,14 +1,20 @@
 <app-container align="center" justify="space-between">
   <div class="p-5">
-    <h2>Interakce</h2>
+    <h2>Povídej si s postavami</h2>
     <p>
-      Během procházky potkáte různé postavy a občas budete moci vstoupit do jejich konverzace a tím i ovlivnit kudy se
-      bude ubírat děj, vaše trasa a možná i dějiny haha.
+      Během poslechu můžeš mít obrazovku mobilu vypnutou a soustředit se na cestu. Přijdou ale momenty, kdy je potřeba
+      se zastavit a telefon znovu otevřít. Například když:
     </p>
-    <p>Pokud bude čas na to, se podívat do aplikace, uslyšíte tento zvuk!</p>
+    <ul>
+      <li>je nutné potvrdit, že jsi na správném místě</li>
+      <li>si můžeš prohlédnout doprovodné materiály</li>
+      <li>musíš vstoupit do konverzace s postavami</li>
+    </ul>
+
+    <p>Tento moment poznáš podle speciálního zvuku.</p>
   </div>
 
   <app-page-footer>
-    <app-button (click)="next.emit()">Zvuk?</app-button>
+    <app-button (click)="playJingle(); next.emit()">Přehrát zvuk!</app-button>
   </app-page-footer>
 </app-container>
