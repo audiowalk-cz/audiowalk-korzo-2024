@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^18.2.5",
     "@angular/router": "^18.2.5",
     "@angular/service-worker": "^18.2.5",
-    "@audiowalk/sdk": "^1.5.1",
+    "@audiowalk/sdk": "^1.5.2",
     "@ngneat/until-destroy": "^10.0.0",
     "angularx-qrcode": "^18.0.2",
     "axios": "^1.6.0",
@@ -35,8 +35,8 @@
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
-    "@angular/build": "^18.2.5",
-    "@angular/cli": "^18.2.5",
+    "@angular/build": "^18.2.11",
+    "@angular/cli": "^18.2.11",
     "@angular/compiler-cli": "^18.2.5",
     "conventional-changelog-cli": "^5.0.0",
     "prettier": "^3.3.3",
