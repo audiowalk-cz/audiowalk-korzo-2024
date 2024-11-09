@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
   "projects": {
     "studentska-revolta": {
       "projectType": "application",
@@ -9,7 +8,7 @@
         "@schematics/angular:component": {
           "standalone": false,
           "style": "scss",
-          "skipTests": true,
+          "skipTests": true
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -34,7 +33,7 @@
           "path": "src/app/services"
         }
       },
-      "root": "",
+      "root": "./",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -77,7 +76,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,

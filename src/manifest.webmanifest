@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest",
-  "name": "Audiowalk Studentská revolta ‘89",
-  "short_name": "Studentská revolta ‘89",
-  "theme_color": "#000000",
-  "background_color": "#000",
+  "name": "Audiowalk Sejdeme se u Koníčka?",
+  "short_name": "Sejdeme se u Koníčka?",
+  "theme_color": "#1b2422",
+  "background_color": "#1b2422",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
