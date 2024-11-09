@@ -8,8 +8,8 @@
 
     @if (isInAppBrowser) {
       <p>
-        ⚠️ Pozor, vypadá to, že si otevíráš audiowalk prostřednictvím prohlížeče jiné aplikace (Instagram, Facebook).
-        Otevři si prosím adresu <code>{{ currentUrl }}</code> v normálním prohlížeči.
+        ⚠️ Pozor, vypadá to, že si otevíráš audiowalk prostřednictvím prohlížeče jiné aplikace (Instagram, Facebook
+        atd.). Otevři si prosím adresu <code>{{ currentUrl }}</code> v normálním prohlížeči.
       </p>
     }
 
@@ -23,9 +23,6 @@
         <app-button (click)="download()">Stáhnout audiowalk</app-button>
       }
     }
-
-    <p>Audiowalk začíná nám. Jana Palacha 1/2, Praha 1 před budovou Filozofické fakulty UK</p>
-    <br /><br />
 
     @if ((mediaService.downloadStatus | async) === "downloaded") {
       @if (storyStateExists | async) {
