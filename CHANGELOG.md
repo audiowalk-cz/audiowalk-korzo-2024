@@ -1,3 +1,8 @@
+## [0.8.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.7.0...v0.8.0) (2024-11-09)
+
+### Features
+
+* new audio tracks ([8926f66](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/8926f662a8625677a7aa671073b4c3870b0c2f56))
 ## [0.7.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.6.2...v0.7.0) (2024-11-09)
 
 ### Features
