@@ -275,10 +275,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         options: [
           {
             label: "S Davidem",
+            track: TrackId.interakce_1_5_a,
             value: "a",
           },
           {
             label: "S Terezou",
+            track: TrackId.interakce_1_5_b,
             value: "b",
           },
         ],
@@ -382,10 +384,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         options: [
           {
             label: "Jdu pro letáky!",
+            track: TrackId.interakce_2_1_a,
             value: "a",
           },
           {
             label: "Hmm, tak já s tebou radši půjdu do Klementina… Zajímá mě, jak to tam vypadá a koho potkáme.",
+            track: TrackId.interakce_2_1_b,
             value: "b",
           },
         ],
