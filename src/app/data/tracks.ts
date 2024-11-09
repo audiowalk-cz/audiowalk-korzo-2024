@@ -255,7 +255,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   prechod_2A_3_klementinum: {
     id: TrackId["prechod_2A_3_klementinum"],
-    url: "assets/audio/2A.3.mp3",
+    url: "assets/audio/placeholder.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
   },

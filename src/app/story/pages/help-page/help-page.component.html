@@ -1,11 +1,15 @@
 <app-container align="left" justify="space-between">
   <div class="p-5">
     <h2>Ztratil jsem se</h2>
+
     @if (currentChapter | async; as chapter) {
       <div class="my-5">
-        <p>Máte být na následujícím místě:</p>
-        <p>{{ chapter.metadata.locationText }}</p>
-        <a [href]="chapter.metadata.locationMapUrl">Otevřít v mapě</a>
+        <p
+          *ngIf="chapter.metadata.direction"
+          [innerHTML]="chapter.metadata.direction"
+          style="white-space: pre-wrap"
+        ></p>
+        <a *ngIf="chapter.metadata.directionMapUrl" [href]="chapter.metadata.directionMapUrl">Otevřít v mapě</a>
       </div>
     }
 

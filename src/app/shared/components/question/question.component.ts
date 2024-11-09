@@ -11,5 +11,7 @@ export class QuestionComponent {
   @Input() options!: QuestionOption[];
   @Input() value?: string;
 
+  questionLoaded: boolean = false;
+
   @Output() select = new EventEmitter<string>();
 }

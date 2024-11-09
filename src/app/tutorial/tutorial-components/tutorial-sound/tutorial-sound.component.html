@@ -2,16 +2,13 @@
   <div class="pt-5">
     <div class="mt-3">
       <h1>Vyzkoušej zvuk</h1>
-      <p class="mt-3">
-        Audiostopy spouštíš tlačítkem ≥, můžeš je zapauzovat, případně posunout o 15 vteřin dopředu nebo dozadu.
-      </p>
+      <p class="mt-3">Audiostopy lze spustit i&nbsp;pozastavit, případně posunout o&nbsp;15&nbsp;vteřin dozadu.</p>
 
-      <p>Tlačítkem níže si pusť audio.</p>
+      <p>Mělo by být slyšet auto, které jede zleva doprava. Vyzkoušej si to.</p>
 
-      <div class="mt-5">
+      <div class="my-5">
         <app-player [track]="track" mode="light" [autoPlay]="false" (next)="next.emit()"></app-player>
       </div>
-      <p>Mělo by být slyšet auto, které jede zleva doprava.</p>
     </div>
   </div>
 

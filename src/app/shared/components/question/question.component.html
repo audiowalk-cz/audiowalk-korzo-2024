@@ -1,3 +1,8 @@
-<app-question-box [question]="question" />
+<app-question-box [question]="question" (end)="questionLoaded = true" />
 
-<app-question-options [options]="options" [value]="value" (select)="select.emit($event)"></app-question-options>
+<app-question-options
+  *ngIf="questionLoaded"
+  [options]="options"
+  [value]="value"
+  (select)="select.emit($event)"
+></app-question-options>

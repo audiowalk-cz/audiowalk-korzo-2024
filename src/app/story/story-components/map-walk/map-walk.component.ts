@@ -10,6 +10,7 @@ export class MapWalkComponent implements ChapterComponent {
   @Input() data!: {
     text: string;
     mapUrl: string;
+    confirmationText: string;
   };
 
   @Output() end = new EventEmitter<void>();

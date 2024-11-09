@@ -1,14 +1,16 @@
 <app-container justify="space-between">
   <div>
+    Pozn. tohle má vypadat trohcu jako GAME OVER!
+
     <app-box>
-      <app-type-text [text]="data.text"></app-type-text>
+      <p [innerHTML]="data.text"></p>
     </app-box>
 
-    <a [href]="data.mapUrl" target="_blank"></a>
+    <a [href]="data.mapUrl" target="_blank">Otevřít mapu</a>
   </div>
 
   <app-page-footer>
-    <app-button (click)="end.emit()">Jsem tu</app-button>
+    <app-button (click)="end.emit()">{{ data.confirmationText }}</app-button>
   </app-page-footer>
 </app-container>
 

@@ -1,10 +1,18 @@
 <app-container>
   <app-box>
     <app-type-text [text]="data.question" (end)="showConfirmButton = true" />
+
+    @if (data.mapUrl) {
+      <a [href]="data.mapUrl" target="_blank">Otevřít mapu</a>
+    }
   </app-box>
   <div class="mt-5">
-    <app-button *ngIf="showConfirmButton" (click)="end.emit()">Jsem na místě!</app-button>
+    <app-button *ngIf="showConfirmButton" (click)="end.emit()">{{
+      data.confirmationText || "Jsem na místě!"
+    }}</app-button>
   </div>
 </app-container>
 
 <app-jingle />
+
+<app-player [track]="data.ambientTrack" [autoPlay]="true" [hideUI]="true" [loop]="true" [crossfade]="true" />

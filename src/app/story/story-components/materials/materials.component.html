@@ -1,8 +1,11 @@
 <app-container justify="space-between">
   <div class="p-3">
-    <app-box>
-      <app-type-text [text]="data.quote" (end)="showMaterials = true" />
-    </app-box>
+    @if (data.quote) {
+      <app-box>
+        <p [innerHTML]="data.quote" style="white-space: pre-wrap"></p>
+      </app-box>
+    }
+
     @if (showMaterials) {
       <div class="mt-5">
         @for (material of data.materials; track $index) {
@@ -18,3 +21,7 @@
 </app-container>
 
 <app-jingle />
+
+@if (data.ambientTrack) {
+  <app-player [track]="data.ambientTrack" [autoPlay]="true" [hideUI]="true" [loop]="true" [crossfade]="true" />
+}

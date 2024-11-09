@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { MediaControlsController, StoryController } from "@audiowalk/sdk";
 import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 import { ChapterId, ChapterMetadata, story, StoryState } from "src/app/data/story";
@@ -22,6 +23,7 @@ export class WalkPageComponent {
       Chapter<ChapterId, any, StoryState, ChapterMetadata>
     >,
     private readonly mediaControls: MediaControlsController,
+    private readonly router: Router,
   ) {
     this.storyController.currentChapter.pipe(untilDestroyed(this)).subscribe((chapter) => {
       if (chapter?.metadata.image) this.image = chapter.metadata.image;
@@ -32,5 +34,10 @@ export class WalkPageComponent {
         artwork: this.image ? [{ src: this.image }] : undefined,
       });
     });
+  }
+
+  async endStory() {
+    await this.router.navigate(["/end"]);
+    this.storyController.resetStory();
   }
 }

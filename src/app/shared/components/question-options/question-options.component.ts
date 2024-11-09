@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 export interface QuestionOption {
   label: string;
   value: string;
+  italic?: boolean;
 }
 
 @Component({

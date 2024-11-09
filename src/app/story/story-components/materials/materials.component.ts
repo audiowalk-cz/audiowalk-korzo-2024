@@ -9,9 +9,9 @@ import { ChapterComponent } from "../../components/story-container/story-contain
 })
 export class MaterialsComponent implements ChapterComponent {
   @Input() data!: {
-    track: TrackId;
-    quote: string;
+    quote?: string;
     materials: { label: string; url: string }[];
+    ambientTrack?: TrackId;
   };
 
   @Output() end = new EventEmitter<void>();

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { TrackId } from "src/app/data/tracks";
 import { ChapterComponent } from "../../components/story-container/story-container.component";
 
 @Component({
@@ -9,6 +10,9 @@ import { ChapterComponent } from "../../components/story-container/story-contain
 export class CheckpointComponent implements ChapterComponent {
   @Input() data!: {
     question: string;
+    ambientTrack: TrackId;
+    mapUrl?: string;
+    confirmationText?: string;
   };
 
   @Output() end = new EventEmitter<void>();

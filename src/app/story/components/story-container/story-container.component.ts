@@ -71,6 +71,8 @@ export class StoryContainerComponent {
     this.storyController.currentChapter.pipe(untilDestroyed(this)).subscribe((currentChapter) => {
       if (currentChapter) this.loadChapter(currentChapter);
     });
+
+    this.storyController.end.pipe(untilDestroyed(this)).subscribe(() => this.end.emit());
   }
 
   loadChapter(chapter: Chapter<string, typeof ChapterComponent>) {

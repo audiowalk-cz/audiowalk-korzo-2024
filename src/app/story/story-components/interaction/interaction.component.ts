@@ -26,13 +26,11 @@ export class InteractionComponent implements ChapterComponent, OnDestroy {
   @Input() data!: {
     question: string;
     answerProperty: keyof StoryState;
-    options: { label: string; track?: TrackId; value: string }[];
+    options: { label: string; track?: TrackId; value: string; italic?: boolean }[];
     ambientTrack: TrackId;
   };
 
   @Output() end = new EventEmitter<void>();
-
-  showOptions = false;
 
   selectedOption: InteractionComponentDataOption | null = null;
 

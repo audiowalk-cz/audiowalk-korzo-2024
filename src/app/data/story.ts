@@ -17,6 +17,7 @@ export enum ChapterId {
   "intro_1_1" = "intro_1_1",
   "interakce_ff" = "interakce_ff",
   "prechod_1_2" = "prechod_1_2",
+  "checkpoint_lampa" = "checkpoint_lampa",
   "prechod_1_3" = "prechod_1_3",
   "interakce_park" = "interakce_park",
   "prechod_1_4" = "prechod_1_4",
@@ -42,6 +43,8 @@ export enum ChapterId {
   "checkpoint_klementinum_a" = "checkpoint_klementinum_a",
   "prechod_2A_3_klementinum" = "prechod_2A_3_klementinum",
   "prechod_2A_4" = "prechod_2A_4",
+  "materialy_2A" = "materialy_2",
+  "checkpoint_materialy_2A" = "checkpoint_materialy_2",
   "prechod_2B_2" = "prechod_2B_2",
   "checkpoint_klementinum_b" = "checkpoint_klementinum_b",
   "prechod_2B_3" = "prechod_2B_3",
@@ -52,8 +55,7 @@ export enum ChapterId {
   "interakce_betlemske_2" = "interakce_betlemske_2",
   "prechod_2B_5" = "prechod_2B_5",
   "prechod_2B_6" = "prechod_2B_6",
-  "checkpoint_materialy_2" = "checkpoint_materialy_2",
-  "materialy_2" = "materialy_2",
+  "materialy_2B" = "materialy_2B",
   "prechod_3A_1" = "prechod_3A_1",
   "interakce_cigo_A" = "interakce_cigo_A",
   "prechod_3A_2" = "prechod_3A_2",
@@ -68,6 +70,7 @@ export enum ChapterId {
   "prechod_4_2B" = "prechod_4_2B",
   "interakce_roh_narodni" = "interakce_roh_narodni",
   "prechod_5" = "prechod_5",
+  "materialy_konec" = "materialy_konec",
 }
 
 /**
@@ -101,7 +104,7 @@ export interface StoryState extends BasicStoryState<ChapterId> {
 
 /**
  * Každá kapitola má nějaké vlastnisti, například titulek (title), který se zobrazí v prehravaci na zamknute obrazovce,
- * nebo odkaz na mapu (locationMapUrl), kde se divák má nacházet.
+ * nebo odkaz na mapu (directionMapUrl), kde se divák má nacházet.
  * Všechny vlastnosti kapitol vypadají takto:
  */
 export interface ChapterMetadata {
@@ -110,8 +113,8 @@ export interface ChapterMetadata {
   image?: string;
 
   /** Zobrazit misto v napovede */
-  locationText?: string;
-  locationMapUrl?: string;
+  direction?: string;
+  directionMapUrl?: string;
 
   //** zobrazit v seznamu kapitol */
   chapterStart?: boolean;
@@ -136,14 +139,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "1. kapitola",
         image: "assets/images/chapters/ff.png",
-        locationText: "před Fildou",
-        locationMapUrl:
-          "https://en.mapy.cz/zakladni?source=coor&id=14.415489122623967%2C50.08903446030233&x=14.4158585&y=50.0889730&z=17",
+        direction: "Stojíš před Filozofickou fakultou Univerzity Karlovy.",
       },
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.intro_1_1,
-        storyDate: "16/11/1989",
+        storyDate: "3/10/1989",
       },
       nextChapter: ChapterId.interakce_ff,
     }),
@@ -156,16 +158,18 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         answerProperty: "interakce_FF",
         options: [
           {
-            label: "Jasně!",
+            label: "Jasně, těším se!",
+            value: "a",
+          },
+          {
+            label: "No tak jo.",
             value: "a",
           },
         ],
       },
       metadata: {
         title: "Kapitola 1.1",
-        location: "před Fildou",
-        locationMapUrl:
-          "https://en.mapy.cz/zakladni?source=coor&id=14.415489122623967%2C50.08903446030233&x=14.4158585&y=50.0889730&z=17",
+        direction: "Stojíš před Filozofickou fakultou Univerzity Karlovy.",
       },
       nextChapter: ChapterId.prechod_1_2,
     }),
@@ -173,12 +177,28 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_1_2: new Chapter(ChapterId.prechod_1_2, {
       component: BasicWalkComponent,
       data: {
+        note: "Jdeš do parku u&nbsp;Staroměstské radnice.",
         imageUrl: "assets/images/chapters/1_2.png",
         track: TrackId.prechod_1_2,
-        storyDate: "16/11/1989",
+        storyDate: "3/10/1989",
       },
       metadata: {
         title: "Kapitola 1.2",
+        direction:
+          "Dojdi k lampě v&nbsp;parku u&nbsp;Staroměstské radnice.\n\nTrasa vede od&nbsp;Filozofické fakulty Univerzity Karlovy ulicí Kaprova a&nbsp;pokračuje na rohu Maiselovy ulice směrem na Staroměstské náměstí.",
+      },
+      nextChapter: ChapterId.checkpoint_lampa,
+    }),
+
+    checkpoint_lampa: new Chapter(ChapterId.checkpoint_lampa, {
+      component: CheckpointComponent,
+      metadata: {
+        title: "Kapitola 1.1",
+        direction: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí.",
+      },
+      data: {
+        question: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí?",
+        ambientTrack: TrackId.ambient_park,
       },
       nextChapter: ChapterId.prechod_1_3,
     }),
@@ -186,12 +206,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_1_3: new Chapter(ChapterId.prechod_1_3, {
       component: BasicWalkComponent,
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/1_3.png",
         track: TrackId.prechod_1_3,
-        storyDate: "16/11/1989",
+        storyDate: "3/10/1989",
       },
       metadata: {
         title: "Kapitola 1.3",
+        direction: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí.",
       },
       nextChapter: ChapterId.interakce_park,
     }),
@@ -200,14 +222,15 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 1.4",
+        direction: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí.",
       },
       data: {
         ambientTrack: TrackId.ambient_park,
-        question: "Chceš na to něco říct?",
+        question: "Jestli chceš, můžeš na to zareagovat.",
         answerProperty: "interakce_park",
         options: [
           {
-            label: "Takže se to snažíte reformovat zevnitř, postupně… To dává smysl…",
+            label: "Takže se to snažíte reformovat zevnitř, postupně, to dává smysl.",
             track: TrackId.interakce_1_3_a,
             value: "a",
           },
@@ -217,9 +240,10 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
             value: "b",
           },
           {
-            label: "(Nic neříkám.)",
+            label: "…nechci reagovat…",
             track: TrackId.interakce_1_3_c,
             value: "c",
+            italic: true,
           },
         ],
       },
@@ -229,12 +253,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_1_4: new Chapter(ChapterId.prechod_1_4, {
       component: BasicWalkComponent,
       data: {
+        note: "Jdeš ke Koníčkovi.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_4,
-        storyDate: "16/11/1989",
+        storyDate: "3/10/1989",
       },
       metadata: {
         title: "Kapitola 1.4",
+        direction: "Dojdi kolem radnice k restauraci White Horse Prague.",
       },
       nextChapter: ChapterId.checkpoint_konicek,
     }),
@@ -243,9 +269,11 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 1.4",
+        direction: "Máš být před vchodem do zahrádky restaurace White Horse. Nachází se na rohu Železné ulice.",
       },
       data: {
-        question: "Jsi před hospodou U bílého koníčka?",
+        question: "Jsi před vchodem do zahrádky restaurace White Horse? Nachází se na rohu Železné ulice.",
+        ambientTrack: TrackId.ambient_konicek,
       },
       nextChapter: ChapterId.prechod_1_5,
     }),
@@ -253,12 +281,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_1_5: new Chapter(ChapterId.prechod_1_5, {
       component: BasicWalkComponent,
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_5,
-        storyDate: "16/11/1989",
+        storyDate: "3/10/1989",
       },
       metadata: {
         title: "Kapitola 1.5",
+        direction: "Máš být před vchodem do zahrádky restaurace White Horse. Nachází se na rohu Železné ulice.",
       },
       nextChapter: ChapterId.interakce_konicek,
     }),
@@ -267,6 +297,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 1.5",
+        direction: "Máš být před vchodem do zahrádky restaurace White Horse. Nachází se na rohu Železné ulice.",
       },
       data: {
         ambientTrack: TrackId.ambient_konicek,
@@ -274,12 +305,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         answerProperty: "interakce_konicek",
         options: [
           {
-            label: "S Davidem",
+            label: "S Davidem, kompromisy se nedělají!",
             track: TrackId.interakce_1_5_a,
             value: "a",
           },
           {
-            label: "S Terezou",
+            label: "S Terezou, akce je třeba dělat bezpečně.",
             track: TrackId.interakce_1_5_b,
             value: "b",
           },
@@ -287,11 +318,11 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       nextChapter: (state) => {
         switch (state.interakce_konicek) {
+          case "b":
+            return ChapterId.prechod_1_6B;
           default:
           case "a":
             return ChapterId.prechod_1_6A;
-          case "b":
-            return ChapterId.prechod_1_6B;
         }
       },
     }),
@@ -299,12 +330,15 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_1_6A: new Chapter(ChapterId.prechod_1_6A, {
       component: BasicWalkComponent,
       data: {
+        note: "Jdeš s Davidem noční Prahou směrem na&nbsp;Mariánské náměstí.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_6A,
-        storyDate: "16/11/1989",
+        storyDate: "3/10/1989",
       },
       metadata: {
         title: "Kapitola 1.6",
+        direction:
+          "Jdi na Mariánské náměstí.\n\nTrasa vede od restaurace White Horse, kolem orloje na Malé náměstí s&nbsp;kašnou uprostřed a&nbsp;pak doleva ulicí Linhartská.",
       },
       nextChapter: ChapterId.materialy_1A,
     }),
@@ -312,12 +346,15 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_1_6B: new Chapter(ChapterId.prechod_1_6B, {
       component: BasicWalkComponent,
       data: {
+        note: "Jdeš s Terezou noční Prahou směrem na&nbsp;Mariánské náměstí.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_1_6B,
-        storyDate: "16/11/1989",
+        storyDate: "3/10/1989",
       },
       metadata: {
         title: "Kapitola 1.6",
+        direction:
+          "Jdi na Mariánské náměstí.\n\nTrasa vede od restaurace White Horse, kolem orloje na Malé náměstí s&nbsp;kašnou uprostřed a&nbsp;pak doleva ulicí Linhartská.",
       },
       nextChapter: ChapterId.materialy_1B,
     }),
@@ -325,38 +362,29 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     materialy_1A: new Chapter(ChapterId.materialy_1A, {
       component: MaterialsComponent,
       data: {
-        track: TrackId.ambient_materialy_1,
-        quote: "Prohlédni si materiály:", // TODO: ma tam byt tohle?
+        quote:
+          "David ti podal časopisy.\n\nDojdi doprostřed Mariánského náměstí, bývají tam stolky a židle. Pokud si chceš materiály v klidu prohlédnout, sedni si tam.",
         materials: [],
+        ambientTrack: TrackId.ambient_materialy_1,
       },
       metadata: {
         title: "Kapitola 1.6",
+        direction: "Dojdi doprostřed Mariánského náměstí, bývají tam stolky a židle.",
       },
-      nextChapter: ChapterId.prechod_2_1,
+      nextChapter: ChapterId.checkpoint_marianske,
     }),
 
     materialy_1B: new Chapter(ChapterId.materialy_1B, {
       component: MaterialsComponent,
       data: {
-        track: TrackId.ambient_materialy_1,
-        quote: "Prohlédni si materiály:", // TODO: ma tam byt tohle?
+        quote:
+          "Tereza ti podala časopisy.\n\nDojdi doprostřed Mariánského náměstí, bývají tam stolky a židle. Pokud si chceš materiály v klidu prohlédnout, sedni si tam.",
         materials: [],
+        ambientTrack: TrackId.ambient_materialy_1,
       },
       metadata: {
         title: "Kapitola 1.6",
-      },
-      nextChapter: ChapterId.prechod_2_1,
-    }),
-
-    prechod_2_1: new Chapter(ChapterId.prechod_2_1, {
-      component: BasicWalkComponent,
-      data: {
-        imageUrl: "assets/images/chapters/ff.png",
-        track: TrackId.prechod_2_1,
-        storyDate: "16/11/1989",
-      },
-      metadata: {
-        title: "Kapitola 2.1",
+        direction: "Dojdi doprostřed Mariánského náměstí, bývají tam stolky a židle.",
       },
       nextChapter: ChapterId.checkpoint_marianske,
     }),
@@ -365,9 +393,26 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.1",
+        direction: "Máš stát uprostřed Mariánského náměstí.",
       },
       data: {
-        question: "Stojíš na Mariánském náměstí?",
+        question: "Jsi uprostřed Mariánského náměstí?",
+        ambientTrack: TrackId.ambient_marianske,
+      },
+      nextChapter: ChapterId.prechod_2_1,
+    }),
+
+    prechod_2_1: new Chapter(ChapterId.prechod_2_1, {
+      component: BasicWalkComponent,
+      data: {
+        note: "Zůstaň na místě a poslouchej.",
+        imageUrl: "assets/images/chapters/ff.png",
+        track: TrackId.prechod_2_1,
+        storyDate: "18/10/1989",
+      },
+      metadata: {
+        title: "Kapitola 2.1",
+        direction: "Máš stát uprostřed Mariánského náměstí.",
       },
       nextChapter: ChapterId.interakce_marianske,
     }),
@@ -376,6 +421,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 2.1",
+        direction: "Máš stát uprostřed Mariánského náměstí.",
       },
       data: {
         ambientTrack: TrackId.ambient_marianske,
@@ -388,7 +434,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
             value: "a",
           },
           {
-            label: "Hmm, tak já s tebou radši půjdu do Klementina… Zajímá mě, jak to tam vypadá a koho potkáme.",
+            label: "Hmm, tak já s tebou radši půjdu do Klementina. Zajímá mě, jak to tam vypadá a koho potkáme.",
             track: TrackId.interakce_2_1_b,
             value: "b",
           },
@@ -396,11 +442,11 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       nextChapter: (state) => {
         switch (state.interakce_marianske) {
+          case "b":
+            return ChapterId.prechod_2B_2;
           default:
           case "a":
             return ChapterId.prechod_2A_2;
-          case "b":
-            return ChapterId.prechod_2B_2;
         }
       },
     }),
@@ -408,12 +454,15 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_2A_2: new Chapter(ChapterId.prechod_2A_2, {
       component: BasicWalkComponent,
       data: {
+        note: "Jdeš pro letáky.\nPřed DAMU počkej na Julii.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2A_2,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
       metadata: {
         title: "Kapitola 2.2",
+        direction:
+          "Dojdi k DAMU.\n\nTrasa vede od Mariánského náměstí ulicí Husova, následně první doprava do ulice Karlova. DAMU uvidí na levé straně.",
       },
       nextChapter: ChapterId.checkpoint_damu,
     }),
@@ -424,7 +473,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.2",
       },
       data: {
-        question: "Stojíš před Domem U Kamenného zvonu?",
+        question: "Stojíš před DAMU?",
+        ambientTrack: TrackId.ambient_damu,
       },
       nextChapter: ChapterId.interakce_damu_1,
     }),
@@ -436,18 +486,20 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_damu,
-        question: "Vidíš Julii a Ondru, co uděláš?",
+        question: "Před DAMU vidíš stát Julii a Ondru, kouří. Co uděláš ty?",
         answerProperty: "interakce_damu_1",
         options: [
           {
-            label: "Oslovím je: „Ehm, ahoj, pardon, my jsme se viděli u Koníčka“",
+            label: "Oslovím je s tím, že jsme se viděli u Koníčka.",
             track: TrackId.interakce_2A_2_int1_a,
             value: "a",
+            italic: true,
           },
           {
-            label: "Zmateně koukám.",
+            label: "Dál zmateně koukám.",
             track: TrackId.interakce_2A_2_int1_b,
             value: "b",
+            italic: true,
           },
         ],
       },
@@ -458,19 +510,20 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 2.2",
+        direction: "Stojíš před DAMU.",
       },
       data: {
         ambientTrack: TrackId.ambient_damu,
-        question: "Co řekneš?",
+        question: "Jak vysvětlíš, že jsi tu ty, a ne Eva?",
         answerProperty: "interakce_damu_2",
         options: [
           {
-            label: "“Eva říkala, že se s tebou domluvila na něčem ohledně nějakých letáků. Ale nakonec nemá čas.”",
+            label: "Eva říkala, že se s tebou domluvila na něčem ohledně nějakých letáků. Ale nakonec nemá čas.",
             value: "a",
           },
           {
             label:
-              "“Eva říkala, že se s tebou domluvila na něčem ohledně nějakých letáků. Ale nakonec se jí do toho nechce…”",
+              "Eva říkala, že se s tebou domluvila na něčem ohledně nějakých letáků. Ale nakonec se jí do toho nechce.",
             value: "b",
           },
         ],
@@ -481,12 +534,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
     prechod_2A_3: new Chapter(ChapterId.prechod_2A_3, {
       component: BasicWalkComponent,
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2A_3,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
       metadata: {
         title: "Kapitola 2.3",
+        direction: "Máš stát před DAMU.",
       },
       nextChapter: ChapterId.interakce_damu_3,
     }),
@@ -495,24 +550,25 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 2.3",
+        direction: "Máš stát před DAMU.",
       },
       data: {
         ambientTrack: TrackId.ambient_damu,
-        question: "Co řekneš?",
+        question: "Co ty na to?",
         answerProperty: "interakce_damu_3",
         options: [
           {
-            label: "“Počkej, to je dost práce… Fakt budu muset všechno oběhnout?”",
+            label: "To je dost práce… Fakt budu muset oběhnout všechno?",
             track: TrackId.interakce_2A_3_int3_a_b,
             value: "a",
           },
           {
-            label: "“Počkej, a když si mě někdo všimne, nebude z toho problém?”",
+            label: "Počkej, a když si mě někdo všimne, nebude z toho problém?",
             track: TrackId.interakce_2A_3_int3_a_b,
             value: "b",
           },
           {
-            label: "“Jo, jasný, pohoda…”",
+            label: "Jo, jasný, jdu!",
             track: TrackId.interakce_2A_3_parada,
             value: "c",
           },
@@ -521,7 +577,6 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       nextChapter: (state) => {
         switch (state.interakce_damu_3) {
           case "a":
-            return ChapterId.interakce_damu_4;
           case "b":
             return ChapterId.interakce_damu_4;
           default:
@@ -538,16 +593,16 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_damu,
-        question: "Co řekneš?",
+        question: "Myslíš, že to zvládneš?",
         answerProperty: "interakce_damu_4",
         options: [
           {
-            label: "“Jo, jasný, pohoda!”",
+            label: "Jo, jasný, pohoda!",
             track: TrackId.interakce_2A_3_parada,
             value: "a",
           },
           {
-            label: "“Hele já se na to asi úplně necítím… Promiň…”",
+            label: "Hele já se na to asi úplně necítím, promiň…",
             track: TrackId.interakce_2A_3_int4_b,
             value: "b",
           },
@@ -555,11 +610,11 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       nextChapter: (state) => {
         switch (state.interakce_damu_4) {
+          case "b":
+            return ChapterId.interakce_damu_5;
           default:
           case "a":
             return ChapterId.prechod_2A_4;
-          case "b":
-            return ChapterId.interakce_damu_5;
         }
       },
     }),
@@ -572,26 +627,28 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         ambientTrack: TrackId.ambient_damu,
         answerProperty: "interakce_damu_5",
-        question: "Co řekneš?",
+        question: "Opravdu je necháš odejít?",
         options: [
           {
-            label: "Počkejte, tak… já to udělám, půjdu s váma.",
+            label: "Ještě je zastavím a řeknu, že jdu s nima.",
             track: TrackId.interakce_2A_3_int5_a,
             value: "a",
+            italic: true,
           },
           {
-            label: "Nechám je odejít",
+            label: "Nechám je odejít.",
             value: "b",
+            italic: true,
           },
         ],
       },
       nextChapter: (state) => {
         switch (state.interakce_damu_5) {
+          case "b":
+            return ChapterId.prechod_2A_3_ke_klementinu;
           default:
           case "a":
             return ChapterId.prechod_2A_4;
-          case "b":
-            return ChapterId.prechod_2A_3_ke_klementinu;
         }
       },
     }),
@@ -602,8 +659,9 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.3",
       },
       data: {
-        text: "Julie a Ondra odešli. Nezbývá ti teď nic jiného, než se vrátit za Evou do Klementina. Zjisti si, kudy z mapky. Zrovna sedí na zídce a svačí.",
-        mapUrl: "", // TODO: Add map URL
+        text: "Julie a Ondra odešli. Nezbývá ti teď nic jiného, než se vrátit za Evou do Klementina. Kudy máš jít, si zjisti z mapy.",
+        confirmationText: "Dobře, jdu do Klementina",
+        mapUrl: "AAA", // TODO: Add map URL
       },
       nextChapter: ChapterId.checkpoint_klementinum_a,
     }),
@@ -614,7 +672,10 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.3",
       },
       data: {
-        question: "Jsi u zídky? Sedni si mezi ty dva stromy.",
+        question: "Už jsi na místě? Eva sedí na rohu na zídce před stromem. Jdi k ní.",
+        ambientTrack: TrackId.ambient_klementinum,
+        mapUrl: "AAA", // TODO: Add map URL
+        confirmationText: "Stojím u zídky",
       },
       nextChapter: ChapterId.prechod_2A_3_klementinum,
     }),
@@ -623,11 +684,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.3",
+        direction: "Máš stát u zídky v areálu Klementina.",
       },
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2A_3_klementinum,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
       nextChapter: ChapterId.prechod_2B_3,
     }),
@@ -636,24 +699,62 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.4",
+        direction:
+          "Dojdi před Betlémskou kapli.\n\nTrasa vede Karlovou ulicí směrem ke Karlovu mostu. U&nbsp;stromu odboč doleva do Liliové ulice a&nbsp;projdi jí až na konec. Na Betlémském náměstí se drž vlevo, než se ocitneš před vchodem do Betlémské kaple.",
       },
       data: {
+        note: "Jdete směrem na Betlémskému náměstí.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2A_4,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
-      nextChapter: ChapterId.checkpoint_materialy_2,
+      nextChapter: ChapterId.materialy_2A,
+    }),
+
+    materialy_2: new Chapter(ChapterId.materialy_2A, {
+      component: MaterialsComponent,
+      metadata: {
+        title: "Kapitola 2.6",
+      },
+      data: {
+        materials: [], // TODO: add letak
+        ambientTrack: TrackId.ambient_betlemske,
+      },
+      nextChapter: ChapterId.checkpoint_materialy_2A,
+    }),
+
+    checkpoint_materialy_2: new Chapter(ChapterId.checkpoint_materialy_2A, {
+      component: CheckpointComponent,
+      metadata: {
+        title: "Kapitola 2.6",
+      },
+      data: {
+        question: "Jsi na Betlémském náměstí kousek od vchodu do Betlémské kaple? Je tu strom a okolo něj lavička.",
+        ambientTrack: TrackId.ambient_betlemske,
+      },
+      nextChapter: (state) => {
+        switch (state.interakce_konicek) {
+          case "b":
+            return ChapterId.prechod_3B_1;
+          default:
+          case "a":
+            return ChapterId.prechod_3A_1;
+        }
+      },
     }),
 
     prechod_2B_2: new Chapter(ChapterId.prechod_2B_2, {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.2",
+        direction:
+          "Dojdi do Klementina.\n\nPřejdi dlážděnou silnici a vejdi velkou branou do areálu Klementina. Za průchodem odboč doleva. Až projdeš dalším průchodem, napravo uvidíš dva stromy. Zastav se na rohu u druhého stromu.",
       },
       data: {
+        note: "Jdeš do Klementina.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2B_2,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
       nextChapter: ChapterId.checkpoint_klementinum_b,
     }),
@@ -664,7 +765,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.2",
       },
       data: {
-        question: "Sedíš na tom správném místě?",
+        question: "Sedíš na zídce u stromu?",
+        ambientTrack: TrackId.ambient_klementinum,
       },
       nextChapter: ChapterId.prechod_2B_3,
     }),
@@ -673,11 +775,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.3",
+        direction: "Máš sedět na zídce u stromu v areálu Klementina.",
       },
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2B_3,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
       nextChapter: ChapterId.interakce_klementinum,
     }),
@@ -711,11 +815,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.4",
+        direction:
+          "Dojdi na Betlémské náměstí.\n\nTrasa vede od Klementina průchodem do Karlovy ulice, pak doprava směrem ke Karlovu mostu a před červeným domem doleva do Liliové ulice, kterou projdeš až na konec na Betlémské náměstí. Na Betlémském náměstí se drž vlevo, než se ocitneš před vchodem do Betlémské kaple.",
       },
       data: {
+        note: "Jdeš s Evou a Martinem na Betlémské náměstí.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2B_4,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
       nextChapter: ChapterId.checkpoint_betlemske,
     }),
@@ -726,7 +833,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.4",
       },
       data: {
-        question: "Stojíš na Betlémském náměstí?",
+        question: "Jsi na Betlémském náměstí kousek od vchodu do Betlémské kaple? Je tu strom a okolo něj lavička.",
+        ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: ChapterId.interakce_betlemske_1,
     }),
@@ -738,11 +846,11 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_betlemske,
-        question: "Co si o tom myslíš ty?",
+        question: "Co jim poradíš?",
         answerProperty: "interakce_betlemske_1",
         options: [
           {
-            label: "Jo, běžte na demonstraci, musíme dát najevo, když nám něco vadí.",
+            label: "Ano, běžte na demonstraci, musíme dát najevo, když nám něco vadí!",
             track: TrackId.interakce_2B_4_int1_a,
             value: "a",
           },
@@ -760,11 +868,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.5",
+        direction: "Máš stát před Betlémskou kaplí.",
       },
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2B_5,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
       nextChapter: ChapterId.interakce_betlemske_2,
     }),
@@ -776,16 +886,16 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_betlemske,
-        question: "Co si o tom myslíš ty?",
+        question: "Měl by Martin jít na promítání na americké ambasádě?",
         answerProperty: "interakce_betlemske_2",
         options: [
           {
-            label: "Jo běž tam, na tom nic nebezpečnýho není a bude to dobrý.",
+            label: "Jasně, běž. Na tom nic nebezpečnýho není a třeba tam budou dávat skvělej film!",
             track: TrackId.interakce_2B_5_int2_a,
             value: "a",
           },
           {
-            label: "Ne, potřebuješ hlavně dostudovat.",
+            label: "Ne, Martine, nechoď. Potřebuješ hlavně v klidu dostudovat.",
             track: TrackId.interakce_2B_5_int2_b,
             value: "b",
           },
@@ -798,43 +908,35 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.6",
+        direction: "Máš stát před Betlémskou kaplí.",
       },
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_2B_6,
-        storyDate: "16/11/1989",
+        storyDate: "18/10/1989",
       },
-      nextChapter: ChapterId.checkpoint_materialy_2,
+      nextChapter: ChapterId.materialy_2B,
     }),
 
-    checkpoint_materialy_2: new Chapter(ChapterId.checkpoint_materialy_2, {
-      component: CheckpointComponent,
-      metadata: {
-        title: "Kapitola 2.6",
-      },
-      data: {
-        question: "Sedíš na lavičce?",
-      },
-      nextChapter: ChapterId.materialy_2,
-    }),
-
-    materialy_2: new Chapter(ChapterId.materialy_2, {
+    materialy_2B: new Chapter(ChapterId.materialy_2B, {
       component: MaterialsComponent,
       metadata: {
         title: "Kapitola 2.6",
       },
       data: {
-        track: TrackId.ambient_marianske, // TODO: https://docs.google.com/document/d/1XgQHhSezD6bL1NA4zuAGw63U6Wbe-XiEirFcn7MPBYo/edit?disco=AAABX6hBb-s
-        quote: "Prohlédni si materiály:",
-        materials: [],
+        quote:
+          "Martin s Evou odešli na oběd. Ty zůstáváš u lavičky před Betlémskou kaplí. Všímáš si, že pod ní leží tento leták:",
+        materials: [], // TODO: add letak
+        ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: (state) => {
         switch (state.interakce_konicek) {
+          case "b":
+            return ChapterId.prechod_3B_1;
           default:
           case "a":
             return ChapterId.prechod_3A_1;
-          case "b":
-            return ChapterId.prechod_3B_1;
         }
       },
     }),
@@ -843,11 +945,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.1",
+        direction: "Máš stát před Betlémskou kaplí.",
       },
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_3A_1,
-        storyDate: "16/11/1989",
+        storyDate: "4/11/1989",
       },
       nextChapter: ChapterId.interakce_cigo_A,
     }),
@@ -859,7 +963,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_betlemske,
-        question: "Co odpovíš?",
+        question: "Co odpovíš Davidovi?",
         answerProperty: "interakce_cigo_A",
         options: [
           {
@@ -868,7 +972,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
             value: "a",
           },
           {
-            label: "Jasně, na, tady máš sirky/zapík.  (škrtá, zapaluje si cígo)", // TODO: https://docs.google.com/document/d/1XgQHhSezD6bL1NA4zuAGw63U6Wbe-XiEirFcn7MPBYo/edit?disco=AAABX6hBb80
+            label: "Jasně, na, tady máš zapík.",
             track: TrackId.interakce_3A_1_b,
             value: "b",
           },
@@ -881,11 +985,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.2",
+        direction:
+          "Dojdi do Bartolomějské ulice.\n\nTrasa vede od Betlémské kaple Konviktskou, pak hned doleva úzkou uličkou Průchodní. Na jejím konci zahni doprava do Bartolomějské a jdi dál.",
       },
       data: {
+        note: "Jdete do Bartolomějské.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_3A_2,
-        storyDate: "16/11/1989",
+        storyDate: "4/11/1989",
       },
       nextChapter: ChapterId.prechod_3_3,
     }),
@@ -894,11 +1001,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.1",
+        direction: "Máš stát před Betlémskou kaplí.",
       },
       data: {
+        note: "Zůstaň na místě a poslouchej.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_3B_1,
-        storyDate: "16/11/1989",
+        storyDate: "4/11/1989",
       },
       nextChapter: ChapterId.interakce_cigo_B,
     }),
@@ -910,7 +1019,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_betlemske,
-        question: "Co odpovíš?",
+        question: "Co odpovíš Tereze?",
         answerProperty: "interakce_cigo_B",
         options: [
           {
@@ -919,7 +1028,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
             value: "a",
           },
           {
-            label: "Jasně, na, tady máš sirky/zapík.  (škrtá, zapaluje si cígo)", // TODO: https://docs.google.com/document/d/1XgQHhSezD6bL1NA4zuAGw63U6Wbe-XiEirFcn7MPBYo/edit?disco=AAABX6hBb80
+            label: "Jasně, na, tady máš zapík.",
             track: TrackId.interakce_3B_1_b,
             value: "b",
           },
@@ -932,11 +1041,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.2",
+        direction:
+          "Dojdi do Bartolomějské ulice.\n\nTrasa vede od Betlémské kaple Konviktskou, pak hned doleva úzkou uličkou Průchodní. Na jejím konci zahni doprava do Bartolomějské a jdi dál.",
       },
       data: {
+        note: "Jdete do Bartolomějské.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_3B_2,
-        storyDate: "16/11/1989",
+        storyDate: "4/11/1989",
       },
       nextChapter: ChapterId.prechod_3_3,
     }),
@@ -945,22 +1057,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.3",
+        direction:
+          "Dojdi na roh Bartolomějské s ulicí Karoliny Světlé.\n\nJdi Bartolomějsou ulicí směrem na západ (k řece) až dojdeš na křižovatku s ulicí Karoliny Světlé.",
       },
       data: {
+        note: "Jdetete dál Bartolomějskou.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_3_3,
-        storyDate: "16/11/1989",
-      },
-      nextChapter: ChapterId.checkpoint_bartolomejska,
-    }),
-
-    checkpoint_bartolomejska: new Chapter(ChapterId.checkpoint_bartolomejska, {
-      component: CheckpointComponent,
-      metadata: {
-        title: "Kapitola 3.3",
-      },
-      data: {
-        question: "Stojíš na Bartolomějské ulici?",
+        storyDate: "4/11/1989",
       },
       nextChapter: ChapterId.interakce_bartolomejska,
     }),
@@ -972,7 +1076,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         ambientTrack: TrackId.ambient_bartolomejska,
-        question: "DAVID: Co si o tom myslíš?",
+        question: "Co si o tom myslíš ty?",
         answerProperty: "interakce_bartolomejska",
         options: [
           {
@@ -987,6 +1091,18 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
           },
         ],
       },
+      nextChapter: ChapterId.checkpoint_bartolomejska,
+    }),
+
+    checkpoint_bartolomejska: new Chapter(ChapterId.checkpoint_bartolomejska, {
+      component: CheckpointComponent,
+      metadata: {
+        title: "Kapitola 3.3",
+      },
+      data: {
+        question: "Stojíš na rohu ulic Bartolomějská a Karoliny Světlé?",
+        ambientTrack: TrackId.ambient_bartolomejska,
+      },
       nextChapter: ChapterId.prechod_4_1,
     }),
 
@@ -994,19 +1110,21 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 4.1",
+        direction: "Máš jít směrem na Národní třídu.\n\nDojdi ulicí Karoliny Světlé na roh s ulicí Národní třída.",
       },
       data: {
+        note: "Následuj Davida a Terezu.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_4_1,
-        storyDate: "16/11/1989",
+        storyDate: "17/11/1989",
       },
       nextChapter: (state) => {
         switch (state.interakce_bartolomejska) {
+          case "b":
+            return ChapterId.prechod_4_2B;
           default:
           case "a":
             return ChapterId.prechod_4_2A;
-          case "b":
-            return ChapterId.prechod_4_2B;
         }
       },
     }),
@@ -1015,11 +1133,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 4.2",
+        direction: "Máš jít směrem na Národní třídu.\n\nDojdi ulicí Karoliny Světlé na roh s ulicí Národní třída.",
       },
       data: {
+        note: "Následuj Davida a Terezu.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_4_2A,
-        storyDate: "16/11/1989",
+        storyDate: "17/11/1989",
       },
       nextChapter: ChapterId.interakce_roh_narodni,
     }),
@@ -1028,11 +1148,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 4.2",
+        direction: "Máš jít směrem na Národní třídu.\n\nDojdi ulicí Karoliny Světlé na roh s ulicí Národní třída.",
       },
       data: {
+        note: "Následuj Davida a Terezu.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_4_2B,
-        storyDate: "16/11/1989",
+        storyDate: "17/11/1989",
       },
       nextChapter: ChapterId.interakce_roh_narodni,
     }),
@@ -1043,11 +1165,11 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 4.2",
       },
       data: {
-        track: TrackId.ambient_roh_narodni,
         quote: "Co ty?",
         materials: [
           // TODO: doplnit fotku
         ],
+        ambientTrack: TrackId.ambient_roh_narodni,
       },
       nextChapter: ChapterId.prechod_5,
     }),
@@ -1056,11 +1178,27 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 5",
+        direction:
+          "Dojdi po Národní třídě až k pamětní desce 17.&nbsp;listopadu.\n\nNachází se kousek od rohu ulic Mikulandská a Národní.",
       },
       data: {
+        note: "Dojdi po Národní třídě až k pamětní desce 17.&nbsp;listopadu.",
         imageUrl: "assets/images/chapters/ff.png",
         track: TrackId.prechod_5,
-        storyDate: "16/11/1989",
+        storyDate: "17/11/1989",
+      },
+      nextChapter: ChapterId.materialy_konec,
+    }),
+
+    materialy_konec: new Chapter(ChapterId.materialy_konec, {
+      component: MaterialsComponent,
+      metadata: {
+        title: "Konec",
+      },
+      data: {
+        materials: [
+          // TODO: doplnit dva letaky
+        ],
       },
       nextChapter: null,
     }),

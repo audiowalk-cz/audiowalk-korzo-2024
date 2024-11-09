@@ -1,7 +1,7 @@
 @for (option of options; track option.value) {
   <div class="my-3">
     <app-button (click)="select.emit(option.value)" [active]="value === option.value" class="w-100">
-      <p class="m-0">{{ option.label }}</p>
+      <p class="m-0" [class.fst-italic]="option.italic">{{ option.label }}</p>
     </app-button>
   </div>
 }

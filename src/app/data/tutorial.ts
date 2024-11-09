@@ -12,6 +12,5 @@ export const TutorialSteps: TutorialStep[] = [
   TutorialSoundComponent,
   TutorialInteractionsComponent,
   TutorialInteractions2Component,
-  // TutorialDownloadComponent,
   TutorialAttentionComponent,
 ];
