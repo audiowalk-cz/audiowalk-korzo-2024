@@ -72,6 +72,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/jingle.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   tutorial_test: {
     id: TrackId["tutorial_test"],
@@ -90,6 +91,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   prechod_1_2: {
     id: TrackId["prechod_1_2"],
@@ -108,6 +110,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE PARK ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   interakce_1_3_a: {
     id: TrackId["interakce_1_3_a"],
@@ -144,6 +147,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   interakce_1_5_a: {
     id: TrackId["interakce_1_5_a"],
@@ -174,6 +178,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/DM 1 ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   prechod_2_1: {
     id: TrackId["prechod_2_1"],
@@ -186,6 +191,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE MARIANSKE ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   interakce_2_1_a: {
     id: TrackId["interakce_2_1_a"],
@@ -210,6 +216,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE DAMU ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   interakce_2A_2_int1_a: {
     id: TrackId["interakce_2A_2_int1_a"],
@@ -282,6 +289,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   interakce_2B_3_a: {
     id: TrackId["interakce_2B_3_a"],
@@ -306,6 +314,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   interakce_2B_4_int1_a: {
     id: TrackId["interakce_2B_4_int1_a"],
@@ -402,6 +411,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE PARK ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   interakce_3_3_a: {
     id: TrackId["interakce_3_3_a"],
@@ -438,6 +448,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
     url: "assets/audio/INTERAKCE PARK ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
+    preloadController: true,
   },
   prechod_5: {
     id: TrackId["prechod_5"],

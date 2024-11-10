@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { PlayerController } from "@audiowalk/sdk";
 import axios from "axios";
 import { BehaviorSubject, Subject } from "rxjs";
 import { TrackId, Tracks } from "../../data/tracks";
@@ -18,6 +19,7 @@ export interface BaseTrackDefinition {
   url: string;
   type: string;
   mimeType: string;
+  preloadController?: boolean;
   placeholderImage?: string;
   title?: string;
 }
@@ -43,6 +45,7 @@ export type TrackDefinition = AudioTrackDefinition | VideoTrackDefinition;
 export interface TrackMeta {
   isDownloaded?: boolean;
   progress?: number;
+  controller?: PlayerController;
 }
 
 export type Track = TrackDefinition & TrackMeta;
@@ -54,18 +57,31 @@ export class MediaService {
   downloadStatus = new BehaviorSubject<DownloadStatus>(DownloadStatus.NotDownloaded);
   downloadProgress = new BehaviorSubject<number>(0);
 
+  private preloadedTracks?: Map<TrackId, Track>;
+
   constructor(
     private fileStorageService: FileStorageService,
     private localStorageService: LocalStorageService,
   ) {
     this.updateDownloadStatus();
+
+    document.addEventListener("touchend", () => {
+      if (!this.preloadedTracks) this.preloadTracks().catch(() => {});
+    });
+  }
+
+  getPreloadedTrackController(trackId: TrackId) {
+    const track = this.preloadedTracks?.get(trackId);
+    if (!track) throw new Error(`Track ${trackId} not preloaded`);
+
+    return track.controller;
   }
 
   async getTracks(): Promise<Track[]> {
     return Promise.all(Object.values(Tracks).map((trackDef) => this.getTrack(trackDef.id)));
   }
 
-  async getTrack(trackId: TrackId): Promise<Track> {
+  async getTrack(trackId: TrackId, options: { noPreload?: boolean } = {}): Promise<Track> {
     const trackDef = Tracks[trackId];
     if (!trackDef) throw new Error(`Track ${trackId} not found`);
 
@@ -105,10 +121,31 @@ export class MediaService {
         );
 
         await this.downloadTrack(track, trackProgress);
+
+        await this.preloadTracks().catch(() => {});
       }
       this.downloadStatus.next(DownloadStatus.Downloaded);
     } catch (e) {
       this.downloadStatus.next(DownloadStatus.Error);
+    }
+  }
+
+  async preloadTracks() {
+    const tracks = Object.values(Tracks).filter((track) => track.preloadController);
+
+    this.preloadedTracks = new Map();
+
+    for (let track of tracks) {
+      const preloadedTrack = await this.getTrack(track.id, { noPreload: true });
+
+      preloadedTrack.controller = new PlayerController(track.id, track.url);
+
+      preloadedTrack.controller.setVolume(0);
+      await preloadedTrack.controller.play();
+      await preloadedTrack.controller.pause();
+      preloadedTrack.controller.setVolume(1);
+
+      this.preloadedTracks.set(track.id, preloadedTrack);
     }
   }
 

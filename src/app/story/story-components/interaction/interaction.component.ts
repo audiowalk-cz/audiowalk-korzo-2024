@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
 import { PlayerController, StoryController } from "@audiowalk/sdk";
 import { ChapterId, StoryState } from "src/app/data/story";
 import { TrackId, Tracks } from "src/app/data/tracks";
+import { MediaService } from "src/app/shared/services/media.service";
 import { ChapterComponent } from "../../components/story-container/story-container.component";
 
 interface InteractionComponentData {
@@ -22,7 +23,7 @@ interface InteractionComponentDataOption {
   templateUrl: "./interaction.component.html",
   styleUrl: "./interaction.component.scss",
 })
-export class InteractionComponent implements ChapterComponent, OnDestroy {
+export class InteractionComponent implements ChapterComponent, OnInit, OnDestroy {
   @Input() data!: {
     question: string;
     answerProperty: keyof StoryState;
@@ -34,14 +35,29 @@ export class InteractionComponent implements ChapterComponent, OnDestroy {
 
   selectedOption: InteractionComponentDataOption | null = null;
 
-  jingleTrack = TrackId["jingle"];
+  jingleTrack = this.mediaService.getPreloadedTrackController(TrackId["jingle"]);
+  ambientTrack = this.mediaService.getPreloadedTrackController(this.data.ambientTrack);
 
   answerPlayer?: PlayerController;
 
-  constructor(private storyController: StoryController<ChapterId, StoryState>) {}
+  constructor(
+    private storyController: StoryController<ChapterId, StoryState>,
+    private mediaService: MediaService,
+  ) {}
+
+  ngOnInit(): void {
+    this.jingleTrack?.play();
+    this.ambientTrack?.play();
+  }
 
   ngOnDestroy(): void {
     this.answerPlayer?.destroy();
+
+    this.jingleTrack?.pause();
+    this.jingleTrack?.seekTo(0);
+
+    this.ambientTrack?.pause();
+    this.ambientTrack?.seekTo(0);
   }
 
   async selectOption(value: string) {
