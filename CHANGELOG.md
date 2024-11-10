@@ -1,3 +1,8 @@
+## [0.10.3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.2...v0.10.3) (2024-11-10)
+
+### Bug Fixes
+
+* update SDK, fix crossfading ([247b32f](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/247b32ff505a83e465ac48ba4df29e3cfda22e70))
 ## [0.10.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.1...v0.10.2) (2024-11-10)
 
 ### Bug Fixes
