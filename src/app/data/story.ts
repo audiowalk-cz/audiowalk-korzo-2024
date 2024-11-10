@@ -138,12 +138,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "1. kapitola",
-        image: "assets/images/chapters/ff.png",
+        image: "assets/images/chapters/hrad.png",
         direction: "Stojíš před Filozofickou fakultou Univerzity Karlovy.",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/hrad.png",
         track: TrackId.intro_1_1,
         storyDate: "2/10/1989",
       },
@@ -178,7 +178,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Jdeš do parku u&nbsp;Staroměstské radnice.",
-        imageUrl: "assets/images/chapters/1_2.png",
+        imageUrl: "assets/images/chapters/staromak_lampa.png",
         track: TrackId.prechod_1_2,
         storyDate: "2/10/1989",
       },
@@ -207,7 +207,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/1_3.png",
+        imageUrl: "assets/images/chapters/staromak_lampa.png",
         track: TrackId.prechod_1_3,
         storyDate: "2/10/1989",
       },
@@ -254,7 +254,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Jdeš ke Koníčkovi.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/u_konicka.png",
         track: TrackId.prechod_1_4,
         storyDate: "2/10/1989",
       },
@@ -282,7 +282,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/u_konicka.png",
         track: TrackId.prechod_1_5,
         storyDate: "2/10/1989",
       },
@@ -331,7 +331,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Jdeš s Davidem noční Prahou směrem na&nbsp;Mariánské náměstí.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/marianske.png",
         track: TrackId.prechod_1_6A,
         storyDate: "2/10/1989",
       },
@@ -347,7 +347,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Jdeš s Terezou noční Prahou směrem na&nbsp;Mariánské náměstí.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/marianske.png",
         track: TrackId.prechod_1_6B,
         storyDate: "2/10/1989",
       },
@@ -406,7 +406,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/marianske.png",
         track: TrackId.prechod_2_1,
         storyDate: "18/10/1989",
       },
@@ -455,7 +455,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Jdeš pro letáky.\nPřed DAMU počkej na Julii.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/damu.png",
         track: TrackId.prechod_2A_2,
         storyDate: "18/10/1989",
       },
@@ -535,7 +535,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/damu.png",
         track: TrackId.prechod_2A_3,
         storyDate: "18/10/1989",
       },
@@ -688,13 +688,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/klementinum.png",
         track: TrackId.prechod_2A_3_klementinum,
         storyDate: "18/10/1989",
       },
       nextChapter: ChapterId.prechod_2B_3,
     }),
-
     prechod_2A_4: new Chapter(ChapterId.prechod_2A_4, {
       component: BasicWalkComponent,
       metadata: {
@@ -704,7 +703,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Jdete směrem na Betlémskému náměstí.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_2A_4,
         storyDate: "18/10/1989",
       },
@@ -752,7 +751,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Jdeš do Klementina.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/klementinum.png",
         track: TrackId.prechod_2B_2,
         storyDate: "18/10/1989",
       },
@@ -779,7 +778,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/klementinum.png",
         track: TrackId.prechod_2B_3,
         storyDate: "18/10/1989",
       },
@@ -820,7 +819,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Jdeš s Evou a Martinem na Betlémské náměstí.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_2B_4,
         storyDate: "18/10/1989",
       },
@@ -872,7 +871,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_2B_5,
         storyDate: "18/10/1989",
       },
@@ -912,7 +911,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_2B_6,
         storyDate: "18/10/1989",
       },
@@ -949,7 +948,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_3A_1,
         storyDate: "4/11/1989",
       },
@@ -990,7 +989,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Jdete do Bartolomějské.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/kachlikarna.png",
         track: TrackId.prechod_3A_2,
         storyDate: "4/11/1989",
       },
@@ -1005,7 +1004,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_3B_1,
         storyDate: "4/11/1989",
       },
@@ -1046,7 +1045,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Jdete do Bartolomějské.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/kachlikarna.png",
         track: TrackId.prechod_3B_2,
         storyDate: "4/11/1989",
       },
@@ -1062,7 +1061,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Jdetete dál Bartolomějskou.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/kachlikarna.png",
         track: TrackId.prechod_3_3,
         storyDate: "4/11/1989",
       },
@@ -1114,7 +1113,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Následuj Davida a Terezu.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/narodni.png",
         track: TrackId.prechod_4_1,
         storyDate: "17/11/1989",
       },
@@ -1137,7 +1136,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Následuj Davida a Terezu.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/narodni.png",
         track: TrackId.prechod_4_2A,
         storyDate: "17/11/1989",
       },
@@ -1152,7 +1151,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Následuj Davida a Terezu.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/narodni.png",
         track: TrackId.prechod_4_2B,
         storyDate: "17/11/1989",
       },
@@ -1183,7 +1182,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         note: "Dojdi po Národní třídě až k pamětní desce 17.&nbsp;listopadu.",
-        imageUrl: "assets/images/chapters/ff.png",
+        imageUrl: "assets/images/chapters/narodni_dav.png",
         track: TrackId.prechod_5,
         storyDate: "17/11/1989",
       },
