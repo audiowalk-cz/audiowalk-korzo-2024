@@ -17,11 +17,11 @@ export class StoryIntroPageComponent {
   ) {}
 
   async startNewStory() {
-    await this.storyController.resetStory();
+    // await this.storyController.resetStory();
 
-    await this.storyController.updateState({
-      storyStartedAt: new Date().toISOString(),
-    });
+    // await this.storyController.updateState({
+    //   storyStartedAt: new Date().toISOString(),
+    // });
 
     this.router.navigate(["/story/walk"]);
   }
