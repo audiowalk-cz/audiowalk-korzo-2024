@@ -608,7 +608,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
           },
           {
             label: "Hele já se na to asi úplně necítím, promiň…",
-            track: TrackId.interakce_2A_3_int4_b,
+            // track: TrackId.interakce_2A_3_int4_b,
             value: "b",
           },
         ],
