@@ -1,3 +1,8 @@
+## [0.10.4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.3...v0.10.4) (2024-11-10)
+
+### Bug Fixes
+
+* remove story reset after tutorial ([e759949](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/e75994909f1a0f325d043ea6d8f7e550af026f57))
 ## [0.10.3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.2...v0.10.3) (2024-11-10)
 
 ### Bug Fixes
