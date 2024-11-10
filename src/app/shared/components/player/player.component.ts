@@ -71,9 +71,8 @@ export class PlayerComponent implements OnInit, OnChanges, OnDestroy {
     this.player = new PlayerController(this.track.id, this.track.url, {
       autoSave: this.autoSave,
       loop: this.loop,
-      fadeIn: this.crossfade || this.fadeIn,
-      fadeOut: this.crossfade || this.fadeOut,
-      fadeInterval: this.fadeInterval,
+      crossfade: this.crossfade,
+      crossfadeTime: this.fadeInterval,
     });
 
     if (this.mediaControlsController) {
