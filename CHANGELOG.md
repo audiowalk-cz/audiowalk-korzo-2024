@@ -1,3 +1,13 @@
+## [0.10.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.9.0...v0.10.0) (2024-11-10)
+
+### Features
+
+Crossfading
+
+### Bug Fixes
+
+* error on options for loop tracking when same value for answer ([0b1edd4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/0b1edd4c0b02c83acbe2e0e2091bedad5b33d25d))
+* fix crossfading and beginning and start of track ([3e0d4d4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/3e0d4d4c783c75c73b113687c56758e16ccbc24c))
 ## [0.9.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.8.1...v0.9.0) (2024-11-09)
 
 ### Features
