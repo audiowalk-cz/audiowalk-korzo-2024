@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { SwUpdate } from "@angular/service-worker";
+import { map } from "rxjs";
 import * as packageJson from "../../../../../package.json";
 
 @Component({
@@ -11,4 +13,8 @@ export class LandingPageComponent {
   isMobile = window.screen.width < window.screen.height;
 
   version = packageJson.version;
+
+  versionUpdates = this.swUpdate.versionUpdates.pipe(map((vu) => vu.type));
+
+  constructor(private readonly swUpdate: SwUpdate) {}
 }
