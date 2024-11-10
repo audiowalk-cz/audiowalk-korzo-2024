@@ -1,3 +1,8 @@
+## [0.10.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.1...v0.10.2) (2024-11-10)
+
+### Bug Fixes
+
+* fix loading of bootstrap icons when offline ([29cd10b](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/29cd10b0d173aed36bc8e9b9d15a4e4559338d15))
 ## [0.10.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.0...v0.10.1) (2024-11-10)
 
 ### Features
