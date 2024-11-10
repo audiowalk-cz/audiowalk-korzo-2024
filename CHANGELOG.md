@@ -1,3 +1,8 @@
+## [0.10.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.0...v0.10.1) (2024-11-10)
+
+### Features
+
+* version update status info on version tag ([a4fb80f](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/a4fb80fe8698c4740ce239c9cbbe21fb907b4b7e))
 ## [0.10.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.9.0...v0.10.0) (2024-11-10)
 
 ### Features
