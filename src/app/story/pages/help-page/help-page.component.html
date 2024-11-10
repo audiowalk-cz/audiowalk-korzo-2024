@@ -1,5 +1,6 @@
 <app-container align="left" justify="space-between">
   <div class="p-5">
+    <a (click)="back()">Zpět</a>
     <h2>Ztratil jsem se</h2>
 
     @if (currentChapter | async; as chapter) {

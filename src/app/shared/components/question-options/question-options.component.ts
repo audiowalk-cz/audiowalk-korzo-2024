@@ -14,6 +14,8 @@ export interface QuestionOption {
 export class QuestionOptionsComponent {
   @Input() options!: QuestionOption[];
 
+  @Input() questionLoaded: boolean = false;
+
   @Input() value?: string;
 
   @Output() select = new EventEmitter<string>();

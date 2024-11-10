@@ -14,8 +14,21 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "PixelifySans";
+  font-family: "Micro5";
   font-weight: bold;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: .85em;
+
+  color: $primary;
+}
+h2 {
+  font-size: 2em;
+  line-height: .85em;
+
+  color: $primary;
 }
 
 .code {

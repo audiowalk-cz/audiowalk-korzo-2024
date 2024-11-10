@@ -1,7 +1,44 @@
 @import "src/styles/theme.scss";
 
 :host {
+  position: relative;
   display: block;
   border: 3px solid $box-border;
+  color: $secondary;
+  background-color: $primary;
   text-align: left;
+
+
+  --pixelborder-width: 5px;
+
+  .pixelborder {
+    position: absolute;
+    background-color: $primary;
+    transition: background-color 0.3s;
+  }
+
+  .pixelborder-left {
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    width: var(--pixelborder-width);
+  }
+  .pixelborder-top {
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: var(--pixelborder-width);
+  }
+  .pixelborder-right {
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    width: var(--pixelborder-width);
+  }
+  .pixelborder-bottom {
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: var(--pixelborder-width);
+  }
 }

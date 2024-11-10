@@ -8,8 +8,9 @@ import { ButtonComponent } from "./components/button/button.component";
 import { ContainerComponent } from "./components/container/container.component";
 import { HelpButtonComponent } from "./components/help-button/help-button.component";
 import { JingleComponent } from "./components/jingle/jingle.component";
-import { MediaDownloadComponent } from "./components/media-download-status/media-download-status.component";
 import { PageFooterComponent } from "./components/page-footer/page-footer.component";
+import { MediaDownloadComponent } from "./components/media-download-status/media-download-status.component";
+import { NoteComponent } from "./components/note/note.component";
 import { PlayButtonComponent } from "./components/play-button/play-button.component";
 import { PlayerComponent } from "./components/player/player.component";
 import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
@@ -20,6 +21,7 @@ import { TypeTextComponent } from "./components/type-text/type-text.component";
 import { VideoComponent } from "./components/video/video.component";
 import { TimePipe } from "./pipes/time.pipe";
 import { TypePipe } from "./pipes/type.pipe";
+import { HeaderComponent } from "./components/header/header.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { TypePipe } from "./pipes/type.pipe";
     ButtonComponent,
     ChapterPhotoComponent,
     ContainerComponent,
+    HeaderComponent,
     MediaDownloadComponent,
+    NoteComponent,
     PageFooterComponent,
     PlayerComponent,
     PlayButtonComponent,
@@ -53,7 +57,9 @@ import { TypePipe } from "./pipes/type.pipe";
     ButtonComponent,
     ChapterPhotoComponent,
     ContainerComponent,
+    HeaderComponent,
     MediaDownloadComponent,
+    NoteComponent,
     PageFooterComponent,
     PlayerComponent,
     PlayButtonComponent,

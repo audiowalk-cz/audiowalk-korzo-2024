@@ -1,20 +1,21 @@
-<app-container align="center" justify="space-between">
-  <div class="p-5">
-    <h2>Povídej si s postavami</h2>
-    <p>
-      Během poslechu můžeš mít obrazovku mobilu vypnutou a soustředit se na cestu. Přijdou ale momenty, kdy je potřeba
-      se zastavit a telefon znovu otevřít. Například když:
+<app-container justify="space-between">
+  <div class="px-3 py-4">
+    <h1 class="text-center">{{ 'Povídej si s\u00A0postavami' }}</h1>
+    <p class="text-center">
+      {{
+        'Během poslechu můžeš mít obrazovku mobilu vypnutou a\u00A0soustředit se na\u00A0cestu. Přijdou ale momenty, kdy je potřeba se zastavit a\u00A0telefon znovu otevřít. Například když:'
+      }}
     </p>
-    <ul>
-      <li>je nutné potvrdit, že jsi na správném místě</li>
-      <li>si můžeš prohlédnout doprovodné materiály</li>
-      <li>musíš vstoupit do konverzace s postavami</li>
+    <ul class="text-left m-3">
+      <li>je nutné potvrdit,<br />že jsi na správném místě</li>
+      <li>si můžeš prohlédnout<br />doprovodné materiály</li>
+      <li>musíš vstoupit<br />do konverzace s postavami</li>
     </ul>
 
-    <p>Tento moment poznáš podle speciálního zvuku.</p>
+    <p class="text-center">Tento moment poznáš<br />podle speciálního zvuku.</p>
   </div>
 
   <app-page-footer>
-    <app-button (click)="playJingle(); next.emit()">Přehrát zvuk!</app-button>
+    <app-button (click)="playJingle(); next.emit()">Přehrát zvuk</app-button>
   </app-page-footer>
 </app-container>
