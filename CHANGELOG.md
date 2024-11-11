@@ -1,3 +1,13 @@
+## [0.12.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.11.1...v0.12.0) (2024-11-11)
+
+### Features
+
+* add new components for notes and bonus materials, update styles and HTML structure ([488ec93](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/488ec930a35d171e8528b49d7a0bccf0341b939e))
+* enhance button styles, add forward functionality, and update play button icons ([f93aeca](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/f93aeca7eb1190c3e65f466e669659afac1aa7db))
+
+### Bug Fixes
+
+* comment out unused track reference in story data ([5fa22b4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/5fa22b4008c0dadb0f7fd4b96793f58f98664490))
 ## [0.11.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.11.0...v0.11.1) (2024-11-11)
 
 ### Bug Fixes

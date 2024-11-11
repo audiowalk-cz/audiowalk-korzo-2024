@@ -1,6 +1,6 @@
 {
   "name": "audiowalk-korzo-2024",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "scripts": {
     "dev": "ng serve",
     "build": "ng build",
