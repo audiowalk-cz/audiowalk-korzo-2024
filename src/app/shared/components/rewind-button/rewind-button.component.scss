@@ -1,0 +1,35 @@
+@import "src/styles/theme.scss";
+
+:host {
+  display: block;
+  width: 100%;
+  max-width: 70px;
+}
+
+app-button {
+  border: none;
+  display: block;
+  width: 100%;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transform-origin: center center;
+  padding: 0;
+
+  img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    transform: scale(1);
+
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    transform-origin: center center;
+  }
+  img:active {
+    transform: scale(.6);
+  }
+}

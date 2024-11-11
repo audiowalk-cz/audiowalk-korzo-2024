@@ -1,10 +1,19 @@
 @if (!hideUI) {
-  <div class="d-inline-block">
-    <app-play-button [status]="player?.status | async" (play)="play()" (pause)="pause()"></app-play-button>
-
-    <button (click)="seekToBeforeEnd()">fw</button>
-
-    <p *ngIf="error && !offline" class="error text-warning">{{ error }}</p>
-    <p *ngIf="offline && !track?.isDownloaded" class="error text-warning">Nejste připojeni k internetu</p>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <app-rewind-button (rewind)="rewind()"></app-rewind-button>
+    </div>
+    <div class="col d-flex justify-content-center">
+      <div class="">
+        <app-play-button [status]="player?.status | async" (play)="play()" (pause)="pause()"></app-play-button>
+    
+        <!-- <button (click)="seekToBeforeEnd()">fw</button> -->
+    
+        <p *ngIf="error && !offline" class="error text-warning">{{ error }}</p>
+        <p *ngIf="offline && !track?.isDownloaded" class="error text-warning">Nejste připojeni k internetu</p>
+      </div>
+    </div>
+    <div class="col">
+    </div>
   </div>
 }

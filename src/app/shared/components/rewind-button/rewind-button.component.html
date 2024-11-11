@@ -1,0 +1,9 @@
+<app-button>
+  <img
+    id="rewind"
+    src="assets/images/icons/24/15_seconds_back.svg"
+    alt="-15s"
+    [class.active]="status === 'playing'"
+    (click)="rewind.emit()"
+  />
+</app-button>

@@ -3,6 +3,7 @@ import { PlayerController } from "@audiowalk/sdk";
 import { TrackId } from "src/app/data/tracks";
 import { MediaService } from "src/app/shared/services/media.service";
 import { ChapterComponent } from "../../components/story-container/story-container.component";
+declare var bootstrap: any; // Make sure to declare bootstrap if TypeScript complains
 
 @Component({
   selector: "app-materials",
@@ -18,7 +19,7 @@ export class MaterialsComponent implements ChapterComponent {
 
   @Output() end = new EventEmitter<void>();
 
-  showMaterials = false;
+  showMaterials = true;
 
   private ambientPLayer?: PlayerController;
 
@@ -29,6 +30,12 @@ export class MaterialsComponent implements ChapterComponent {
     if (this.data.ambientTrack) {
       this.ambientPLayer = this.mediaService.playAmbient(this.data.ambientTrack);
     }
+
+    const carouselElement = document.getElementById('carouselExampleControls');
+    const carousel = new bootstrap.Carousel(carouselElement, {
+      interval: 0, // Adjust the interval as needed
+      wrap: true
+    });
   }
 
   ngOnDestroy(): void {

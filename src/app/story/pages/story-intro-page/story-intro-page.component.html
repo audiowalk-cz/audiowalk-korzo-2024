@@ -1,11 +1,13 @@
-<app-container align="center" justify="space-between">
-  <div class="p-5">
-    <p>
-      NĚJAKÁ ÚVODNÍ GRAFIKA S TITULKEM POTKÁME SE U KONÍČKA (PODTITUL: INTERAKTIVNÍ AUDIOWALK ZE ZAČÁTKU AKADEMICKÉHO
-      ROKU 1989/90)
-    </p>
+<app-container justify="space-between">
+  <div class="fixed-bottom p-2 text-center d-flex flex-column justify-content-center">
+    <div class="p-0">
+      <img src="assets/images/chapters/intro.png" class="img-fluid">
+    </div>
+    <p>Interaktivní audiowalk
+      ze začátku akademického roku 1989/90<span class="animate-ticking">_</span></p>
+    <div>
+
+      <app-button (click)="startNewStory()">Můžeme začít</app-button>
+    </div>
   </div>
-  <app-page-footer>
-    <app-button (click)="startNewStory()">Můžeme začít</app-button>
-  </app-page-footer>
 </app-container>

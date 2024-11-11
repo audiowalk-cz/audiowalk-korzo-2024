@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
   templateUrl: "./box.component.html",
   styleUrl: "./box.component.scss",
   host: {
-    class: "p-1",
+    class: "p-2",
   },
 })
 export class BoxComponent {}

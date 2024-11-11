@@ -7,6 +7,7 @@ import { QuestionOption } from "../question-options/question-options.component";
   styleUrl: "./question.component.scss",
 })
 export class QuestionComponent {
+  @Input() title: string = 'Teď odpověz<br />na otázku:';
   @Input() question!: string;
   @Input() options!: QuestionOption[];
   @Input() value?: string;

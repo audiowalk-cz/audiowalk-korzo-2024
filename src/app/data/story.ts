@@ -43,7 +43,6 @@ export enum ChapterId {
   "checkpoint_klementinum_a" = "checkpoint_klementinum_a",
   "prechod_2A_3_klementinum" = "prechod_2A_3_klementinum",
   "prechod_2A_4" = "prechod_2A_4",
-  "materialy_2A" = "materialy_2",
   "checkpoint_materialy_2A" = "checkpoint_materialy_2",
   "prechod_2B_2" = "prechod_2B_2",
   "checkpoint_klementinum_b" = "checkpoint_klementinum_b",
@@ -70,8 +69,7 @@ export enum ChapterId {
   "prechod_4_2B" = "prechod_4_2B",
   "interakce_roh_narodni" = "interakce_roh_narodni",
   "checkpoint_roh_narodni" = "checkpoint_roh_narodni",
-  "prechod_5" = "prechod_5",
-  "materialy_konec" = "materialy_konec",
+  "prechod_5" = "prechod_5"
 }
 
 /**
@@ -375,7 +373,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote:
           "David ti podal časopisy.\n\nDojdi doprostřed Mariánského náměstí, bývají tam stolky a židle. Pokud si chceš materiály v klidu prohlédnout, sedni si tam.",
-        materials: [],
+        materials: [
+          {
+            label: 'Samizdat Revue 88',
+            url: "assets/images/materials/revue88.jpg",
+          },
+        ],
         ambientTrack: TrackId.ambient_materialy_1,
       },
       metadata: {
@@ -390,7 +393,20 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote:
           "Tereza ti podala časopisy.\n\nDojdi doprostřed Mariánského náměstí, bývají tam stolky a židle. Pokud si chceš materiály v klidu prohlédnout, sedni si tam.",
-        materials: [],
+        materials: [
+          {
+            label: 'FF časopis Situace',
+            url: "assets/images/materials/situace.jpg",
+          },
+          {
+            label: 'EM medicína časopis',
+            url: "assets/images/materials/em_casopis.jpg",
+          },
+          {
+            label: 'Kavárna časopis DAMU',
+            url: "assets/images/materials/damu_casopis.jpg",
+          },
+        ],
         ambientTrack: TrackId.ambient_materialy_1,
       },
       metadata: {
@@ -727,18 +743,6 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         track: TrackId.prechod_2A_4,
         storyDate: "18/10/1989",
       },
-      nextChapter: ChapterId.materialy_2A,
-    }),
-
-    materialy_2: new Chapter(ChapterId.materialy_2A, {
-      component: MaterialsComponent,
-      metadata: {
-        title: "Kapitola 2.6",
-      },
-      data: {
-        materials: [], // TODO: add letak
-        ambientTrack: TrackId.ambient_betlemske,
-      },
       nextChapter: ChapterId.checkpoint_materialy_2A,
     }),
 
@@ -954,7 +958,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote:
           "Martin s Evou odešli na oběd. Ty zůstáváš u lavičky před Betlémskou kaplí. Všímáš si, že pod ní leží tento leták:",
-        materials: [], // TODO: add letak
+        materials: [
+          {
+            label: 'Ty jsi ještě v SSM?',
+            url: "assets/images/materials/letaky_betlemske.jpg",
+          },
+        ],
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: (state) => {
@@ -1202,7 +1211,10 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote: "Co ty?",
         materials: [
-          // TODO: doplnit fotku
+          {
+            label: 'Pozvánka na 17. listopad',
+            url: "assets/images/materials/pozvanka_17_11.jpg",
+          },
         ],
         ambientTrack: TrackId.ambient_roh_narodni,
       },
@@ -1237,19 +1249,6 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         imageUrl: "assets/images/chapters/narodni_dav.png",
         track: TrackId.prechod_5,
         storyDate: "17/11/1989",
-      },
-      nextChapter: ChapterId.materialy_konec,
-    }),
-
-    materialy_konec: new Chapter(ChapterId.materialy_konec, {
-      component: MaterialsComponent,
-      metadata: {
-        title: "Konec",
-      },
-      data: {
-        materials: [
-          // TODO: doplnit dva letaky
-        ],
       },
       nextChapter: null,
     }),

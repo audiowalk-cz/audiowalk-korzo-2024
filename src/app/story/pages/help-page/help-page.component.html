@@ -1,7 +1,6 @@
-<app-container align="left" justify="space-between">
-  <div class="p-5">
-    <a (click)="back()">Zpět</a>
-    <h2>Ztratil jsem se</h2>
+<app-container justify="space-between">
+  <div class="px-2 py-3 text-center">
+    <app-header text="Ztratil jsem se" [showHelp]="false"></app-header>
 
     @if (currentChapter | async; as chapter) {
       <div class="my-5">
@@ -10,15 +9,10 @@
           [innerHTML]="chapter.metadata.direction"
           style="white-space: pre-wrap"
         ></p>
-        <a *ngIf="chapter.metadata.directionMapUrl" [href]="chapter.metadata.directionMapUrl">Otevřít v mapě</a>
+        <a *ngIf="chapter.metadata.directionMapUrl" [href]="chapter.metadata.directionMapUrl">Otevřít cílové místo v mapě</a>
       </div>
     }
 
-    <h2 class="mt-5">Zvolit kapitolu</h2>
-    <app-chapters (select)="selectChapter($event)"></app-chapters>
-
-    <h2 class="mt-5">Začít od začátku</h2>
-    <a (click)="resetStory()">Začít příběh od začátku</a>
   </div>
 
   <app-page-footer>

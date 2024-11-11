@@ -1,10 +1,5 @@
-<app-container justify="space-between">
-  <div class="px-3 py-4">
-    <h1>Teď odpověz na otázku:</h1>
-  </div>
-  <app-page-footer>
-    <app-question [question]="question" [options]="questionOptions" (select)="next.emit()"></app-question>
-  </app-page-footer>
+<app-container>
+  <app-question [question]="question" [options]="questionOptions" (select)="next.emit()"></app-question>
 </app-container>
 
 <app-jingle />
