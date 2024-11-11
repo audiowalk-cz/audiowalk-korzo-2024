@@ -1,3 +1,9 @@
+## [0.11.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.4...v0.11.0) (2024-11-11)
+
+### Features
+
+* update audio track tutorial test ([7e98f4e](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/7e98f4ef9e8e19fb19a3b188346a9e591f6e3f04))
+* update audio tracks ([0b556a3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/0b556a3796fdc13cf552c396253d61b72b19fd6f))
 ## [0.10.4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.3...v0.10.4) (2024-11-10)
 
 ### Bug Fixes
