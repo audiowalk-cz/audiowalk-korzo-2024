@@ -1,3 +1,8 @@
+## [0.13.5](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.4...v0.13.5) (2024-11-11)
+
+### Bug Fixes
+
+* prevent back on gesture ([c24aec9](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/c24aec9f6d4cc2ce1dea3ddf9e0c059cdccb3a01))
 ## [0.13.4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.3...v0.13.4) (2024-11-11)
 
 ### Features
