@@ -279,7 +279,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_klementinum: {
     id: TrackId["ambient_klementinum"],
-    url: "assets/audio/INTERAKCE KLEMENTINUM AMB.mp3",
+    url: "assets/audio/INTERAKCE KLEMETNINUM AMB.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
