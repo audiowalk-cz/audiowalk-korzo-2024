@@ -33,6 +33,7 @@ export enum TrackId {
   "interakce_2A_3_int4_b" = "interakce_2A_3_int4_b",
   "interakce_2A_3_int5_a" = "interakce_2A_3_int5_a",
   "prechod_2A_3_klementinum" = "prechod_2A_3_klementinum",
+  "ambient_damu_klementinum" = "ambient_damu_klementinum",
   "prechod_2A_4" = "prechod_2A_4",
   "prechod_2B_2" = "prechod_2B_2",
   "prechod_2B_3" = "prechod_2B_3",
@@ -256,7 +257,13 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   prechod_2A_3_klementinum: {
     id: TrackId["prechod_2A_3_klementinum"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/2A.3.klementinum.mp3",
+    type: "audio",
+    mimeType: "audio/mpeg",
+  },
+  ambient_damu_klementinum: {
+    id: TrackId["ambient_damu_klementinum"],
+    url: "assets/audio/ATMO DAMU-KLEMENTINUM.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
