@@ -13,9 +13,7 @@ export class TutorialInteractionsComponent implements TutorialStepComponent, OnI
 
   private readonly jingleSound = new PlayerController("jingle", Tracks["jingle"].url);
 
-  ngOnInit(): void {
-    this.playJingle();
-  }
+  ngOnInit(): void {}
 
   playJingle() {
     this.jingleSound.play();

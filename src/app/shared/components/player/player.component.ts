@@ -43,8 +43,6 @@ export class PlayerComponent implements OnInit, OnChanges, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.trackId);
-    console.log(this.autoPlay);
     if (this.trackId) this.loadTrack(this.trackId);
   }
 
@@ -103,10 +101,10 @@ export class PlayerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   rewind() {
-    this.player?.seekTo(Math.max(0, this.player.currentTime.value - 10));
+    this.player?.back(10);
   }
 
-  forward() {
+  seekToBeforeEnd() {
     this.player?.seekTo((this.player.totalTime.value || 10) - 10);
   }
 }
