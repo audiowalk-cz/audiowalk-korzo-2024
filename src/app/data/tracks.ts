@@ -88,7 +88,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_FF: {
     id: TrackId["ambient_FF"],
-    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE FF ambient.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
     preloadController: true,
@@ -144,7 +144,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_konicek: {
     id: TrackId["ambient_konicek"],
-    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE KONICEK AMBIENT.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
     preloadController: true,
@@ -286,7 +286,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_klementinum: {
     id: TrackId["ambient_klementinum"],
-    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE KLEMENTINUM AMB.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
     preloadController: true,
@@ -311,7 +311,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_betlemske: {
     id: TrackId["ambient_betlemske"],
-    url: "assets/audio/INTERAKCE PARK ambient.mp3", // TODO: chybi track
+    url: "assets/audio/INTERAKCE BETLEMSKE AMB.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
     preloadController: true,
@@ -415,13 +415,13 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   interakce_3_3_a: {
     id: TrackId["interakce_3_3_a"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3.3.int.a.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
   interakce_3_3_b: {
     id: TrackId["interakce_3_3_b"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/3.3.int.b.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
@@ -445,7 +445,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   ambient_roh_narodni: {
     id: TrackId["ambient_roh_narodni"],
-    url: "assets/audio/INTERAKCE PARK ambient.mp3",
+    url: "assets/audio/INTERAKCE NARODKA AMB.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
     preloadController: true,
