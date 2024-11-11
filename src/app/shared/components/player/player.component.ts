@@ -101,6 +101,10 @@ export class PlayerComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   rewind() {
-    this.player?.seekTo(Math.max(0, this.player.currentTime.value - 10));
+    this.player?.back(10);
+  }
+
+  seekToBeforeEnd() {
+    this.player?.seekTo((this.player.totalTime.value || 10) - 10);
   }
 }

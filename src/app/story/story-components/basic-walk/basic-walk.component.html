@@ -1,17 +1,17 @@
-<app-container align="center" justify="space-between">
-  <h1>{{ data.storyDate }}</h1>
+<app-container justify="space-between">
+  <app-header>{{ data.storyDate }}</app-header>
   <img [src]="data.imageUrl" />
-  @if (data.note) {
-    <p [innerHTML]="data.note"></p>
-  }
+  
 
   <p>Smazat:{{ currentChapterId | async }}</p>
   <!-- TODO:-->
 
   <app-page-footer class="p-3">
+    @if (data.note) {
+      <app-note [innerHTML]="data.note"></app-note>
+    }
     <div class="row">
       <div class="col">
-        <app-help-button></app-help-button>
       </div>
       <div class="col">
         <app-player [track]="data.track" [autoPlay]="true" [autoSave]="true" (stop)="end.emit()" [crossfade]="true" />
