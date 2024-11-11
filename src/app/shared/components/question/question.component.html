@@ -1,7 +1,7 @@
 <app-question-box [question]="question" (end)="questionLoaded = true" />
 
 <app-question-options
-  *ngIf="questionLoaded"
+  [questionLoaded]="questionLoaded"
   [options]="options"
   [value]="value"
   (select)="select.emit($event)"

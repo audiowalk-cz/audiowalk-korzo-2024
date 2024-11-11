@@ -9,6 +9,7 @@ import { ChapterComponent } from "../../components/story-container/story-contain
 })
 export class CheckpointComponent implements ChapterComponent {
   @Input() data!: {
+    headerText: string;
     question: string;
     ambientTrack: TrackId;
     mapUrl?: string;

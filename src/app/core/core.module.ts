@@ -9,6 +9,7 @@ import { IntroComponent } from "./pages/intro/intro.component";
 import { LandingPageComponent } from "./pages/landing-page/landing-page.component";
 import { PreloadPageComponent } from "./pages/preload-page/preload-page.component";
 import { SourcesComponent } from "./pages/sources/sources.component";
+import { BonusComponent } from "./pages/bonus/bonus.component";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SourcesComponent } from "./pages/sources/sources.component";
     EndComponent,
     SourcesComponent,
     LoadingComponent,
+    BonusComponent,
   ],
   imports: [CommonModule, CoreRoutingModule, SharedModule, QRCodeModule],
 })

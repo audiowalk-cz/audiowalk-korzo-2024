@@ -1,5 +1,5 @@
 @for (option of options; track $index) {
-  <div class="my-3">
+  <div class="my-3" [class.opacity-0]="!questionLoaded">
     <app-button (click)="select.emit(option.value)" [active]="value === option.value" class="w-100">
       <p class="m-0" [class.fst-italic]="option.italic">{{ option.label }}</p>
     </app-button>
