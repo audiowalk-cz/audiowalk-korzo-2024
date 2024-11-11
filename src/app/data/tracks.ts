@@ -75,7 +75,7 @@ export const Tracks: { [key in TrackId]: { id: key } & TrackDefinition } = {
   },
   tutorial_test: {
     id: TrackId["tutorial_test"],
-    url: "assets/audio/placeholder.mp3", // TODO: chybi track
+    url: "assets/audio/zkusebni lr track.mp3",
     type: "audio",
     mimeType: "audio/mpeg",
   },
