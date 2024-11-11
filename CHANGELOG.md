@@ -1,3 +1,8 @@
+## [0.13.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.0...v0.13.1) (2024-11-11)
+
+### Bug Fixes
+
+* update end texts ([c68c830](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/c68c8300a8faf915e54e8119849aee45cd0a1980))
 ## [0.13.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.12.0...v0.13.0) (2024-11-11)
 
 ### Features
