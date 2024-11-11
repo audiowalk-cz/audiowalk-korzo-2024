@@ -1,3 +1,17 @@
+## [0.13.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.12.0...v0.13.0) (2024-11-11)
+
+### Features
+
+* update audio track tutorial test ([603a846](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/603a84619b7159032c78de08fc6337f5c42db4ab))
+* update audio tracks ([c356959](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/c356959fa1cec528b675349739070b7a136c39f0))
+* update texts ([f21ffc0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/f21ffc07ce6eb97777eee8c8c8170a825ff46700))
+* updated map links ([5af9292](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/5af9292f5a5ea4d73c51080a3cfaff664048d819))
+* updated sounds ([adad432](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/adad432e71f02947e0d05429d61f3b3cb9c2cfe2))
+
+### Bug Fixes
+
+* half fix to allow jingle and ambient to play on ios ([779c023](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/779c0237a857ba182f03232e320ded0c2d2cea6d))
+* try to preload controllers after touch or download ([961978a](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/961978a2e182243711e1888485938b23d3ae348b))
 ## [0.12.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.11.1...v0.12.0) (2024-11-11)
 
 ### Features
