@@ -141,6 +141,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "1. kapitola",
         image: "assets/images/chapters/hrad.png",
         direction: "Stojíš před Filozofickou fakultou Univerzity Karlovy.",
+        directionMapUrl: "https://maps.app.goo.gl/hA5EdNjSxcuSAQ8f9",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -187,6 +188,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 1.2",
         direction:
           "Dojdi k lampě v&nbsp;parku u&nbsp;Staroměstské radnice.\n\nTrasa vede od&nbsp;Filozofické fakulty Univerzity Karlovy ulicí Kaprova a&nbsp;pokračuje na rohu Maiselovy ulice směrem na Staroměstské náměstí.",
+        directionMapUrl: "https://maps.app.goo.gl/2BNd6J5LkBSfH9M96",
       },
       nextChapter: ChapterId.checkpoint_lampa,
     }),
@@ -196,6 +198,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 1.1",
         direction: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí.",
+        directionMapUrl: "https://maps.app.goo.gl/2BNd6J5LkBSfH9M96",
       },
       data: {
         headerText: "2/10/1989",
@@ -216,6 +219,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 1.3",
         direction: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí.",
+        directionMapUrl: "https://maps.app.goo.gl/2BNd6J5LkBSfH9M96",
       },
       nextChapter: ChapterId.interakce_park,
     }),
@@ -263,6 +267,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 1.4",
         direction: "Dojdi kolem radnice k restauraci White Horse Prague.",
+        directionMapUrl: "https://maps.app.goo.gl/g3FU5hwZ8wt7A29X9",
       },
       nextChapter: ChapterId.checkpoint_konicek,
     }),
@@ -292,6 +297,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 1.5",
         direction: "Máš být před vchodem do zahrádky restaurace White Horse. Nachází se na rohu Železné ulice.",
+        directionMapUrl: "https://maps.app.goo.gl/g3FU5hwZ8wt7A29X9",
       },
       nextChapter: ChapterId.interakce_konicek,
     }),
@@ -342,6 +348,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 1.6",
         direction:
           "Jdi na Mariánské náměstí.\n\nTrasa vede od restaurace White Horse, kolem orloje na Malé náměstí s&nbsp;kašnou uprostřed a&nbsp;pak doleva ulicí Linhartská.",
+        directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       nextChapter: ChapterId.materialy_1A,
     }),
@@ -358,6 +365,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 1.6",
         direction:
           "Jdi na Mariánské náměstí.\n\nTrasa vede od restaurace White Horse, kolem orloje na Malé náměstí s&nbsp;kašnou uprostřed a&nbsp;pak doleva ulicí Linhartská.",
+        directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       nextChapter: ChapterId.materialy_1B,
     }),
@@ -397,6 +405,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 2.1",
         direction: "Máš stát uprostřed Mariánského náměstí.",
+        directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       data: {
         headerText: "2/10/1989",
@@ -417,6 +426,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 2.1",
         direction: "Máš stát uprostřed Mariánského náměstí.",
+        directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       nextChapter: ChapterId.interakce_marianske,
     }),
@@ -467,6 +477,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.2",
         direction:
           "Dojdi k DAMU.\n\nTrasa vede od Mariánského náměstí ulicí Husova, následně první doprava do ulice Karlova. DAMU uvidí na levé straně.",
+        directionMapUrl: "https://maps.app.goo.gl/MtVLu6Gccr8nHkaw9",
       },
       nextChapter: ChapterId.checkpoint_damu,
     }),
@@ -547,6 +558,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 2.3",
         direction: "Máš stát před DAMU.",
+        directionMapUrl: "https://maps.app.goo.gl/MtVLu6Gccr8nHkaw9",
       },
       nextChapter: ChapterId.interakce_damu_3,
     }),
@@ -666,7 +678,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         text: "Julie a Ondra odešli. Nezbývá ti teď nic jiného, než se vrátit za Evou do Klementina. Kudy máš jít, si zjisti z mapy.",
         confirmationText: "Dobře, jdu do Klementina",
-        mapUrl: "AAA", // TODO: Add map URL
+        mapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
+        ambientTrack: TrackId.ambient_damu,
       },
       nextChapter: ChapterId.checkpoint_klementinum_a,
     }),
@@ -706,6 +719,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.4",
         direction:
           "Dojdi před Betlémskou kapli.\n\nTrasa vede Karlovou ulicí směrem ke Karlovu mostu. U&nbsp;stromu odboč doleva do Liliové ulice a&nbsp;projdi jí až na konec. Na Betlémském náměstí se drž vlevo, než se ocitneš před vchodem do Betlémské kaple.",
+        directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         note: "Jdete směrem na Betlémské náměstí.",
@@ -755,6 +769,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.2",
         direction:
           "Dojdi do Klementina.\n\nPřejdi dlážděnou silnici a vejdi velkou branou do areálu Klementina. Za průchodem odboč doleva. Až projdeš dalším průchodem, napravo uvidíš dva stromy. Zastav se na rohu u druhého stromu.",
+        directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
         note: "Jdeš do Klementina.",
@@ -783,6 +798,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 2.3",
         direction: "Máš sedět na zídce u stromu v areálu Klementina.",
+        directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -824,6 +840,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 2.4",
         direction:
           "Dojdi na Betlémské náměstí.\n\nTrasa vede od Klementina průchodem do Karlovy ulice, pak doprava směrem ke Karlovu mostu a před červeným domem doleva do Liliové ulice, kterou projdeš až na konec na Betlémské náměstí. Na Betlémském náměstí se drž vlevo, než se ocitneš před vchodem do Betlémské kaple.",
+        directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         note: "Jdeš s Evou a Martinem na Betlémské náměstí.",
@@ -864,6 +881,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 2.5",
         direction: "Máš stát před Betlémskou kaplí.",
+        directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -904,6 +922,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 2.6",
         direction: "Máš stát před Betlémskou kaplí.",
+        directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -954,6 +973,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 3.1",
         direction: "Máš stát před Betlémskou kaplí.",
+        directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -995,6 +1015,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 3.2",
         direction:
           "Dojdi do Bartolomějské ulice.\n\nTrasa vede od Betlémské kaple Konviktskou, pak hned doleva úzkou uličkou Průchodní. Na jejím konci zahni doprava do Bartolomějské a jdi dál.",
+        directionMapUrl: "https://maps.app.goo.gl/y8qxb6P6xtb9j6558",
       },
       data: {
         note: "Jdete do Bartolomějské.",
@@ -1051,6 +1072,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 3.2",
         direction:
           "Dojdi do Bartolomějské ulice.\n\nTrasa vede od Betlémské kaple Konviktskou, pak hned doleva úzkou uličkou Průchodní. Na jejím konci zahni doprava do Bartolomějské a jdi dál.",
+        directionMapUrl: "https://maps.app.goo.gl/y8qxb6P6xtb9j6558",
       },
       data: {
         note: "Jdete do Bartolomějské.",
@@ -1067,6 +1089,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 3.3",
         direction:
           "Dojdi na roh Bartolomějské s ulicí Karoliny Světlé.\n\nJdi Bartolomějsou ulicí směrem na západ (k řece) až dojdeš na křižovatku s ulicí Karoliny Světlé.",
+        directionMapUrl: "https://maps.app.goo.gl/y8qxb6P6xtb9j6558",
       },
       data: {
         note: "Jdete dál Bartolomějskou.",
@@ -1120,6 +1143,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 4.1",
         direction: "Máš jít směrem na Národní třídu.\n\nDojdi ulicí Karoliny Světlé na roh s ulicí Národní třída.",
+        directionMapUrl: "https://maps.app.goo.gl/5DZw3USYNx2DED1w7",
       },
       data: {
         note: "Následuj Davida a Terezu.",
@@ -1143,6 +1167,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 4.2",
         direction: "Máš jít směrem na Národní třídu.\n\nDojdi ulicí Karoliny Světlé na roh s ulicí Národní třída.",
+        directionMapUrl: "https://maps.app.goo.gl/5DZw3USYNx2DED1w7",
       },
       data: {
         note: "Následuj Davida a Terezu.",
@@ -1158,6 +1183,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 4.2",
         direction: "Máš jít směrem na Národní třídu.\n\nDojdi ulicí Karoliny Světlé na roh s ulicí Národní třída.",
+        directionMapUrl: "https://maps.app.goo.gl/5DZw3USYNx2DED1w7",
       },
       data: {
         note: "Následuj Davida a Terezu.",
@@ -1190,7 +1216,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       data: {
         headerText: "18/10/1989",
-        question: "Máš stát na rohu ulic Karoliny Světlé a Národní. Přejdi na druhou stranu Národní třídy k domu Dunaj. Tam se vydej po Národní doleva a dojdi až k památníku 17. listopadu.",
+        question:
+          "Máš stát na rohu ulic Karoliny Světlé a Národní. Přejdi na druhou stranu Národní třídy k domu Dunaj. Tam se vydej po Národní doleva a dojdi až k památníku 17. listopadu.",
         confirmationText: "Ok",
         ambientTrack: TrackId.ambient_betlemske,
       },
@@ -1203,6 +1230,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         title: "Kapitola 5",
         direction:
           "Dojdi po Národní třídě až k pamětní desce 17.&nbsp;listopadu.\n\nNachází se kousek od rohu ulic Mikulandská a Národní.",
+        directionMapUrl: "https://maps.app.goo.gl/7FQs6jfY9FkvYvj36",
       },
       data: {
         note: "Dojdi po Národní třídě až k pamětní desce 17.&nbsp;listopadu.",
