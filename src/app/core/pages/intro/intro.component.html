@@ -26,11 +26,11 @@
 
     @if ((mediaService.downloadStatus | async) === "downloaded") {
       @if (storyStateExists | async) {
-        <app-button (click)="resetStory()">Spustit od začátku</app-button>
+        <app-button (click)="startNewStory()">Spustit od začátku</app-button>
         <br /><br />
-        <app-button routerLink="/story/walk">Pokračovat v příběhu</app-button>
+        <app-button (click)="continueOldStory()">Pokračovat v příběhu</app-button>
       } @else {
-        <app-button routerLink="/tutorial">Spustit audiowalk</app-button>
+        <app-button (click)="startNewStory()">Spustit audiowalk</app-button>
       }
     }
   </div>

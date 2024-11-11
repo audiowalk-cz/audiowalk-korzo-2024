@@ -3,12 +3,6 @@
 
   <app-page-footer class="p-3">
     <app-note>{{ data.question }}</app-note>
-    <app-button (click)="end.emit()">{{
-      data.confirmationText || "Jsem na místě"
-    }}</app-button>
+    <app-button (click)="end.emit()">{{ data.confirmationText || "Jsem na místě" }}</app-button>
   </app-page-footer>
 </app-container>
-
-<app-jingle />
-
-<app-player [track]="data.ambientTrack" [autoPlay]="true" [hideUI]="true" [loop]="true" [crossfade]="true" />

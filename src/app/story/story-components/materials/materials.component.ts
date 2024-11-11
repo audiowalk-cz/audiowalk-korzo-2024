@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { PlayerController } from "@audiowalk/sdk";
 import { TrackId } from "src/app/data/tracks";
+import { MediaService } from "src/app/shared/services/media.service";
 import { ChapterComponent } from "../../components/story-container/story-container.component";
 
 @Component({
@@ -17,4 +19,19 @@ export class MaterialsComponent implements ChapterComponent {
   @Output() end = new EventEmitter<void>();
 
   showMaterials = false;
+
+  private ambientPLayer?: PlayerController;
+
+  constructor(private readonly mediaService: MediaService) {}
+
+  ngOnInit(): void {
+    this.mediaService.playJingle();
+    if (this.data.ambientTrack) {
+      this.ambientPLayer = this.mediaService.playAmbient(this.data.ambientTrack);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.ambientPLayer?.stop();
+  }
 }

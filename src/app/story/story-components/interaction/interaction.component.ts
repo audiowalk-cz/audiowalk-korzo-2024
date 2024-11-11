@@ -35,8 +35,7 @@ export class InteractionComponent implements ChapterComponent, OnInit, OnDestroy
 
   selectedOption: InteractionComponentDataOption | null = null;
 
-  jingleTrack = this.mediaService.getPreloadedTrackController(TrackId["jingle"]);
-  ambientTrack = this.mediaService.getPreloadedTrackController(this.data.ambientTrack);
+  ambientPlayer?: PlayerController;
 
   answerPlayer?: PlayerController;
 
@@ -46,18 +45,14 @@ export class InteractionComponent implements ChapterComponent, OnInit, OnDestroy
   ) {}
 
   ngOnInit(): void {
-    this.jingleTrack?.play();
-    this.ambientTrack?.play();
+    setTimeout(() => this.mediaService.playJingle(), 1000);
+    this.ambientPlayer = this.mediaService.playAmbient(this.data.ambientTrack);
   }
 
   ngOnDestroy(): void {
     this.answerPlayer?.destroy();
 
-    this.jingleTrack?.pause();
-    this.jingleTrack?.seekTo(0);
-
-    this.ambientTrack?.pause();
-    this.ambientTrack?.seekTo(0);
+    this.ambientPlayer?.stop();
   }
 
   async selectOption(value: string) {

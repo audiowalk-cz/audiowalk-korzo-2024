@@ -9,7 +9,7 @@ export class AnalyticsService {
   constructor() {}
 
   trackEvent(eventName: string, props?: any) {
-    this.plausible?.(eventName, { props });
+    // this.plausible?.(eventName, { props });
   }
 
   trackError(message: string) {

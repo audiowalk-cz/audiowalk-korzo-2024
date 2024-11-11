@@ -43,8 +43,22 @@ export class IntroComponent {
     await this.mediaService.deleteTracks();
   }
 
-  async resetStory() {
+  async startNewStory() {
     await this.storyController.resetStory();
+    await this.storyController.updateState({
+      storyStartedAt: new Date().toISOString(),
+    });
+
+    await this.preloadTracks();
     this.router.navigate(["/tutorial"]);
+  }
+
+  async continueOldStory() {
+    await this.preloadTracks();
+    this.router.navigate(["/story/walk"]);
+  }
+
+  async preloadTracks() {
+    await this.mediaService.preloadControllers();
   }
 }

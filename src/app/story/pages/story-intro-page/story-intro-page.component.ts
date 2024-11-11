@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { StoryController } from "@audiowalk/sdk";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { ChapterId, StoryState } from "src/app/data/story";
+import { MediaService } from "src/app/shared/services/media.service";
 
 @UntilDestroy()
 @Component({
@@ -14,6 +15,7 @@ export class StoryIntroPageComponent {
   constructor(
     private readonly storyController: StoryController<ChapterId, StoryState>,
     private router: Router,
+    private readonly mediaService: MediaService,
   ) {}
 
   async startNewStory() {
