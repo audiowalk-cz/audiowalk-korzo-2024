@@ -1,3 +1,8 @@
+## [0.11.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.11.0...v0.11.1) (2024-11-11)
+
+### Bug Fixes
+
+* fix bad mp3 name ([e6b2170](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/e6b21707b5d4c72e35b3357182d42806bd1ed760))
 ## [0.11.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.10.4...v0.11.0) (2024-11-11)
 
 ### Features
