@@ -1,3 +1,8 @@
+## [0.13.7](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.6...v0.13.7) (2024-11-11)
+
+### Bug Fixes
+
+* track playing when help called ([092d63c](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/092d63c8908b57bc027c3178d04863bfe0df761d))
 ## [0.13.6](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.5...v0.13.6) (2024-11-11)
 
 ### Bug Fixes
