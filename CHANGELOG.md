@@ -1,3 +1,8 @@
+## [0.13.8](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.7...v0.13.8) (2024-11-11)
+
+### Bug Fixes
+
+* fix race condition in story udpate and nextChapter ([a6862fd](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/a6862fd921cc3cac53a9bf7221ab87042a45fadf))
 ## [0.13.7](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.6...v0.13.7) (2024-11-11)
 
 ### Bug Fixes
