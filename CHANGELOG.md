@@ -1,3 +1,8 @@
+## [0.13.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.1...v0.13.2) (2024-11-11)
+
+### Bug Fixes
+
+* ambent volume ([2d1da16](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/2d1da16bc9c41769a4629f45fe1ceffa300c091b))
 ## [0.13.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.0...v0.13.1) (2024-11-11)
 
 ### Bug Fixes
