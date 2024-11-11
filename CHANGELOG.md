@@ -1,3 +1,8 @@
+## [0.13.4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.3...v0.13.4) (2024-11-11)
+
+### Features
+
+* add after reload page ([1ae0c05](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/1ae0c05c018bf8373e4ce9ffc1f62f6247577fd9))
 ## [0.13.3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.2...v0.13.3) (2024-11-11)
 ## [0.13.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.1...v0.13.2) (2024-11-11)
 
