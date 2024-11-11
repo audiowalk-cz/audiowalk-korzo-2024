@@ -1,3 +1,8 @@
+## [0.13.9](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.8...v0.13.9) (2024-11-11)
+
+### Bug Fixes
+
+* add maps to checkpoint help pages ([931e137](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/931e13772c42e2e694908b7e760b833f0f91e5ad))
 ## [0.13.8](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.7...v0.13.8) (2024-11-11)
 
 ### Bug Fixes
