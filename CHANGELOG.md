@@ -1,3 +1,8 @@
+## [0.13.6](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.5...v0.13.6) (2024-11-11)
+
+### Bug Fixes
+
+* do not skip to end of story after help called ([f1cfef4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/f1cfef427d8007e5881889a3eaee80f0fb141273))
 ## [0.13.5](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.4...v0.13.5) (2024-11-11)
 
 ### Bug Fixes
