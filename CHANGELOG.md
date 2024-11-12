@@ -1,3 +1,8 @@
+## [1.0.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.0...v1.0.1) (2024-11-12)
+
+### Bug Fixes
+
+* update theme color, improve accessibility and layout in various components ([f88b9ff](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/f88b9ffbac7cad269e1bdbb5664b10c7f85297b9))
 ## [1.0.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.9...v1.0.0) (2024-11-12)
 
 ### Features
