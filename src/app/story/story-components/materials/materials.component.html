@@ -27,14 +27,22 @@
         <div class="row">
           <div class="col d-flex justify-content-start">
             @if(showIndex > 0) {
-              <a (click)="prevMaterial()" class="prev">← Předchozí</a>
+              <a (click)="prevMaterial()" class="prev">← zpět</a>
             }
+          </div>
+          <div class="col d-flex justify-content-center">
+            <a (click)="openImage()">zvětšit</a>
           </div>
           <div class="col d-flex justify-content-end">
             @if(showIndex < data.materials.length - 1) {
-              <a (click)="nextMaterial()" class="next">Další →</a>
+              <a (click)="nextMaterial()" class="next">dál →</a>
             }
           </div>
+        </div>
+      }
+      @else {
+        <div class="d-flex justify-content-center">
+          <a (click)="openImage()">zvětšit</a>
         </div>
       }
     }
