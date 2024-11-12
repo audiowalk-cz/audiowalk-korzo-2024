@@ -9,7 +9,9 @@
           [innerHTML]="chapter.metadata.direction"
           style="white-space: pre-wrap"
         ></p>
-        <a *ngIf="chapter.metadata.directionMapUrl" [href]="chapter.metadata.directionMapUrl">Otevřít cílové místo v mapě</a>
+        <a *ngIf="chapter.metadata.directionMapUrl" [href]="chapter.metadata.directionMapUrl" target="_blank"
+          >Otevřít cílové místo v mapě</a
+        >
       </div>
     }
 
