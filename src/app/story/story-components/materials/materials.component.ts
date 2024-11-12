@@ -18,7 +18,9 @@ export class MaterialsComponent implements ChapterComponent {
 
   @Output() end = new EventEmitter<void>();
 
-  showMaterials = false;
+  showMaterials = true;
+  showIndex = 0;
+  showImage = false;
 
   private ambientPLayer?: PlayerController;
 
@@ -34,4 +36,20 @@ export class MaterialsComponent implements ChapterComponent {
   ngOnDestroy(): void {
     this.ambientPLayer?.stop();
   }
+
+  prevMaterial(): void {
+    this.showIndex = Math.max(0, this.showIndex - 1);
+  }
+  nextMaterial(): void {
+    this.showIndex = Math.min(this.data.materials.length - 1, this.showIndex + 1);
+  }
+
+  openImage(): void {
+    this.showImage = true;
+  }
+
+  closeImage(): void {
+    this.showImage = false;
+  }
+
 }

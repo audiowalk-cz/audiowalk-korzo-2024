@@ -1,10 +1,12 @@
 <div class="py-4 px-3">
   <div class="row">
-    <div class="col-9">
-      <h1><ng-content></ng-content></h1>
+    <div class="d-flex align-items-center" [class.col-9]="showHelp" [class.col]="!showHelp">
+      <h1 class="mb-1" [innerHTML]="text"></h1>
     </div>
-    <div class="col-3 text-right">
-      <app-help-button routerLink="/story/help"></app-help-button>
-    </div>
+    @if (showHelp) {
+      <div class="col-3 text-right">
+        <app-help-button routerLink="/story/help"></app-help-button>
+      </div>
+    }
   </div>
 </div>

@@ -16,6 +16,7 @@ export class CheckpointComponent implements ChapterComponent, OnInit, OnDestroy 
     ambientTrack: TrackId;
     mapUrl?: string;
     confirmationText?: string;
+    imageUrl?: string;
   };
 
   @Output() end = new EventEmitter<void>();

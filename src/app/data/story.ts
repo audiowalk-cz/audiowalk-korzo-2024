@@ -43,7 +43,6 @@ export enum ChapterId {
   "checkpoint_klementinum_a" = "checkpoint_klementinum_a",
   "prechod_2A_3_klementinum" = "prechod_2A_3_klementinum",
   "prechod_2A_4" = "prechod_2A_4",
-  "materialy_2A" = "materialy_2",
   "checkpoint_materialy_2A" = "checkpoint_materialy_2",
   "prechod_2B_2" = "prechod_2B_2",
   "checkpoint_klementinum_b" = "checkpoint_klementinum_b",
@@ -70,8 +69,7 @@ export enum ChapterId {
   "prechod_4_2B" = "prechod_4_2B",
   "interakce_roh_narodni" = "interakce_roh_narodni",
   "checkpoint_roh_narodni" = "checkpoint_roh_narodni",
-  "prechod_5" = "prechod_5",
-  "materialy_konec" = "materialy_konec",
+  "prechod_5" = "prechod_5"
 }
 
 /**
@@ -203,6 +201,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "2/10/1989",
         question: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí?",
+        imageUrl: "assets/images/chapters/staromak_lampa.png",
         ambientTrack: TrackId.ambient_park,
       },
       nextChapter: ChapterId.prechod_1_3,
@@ -281,6 +280,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "2/10/1989",
         question: "Jsi před vchodem do zahrádky restaurace White Horse? Nachází se na rohu Železné ulice.",
+        imageUrl: "assets/images/chapters/u_konicka.png",
         ambientTrack: TrackId.ambient_konicek,
       },
       nextChapter: ChapterId.prechod_1_5,
@@ -375,7 +375,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote:
           "David ti podal časopisy.\n\nDojdi doprostřed Mariánského náměstí, bývají tam stolky a židle. Pokud si chceš materiály v klidu prohlédnout, sedni si tam.",
-        materials: [],
+        materials: [
+          {
+            label: 'Samizdat Revue 88',
+            url: "assets/images/materials/revue88.jpg",
+          },
+        ],
         ambientTrack: TrackId.ambient_materialy_1,
       },
       metadata: {
@@ -390,7 +395,20 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote:
           "Tereza ti podala časopisy.\n\nDojdi doprostřed Mariánského náměstí, bývají tam stolky a židle. Pokud si chceš materiály v klidu prohlédnout, sedni si tam.",
-        materials: [],
+        materials: [
+          {
+            label: 'FF časopis Situace',
+            url: "assets/images/materials/situace.jpg",
+          },
+          {
+            label: 'EM medicína časopis',
+            url: "assets/images/materials/em_casopis.jpg",
+          },
+          {
+            label: 'Kavárna časopis DAMU',
+            url: "assets/images/materials/damu_casopis.jpg",
+          },
+        ],
         ambientTrack: TrackId.ambient_materialy_1,
       },
       metadata: {
@@ -404,12 +422,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.1",
-        direction: "Máš stát uprostřed Mariánského náměstí.",
+        direction: "Měl/a bys stát uprostřed Mariánského náměstí.",
         directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       data: {
         headerText: "2/10/1989",
         question: "Jsi uprostřed Mariánského náměstí?",
+        imageUrl: "assets/images/chapters/marianske.png",
         ambientTrack: TrackId.ambient_marianske,
       },
       nextChapter: ChapterId.prechod_2_1,
@@ -425,7 +444,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       metadata: {
         title: "Kapitola 2.1",
-        direction: "Máš stát uprostřed Mariánského náměstí.",
+        direction: "Měl/a bys stát uprostřed Mariánského náměstí.",
         directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       nextChapter: ChapterId.interakce_marianske,
@@ -435,7 +454,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 2.1",
-        direction: "Máš stát uprostřed Mariánského náměstí.",
+        direction: "Měl/a bys stát uprostřed Mariánského náměstí.",
       },
       data: {
         ambientTrack: TrackId.ambient_marianske,
@@ -490,6 +509,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "10/10/1989",
         question: "Stojíš před DAMU?",
+        imageUrl: "assets/images/chapters/damu.png",
         ambientTrack: TrackId.ambient_damu,
       },
       nextChapter: ChapterId.interakce_damu_1,
@@ -506,7 +526,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         answerProperty: "interakce_damu_1",
         options: [
           {
-            label: "Oslovím je s tím, že jsme se viděli u Koníčka.",
+            label: "Ehm, ahoj, pardon, my jsme se viděli u Koníčka.",
             track: TrackId.interakce_2A_2_int1_a,
             value: "a",
             italic: true,
@@ -557,7 +577,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát před DAMU.",
+        direction: "Měl/a bys stát před DAMU.",
         directionMapUrl: "https://maps.app.goo.gl/MtVLu6Gccr8nHkaw9",
       },
       nextChapter: ChapterId.interakce_damu_3,
@@ -567,7 +587,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát před DAMU.",
+        direction: "Měl/a bys stát před DAMU.",
       },
       data: {
         ambientTrack: TrackId.ambient_damu,
@@ -688,13 +708,14 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát u zídky v areálu Klementina.",
+        direction: "Měl/a bys stát u zídky v areálu Klementina.",
         directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
         headerText: "10/10/1989",
         question: "Už jsi na místě? Eva sedí na rohu na zídce před stromem. Jdi k ní.",
         ambientTrack: TrackId.ambient_klementinum,
+        imageUrl: "assets/images/chapters/klementinum.png",
         mapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
         confirmationText: "Stojím u zídky",
       },
@@ -705,7 +726,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát u zídky v areálu Klementina.",
+        direction: "Měl/a bys stát u zídky v areálu Klementina.",        
+        directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -724,22 +746,10 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
-        note: "Jdete směrem na Betlémské náměstí.",
+        note: "Jdete směrem k Betlémskému náměstí.",
         imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_2A_4,
         storyDate: "18/10/1989",
-      },
-      nextChapter: ChapterId.materialy_2A,
-    }),
-
-    materialy_2: new Chapter(ChapterId.materialy_2A, {
-      component: MaterialsComponent,
-      metadata: {
-        title: "Kapitola 2.6",
-      },
-      data: {
-        materials: [], // TODO: add letak
-        ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: ChapterId.checkpoint_materialy_2A,
     }),
@@ -748,12 +758,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.6",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         headerText: "18/10/1989",
         question: "Jsi na Betlémském náměstí kousek od vchodu do Betlémské kaple? Je tu strom a okolo něj lavička.",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: (state) => {
@@ -794,6 +805,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "18/10/1989",
         question: "Sedíš na zídce u stromu?",
+        imageUrl: "assets/images/chapters/klementinum.png",
         ambientTrack: TrackId.ambient_klementinum,
       },
       nextChapter: ChapterId.prechod_2B_3,
@@ -886,7 +898,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.5",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -927,7 +939,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.6",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -943,12 +955,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.4",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         headerText: "18/10/1989",
         question: "Jsi na Betlémském náměstí kousek od vchodu do Betlémské kaple? Je tu strom a okolo něj lavička.",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: ChapterId.materialy_2B,
@@ -962,7 +975,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote:
           "Martin s Evou odešli na oběd. Ty zůstáváš u lavičky před Betlémskou kaplí. Všímáš si, že pod ní leží tento leták:",
-        materials: [], // TODO: add letak
+        materials: [
+          {
+            label: 'Ty jsi ještě v SSM?',
+            url: "assets/images/materials/letaky_betlemske.jpg",
+          },
+        ],
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: (state) => {
@@ -980,7 +998,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.1",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -1038,7 +1056,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.1",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -1137,12 +1155,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 3.3",
-        direction: "Máš stát na rohu ulic Bartolomějská a Karoliny Světlé.",
+        direction: "Měl/a bys stát na rohu ulic Bartolomějská a Karoliny Světlé.",
         directionMapUrl: "https://maps.app.goo.gl/y8qxb6P6xtb9j6558",
       },
       data: {
         headerText: "2/11/1989",
         question: "Stojíš na rohu ulic Bartolomějská a Karoliny Světlé?",
+        imageUrl: "assets/images/chapters/kachlikarna.png",
         ambientTrack: TrackId.ambient_bartolomejska,
       },
       nextChapter: ChapterId.prechod_4_1,
@@ -1212,7 +1231,10 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         quote: "Co ty?",
         materials: [
-          // TODO: doplnit fotku
+          {
+            label: 'Pozvánka na 17. listopad',
+            url: "assets/images/materials/pozvanka_17_11.jpg",
+          },
         ],
         ambientTrack: TrackId.ambient_roh_narodni,
       },
@@ -1223,14 +1245,15 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.4",
-        direction: "Máš stát na rohu ulic Karoliny Světlé a Národní.",
+        direction: "Měl/a bys stát na rohu ulic Karoliny Světlé a Národní.",
         directionMapUrl: "https://maps.app.goo.gl/5DZw3USYNx2DED1w7",
       },
       data: {
         headerText: "18/10/1989",
         question:
-          "Máš stát na rohu ulic Karoliny Světlé a Národní. Přejdi na druhou stranu Národní třídy k domu Dunaj. Tam se vydej po Národní doleva a dojdi až k památníku 17. listopadu.",
+          "Měl/a bys stát na rohu ulic Karoliny Světlé a Národní. Na Národní přejdi na druhou stranu k paláci Dunaj. Tam se vydej doleva a po Národní dojdi až k památníku 17. listopadu.",
         confirmationText: "Ok",
+        imageUrl: "assets/images/chapters/narodni.png",
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: ChapterId.prechod_5,
@@ -1249,19 +1272,6 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         imageUrl: "assets/images/chapters/narodni_dav.png",
         track: TrackId.prechod_5,
         storyDate: "17/11/1989",
-      },
-      nextChapter: ChapterId.materialy_konec,
-    }),
-
-    materialy_konec: new Chapter(ChapterId.materialy_konec, {
-      component: MaterialsComponent,
-      metadata: {
-        title: "Konec",
-      },
-      data: {
-        materials: [
-          // TODO: doplnit dva letaky
-        ],
       },
       nextChapter: null,
     }),

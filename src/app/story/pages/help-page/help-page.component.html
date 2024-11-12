@@ -1,23 +1,25 @@
-<app-container align="left" justify="space-between">
-  <div class="p-5">
-    <a (click)="back()">Zpět</a>
-    <h2>Ztratil jsem se</h2>
+<app-container justify="space-between">
+  <div>
+    <app-header text="Ztratil/a jsem se" [showHelp]="false"></app-header>
 
     @if (currentChapter | async; as chapter) {
-      <div class="my-5">
+      <div class="my-5 text-center">
         <p
           *ngIf="chapter.metadata.direction"
           [innerHTML]="chapter.metadata.direction"
           style="white-space: pre-wrap"
         ></p>
-        <a *ngIf="chapter.metadata.directionMapUrl" [href]="chapter.metadata.directionMapUrl">Otevřít v mapě</a>
+        <a *ngIf="chapter.metadata.directionMapUrl" [href]="chapter.metadata.directionMapUrl" target="_blank"
+          >Otevřít cílové místo v mapě</a
+        >
       </div>
     }
 
-    <h2 class="mt-5">Začít od začátku</h2>
-    <a (click)="resetStory()">Začít příběh od začátku</a>
+    <app-header text="Reset aplikace" [showHelp]="false"></app-header>
+    <p class="px-3">
+      <a routerLink="/intro">Vrátit se na začátek</a>
+    </p>
   </div>
-
   <app-page-footer>
     <app-button routerLink="/story/walk">Zpět do příběhu</app-button>
   </app-page-footer>

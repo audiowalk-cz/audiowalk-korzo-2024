@@ -12,7 +12,7 @@ export class TutorialInteractions2Component implements TutorialStepComponent {
 
   question = "Petr se tě ptá, jestli je ti zima.\n\nCo mu odpovíš?";
   questionOptions: QuestionOption[] = [
-    { label: "Je mi zima", value: "a" },
-    { label: "Ne, není mi zima", value: "b" },
+    { label: "Je mi zima.", value: "a" },
+    { label: "Ne, není mi zima.", value: "b" },
   ];
 }

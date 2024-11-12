@@ -1,5 +1,6 @@
 :host {
   position: relative;
+
   .shadow-text {
     position: relative;
     opacity: 0;
@@ -8,5 +9,6 @@
   app-type-text {
     position: absolute;
     z-index: 1;
+    overflow: hidden;
   }
 }

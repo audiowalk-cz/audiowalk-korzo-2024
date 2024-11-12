@@ -1,8 +1,13 @@
-<app-question-box [question]="question" (end)="questionLoaded = true" />
+<div>
+  <app-header [text]="title" [showHelp]="false"></app-header>
+  <app-question-box class="" [question]="question" (end)="questionLoaded = true" />
+</div>  
 
-<app-question-options
-  [questionLoaded]="questionLoaded"
-  [options]="options"
-  [value]="value"
-  (select)="select.emit($event)"
-></app-question-options>
+<app-page-footer>
+  <app-question-options
+    [questionLoaded]="questionLoaded"
+    [options]="options"
+    [value]="value"
+    (select)="select.emit($event)"
+  ></app-question-options>
+</app-page-footer>

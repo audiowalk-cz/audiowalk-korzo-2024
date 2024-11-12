@@ -1,8 +1,11 @@
-<app-container align="center" justify="space-between">
-  <app-header>{{ data.headerText }}</app-header>
+<app-container justify="space-between">
+  <app-header [text]="data.headerText"></app-header>
+  @if(data.imageUrl) {
+    <img [src]="data.imageUrl" />
+  }
 
-  <app-page-footer class="p-3">
-    <app-note>{{ data.question }}</app-note>
+  <app-page-footer class="p-2">
+    <app-note class="pb-2">{{ data.question }}</app-note>
     <app-button (click)="end.emit()">{{ data.confirmationText || "Jsem na místě" }}</app-button>
   </app-page-footer>
 </app-container>

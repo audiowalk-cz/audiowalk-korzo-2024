@@ -1,5 +1,7 @@
 @import "src/styles/theme.scss";
 
 :host {
+  display: block;
+  opacity: .5;
   font-style: italic;
 }

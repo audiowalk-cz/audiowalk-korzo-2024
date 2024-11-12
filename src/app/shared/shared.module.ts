@@ -17,6 +17,7 @@ import { ProgressBarComponent } from "./components/progress-bar/progress-bar.com
 import { QuestionBoxComponent } from "./components/question-box/question-box.component";
 import { QuestionOptionsComponent } from "./components/question-options/question-options.component";
 import { QuestionComponent } from "./components/question/question.component";
+import { RewindButtonComponent } from "./components/rewind-button/rewind-button.component";
 import { TypeTextComponent } from "./components/type-text/type-text.component";
 import { VideoComponent } from "./components/video/video.component";
 import { TimePipe } from "./pipes/time.pipe";
@@ -47,11 +48,13 @@ import { HeaderComponent } from "./components/header/header.component";
     QuestionBoxComponent,
     QuestionOptionsComponent,
     QuestionComponent,
+    RewindButtonComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
     TimePipe,
     TypePipe,
+    
 
     BoxComponent,
     ButtonComponent,
@@ -72,6 +75,7 @@ import { HeaderComponent } from "./components/header/header.component";
     QuestionBoxComponent,
     QuestionOptionsComponent,
     QuestionComponent,
+    RewindButtonComponent,
   ],
 })
 export class SharedModule {}
