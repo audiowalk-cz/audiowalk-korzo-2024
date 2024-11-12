@@ -1,3 +1,13 @@
+## [1.0.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.9...v1.0.0) (2024-11-12)
+
+### Features
+
+* enhance materials component with image handling and styling updates ([1b1cf7c](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/1b1cf7c7ae62e0cdef9737fd349716fd1c4d58a3))
+
+### Bug Fixes
+
+* open map in new window ([cf33672](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/cf3367242fe1bf0f58306dbdb61a11d606306008))
+* remove unused scripts from angular.json and update story data with directionMapUrl ([f05e9f1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/f05e9f1a8c936c0934801b4ddb3a9844be64af40))
 ## [0.13.9](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.8...v0.13.9) (2024-11-11)
 
 ### Bug Fixes
