@@ -380,10 +380,6 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
             label: 'Samizdat Revue 88',
             url: "assets/images/materials/revue88.jpg",
           },
-          {
-            label: 'FF časopis Situace',
-            url: "assets/images/materials/situace.jpg",
-          },
         ],
         ambientTrack: TrackId.ambient_materialy_1,
       },
@@ -730,7 +726,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát u zídky v areálu Klementina.",
+        direction: "Máš stát u zídky v areálu Klementina.",        
+        directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
