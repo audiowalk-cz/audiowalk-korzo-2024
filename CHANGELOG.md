@@ -1,3 +1,44 @@
+## [0.13.9](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.8...v0.13.9) (2024-11-11)
+
+### Bug Fixes
+
+* add maps to checkpoint help pages ([931e137](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/931e13772c42e2e694908b7e760b833f0f91e5ad))
+## [0.13.8](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.7...v0.13.8) (2024-11-11)
+
+### Bug Fixes
+
+* fix race condition in story udpate and nextChapter ([a6862fd](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/a6862fd921cc3cac53a9bf7221ab87042a45fadf))
+## [0.13.7](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.6...v0.13.7) (2024-11-11)
+
+### Bug Fixes
+
+* track playing when help called ([092d63c](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/092d63c8908b57bc027c3178d04863bfe0df761d))
+## [0.13.6](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.5...v0.13.6) (2024-11-11)
+
+### Bug Fixes
+
+* do not skip to end of story after help called ([f1cfef4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/f1cfef427d8007e5881889a3eaee80f0fb141273))
+## [0.13.5](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.4...v0.13.5) (2024-11-11)
+
+### Bug Fixes
+
+* prevent back on gesture ([c24aec9](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/c24aec9f6d4cc2ce1dea3ddf9e0c059cdccb3a01))
+## [0.13.4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.3...v0.13.4) (2024-11-11)
+
+### Features
+
+* add after reload page ([1ae0c05](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/1ae0c05c018bf8373e4ce9ffc1f62f6247577fd9))
+## [0.13.3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.2...v0.13.3) (2024-11-11)
+## [0.13.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.1...v0.13.2) (2024-11-11)
+
+### Bug Fixes
+
+* ambent volume ([2d1da16](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/2d1da16bc9c41769a4629f45fe1ceffa300c091b))
+## [0.13.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.13.0...v0.13.1) (2024-11-11)
+
+### Bug Fixes
+
+* update end texts ([c68c830](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/c68c8300a8faf915e54e8119849aee45cd0a1980))
 ## [0.13.0](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v0.12.0...v0.13.0) (2024-11-11)
 
 ### Features

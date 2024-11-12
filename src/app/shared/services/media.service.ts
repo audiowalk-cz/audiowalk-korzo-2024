@@ -63,7 +63,6 @@ export class MediaService {
     keepPlayer: true,
     loop: true,
     crossfade: true,
-    volume: 0.3,
   });
 
   constructor(

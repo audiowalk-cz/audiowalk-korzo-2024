@@ -10,6 +10,7 @@ import { LandingPageComponent } from "./pages/landing-page/landing-page.componen
 import { PreloadPageComponent } from "./pages/preload-page/preload-page.component";
 import { SourcesComponent } from "./pages/sources/sources.component";
 import { BonusComponent } from "./pages/bonus/bonus.component";
+import { AfterReloadPageComponent } from './pages/after-reload-page/after-reload-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BonusComponent } from "./pages/bonus/bonus.component";
     SourcesComponent,
     LoadingComponent,
     BonusComponent,
+    AfterReloadPageComponent,
   ],
   imports: [CommonModule, CoreRoutingModule, SharedModule, QRCodeModule],
 })

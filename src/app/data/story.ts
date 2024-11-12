@@ -712,13 +712,15 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.3",
+        direction: "Máš stát u zídky v areálu Klementina.",
+        directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
         headerText: "10/10/1989",
         question: "Už jsi na místě? Eva sedí na rohu na zídce před stromem. Jdi k ní.",
         ambientTrack: TrackId.ambient_klementinum,
         imageUrl: "assets/images/chapters/klementinum.png",
-        mapUrl: "AAA", // TODO: Add map URL
+        mapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
         confirmationText: "Stojím u zídky",
       },
       nextChapter: ChapterId.prechod_2A_3_klementinum,
@@ -759,6 +761,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.6",
+        direction: "Máš stát před Betlémskou kaplí.",
+        directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         headerText: "18/10/1989",
@@ -798,6 +802,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.2",
+        direction: "Máš sed2t na zídce v areálu Klementina.",
+        directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
         headerText: "18/10/1989",
@@ -952,6 +958,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.4",
+        direction: "Máš stát před Betlémskou kaplí.",
+        directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
         headerText: "18/10/1989",
@@ -1151,6 +1159,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       metadata: {
         title: "Kapitola 3.3",
         direction: "Máš stát na rohu ulic Bartolomějská a Karoliny Světlé.",
+        directionMapUrl: "https://maps.app.goo.gl/y8qxb6P6xtb9j6558",
       },
       data: {
         headerText: "2/11/1989",
@@ -1239,6 +1248,8 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.4",
+        direction: "Máš stát na rohu ulic Karoliny Světlé a Národní.",
+        directionMapUrl: "https://maps.app.goo.gl/5DZw3USYNx2DED1w7",
       },
       data: {
         headerText: "18/10/1989",

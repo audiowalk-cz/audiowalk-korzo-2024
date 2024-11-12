@@ -1,6 +1,6 @@
 {
   "name": "audiowalk-korzo-2024",
-  "version": "0.13.0",
+  "version": "0.13.9",
   "scripts": {
     "dev": "ng serve",
     "build": "ng build",
@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^18.2.5",
     "@angular/router": "^18.2.5",
     "@angular/service-worker": "^18.2.5",
-    "@audiowalk/sdk": "^1.5.6",
+    "@audiowalk/sdk": "^1.5.10",
     "@ngneat/until-destroy": "^10.0.0",
     "angularx-qrcode": "^18.0.2",
     "axios": "^1.6.0",
