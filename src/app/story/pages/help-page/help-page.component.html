@@ -1,6 +1,6 @@
 <app-container justify="space-between">
   <div>
-    <app-header text="Ztratil jsem se" [showHelp]="false"></app-header>
+    <app-header text="Ztratil/a jsem se" [showHelp]="false"></app-header>
 
     @if (currentChapter | async; as chapter) {
       <div class="my-5 text-center">
@@ -15,7 +15,7 @@
 
     <app-header text="Reset aplikace" [showHelp]="false"></app-header>
     <p class="px-3">
-      <a routerLink="/intro">Začít příběh od začátku</a>
+      <a routerLink="/intro">Vrátit se na začátek</a>
     </p>
   </div>
   <app-page-footer>

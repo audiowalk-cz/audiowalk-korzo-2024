@@ -422,7 +422,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.1",
-        direction: "Máš stát uprostřed Mariánského náměstí.",
+        direction: "Měl/a bys stát uprostřed Mariánského náměstí.",
         directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       data: {
@@ -444,7 +444,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       metadata: {
         title: "Kapitola 2.1",
-        direction: "Máš stát uprostřed Mariánského náměstí.",
+        direction: "Měl/a bys stát uprostřed Mariánského náměstí.",
         directionMapUrl: "https://maps.app.goo.gl/DZoGiQn5vUT4XXkq8",
       },
       nextChapter: ChapterId.interakce_marianske,
@@ -454,7 +454,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 2.1",
-        direction: "Máš stát uprostřed Mariánského náměstí.",
+        direction: "Měl/a bys stát uprostřed Mariánského náměstí.",
       },
       data: {
         ambientTrack: TrackId.ambient_marianske,
@@ -526,7 +526,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         answerProperty: "interakce_damu_1",
         options: [
           {
-            label: "Oslovím je s tím, že jsme se viděli u Koníčka.",
+            label: "Ehm, ahoj, pardon, my jsme se viděli u Koníčka.",
             track: TrackId.interakce_2A_2_int1_a,
             value: "a",
             italic: true,
@@ -577,7 +577,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       },
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát před DAMU.",
+        direction: "Měl/a bys stát před DAMU.",
         directionMapUrl: "https://maps.app.goo.gl/MtVLu6Gccr8nHkaw9",
       },
       nextChapter: ChapterId.interakce_damu_3,
@@ -587,7 +587,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: InteractionComponent,
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát před DAMU.",
+        direction: "Měl/a bys stát před DAMU.",
       },
       data: {
         ambientTrack: TrackId.ambient_damu,
@@ -708,7 +708,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát u zídky v areálu Klementina.",
+        direction: "Měl/a bys stát u zídky v areálu Klementina.",
         directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
@@ -726,7 +726,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.3",
-        direction: "Máš stát u zídky v areálu Klementina.",        
+        direction: "Měl/a bys stát u zídky v areálu Klementina.",        
         directionMapUrl: "https://maps.app.goo.gl/nXta6x4N8e3wZ9PNA",
       },
       data: {
@@ -746,7 +746,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
-        note: "Jdete směrem na Betlémské náměstí.",
+        note: "Jdete směrem k Betlémskému náměstí.",
         imageUrl: "assets/images/chapters/betlemska_kaple.png",
         track: TrackId.prechod_2A_4,
         storyDate: "18/10/1989",
@@ -758,7 +758,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.6",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -898,7 +898,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.5",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -939,7 +939,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 2.6",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -955,7 +955,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.4",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -998,7 +998,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.1",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
         directionMapUrl: "https://maps.app.goo.gl/6YbqjbkLZ8KVU91R9",
       },
       data: {
@@ -1056,7 +1056,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: BasicWalkComponent,
       metadata: {
         title: "Kapitola 3.1",
-        direction: "Máš stát před Betlémskou kaplí.",
+        direction: "Měl/a bys stát před Betlémskou kaplí.",
       },
       data: {
         note: "Zůstaň na místě a poslouchej.",
@@ -1155,7 +1155,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 3.3",
-        direction: "Máš stát na rohu ulic Bartolomějská a Karoliny Světlé.",
+        direction: "Měl/a bys stát na rohu ulic Bartolomějská a Karoliny Světlé.",
         directionMapUrl: "https://maps.app.goo.gl/y8qxb6P6xtb9j6558",
       },
       data: {
@@ -1245,13 +1245,13 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 2.4",
-        direction: "Máš stát na rohu ulic Karoliny Světlé a Národní.",
+        direction: "Měl/a bys stát na rohu ulic Karoliny Světlé a Národní.",
         directionMapUrl: "https://maps.app.goo.gl/5DZw3USYNx2DED1w7",
       },
       data: {
         headerText: "18/10/1989",
         question:
-          "Máš stát na rohu ulic Karoliny Světlé a Národní. Přejdi na druhou stranu Národní třídy k domu Dunaj. Tam se vydej po Národní doleva a dojdi až k památníku 17. listopadu.",
+          "Měl/a bys stát na rohu ulic Karoliny Světlé a Národní. Na Národní přejdi na druhou stranu k paláci Dunaj. Tam se vydej doleva a po Národní dojdi až k památníku 17. listopadu.",
         confirmationText: "Ok",
         imageUrl: "assets/images/chapters/narodni.png",
         ambientTrack: TrackId.ambient_betlemske,
