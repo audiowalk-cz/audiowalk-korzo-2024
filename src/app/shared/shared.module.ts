@@ -54,6 +54,7 @@ import { HeaderComponent } from "./components/header/header.component";
   exports: [
     TimePipe,
     TypePipe,
+    
 
     BoxComponent,
     ButtonComponent,

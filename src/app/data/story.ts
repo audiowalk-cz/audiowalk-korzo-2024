@@ -201,6 +201,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "2/10/1989",
         question: "Stojíš u pouliční lampy uprostřed parku u Staroměstského náměstí?",
+        imageUrl: "assets/images/chapters/staromak_lampa.png",
         ambientTrack: TrackId.ambient_park,
       },
       nextChapter: ChapterId.prechod_1_3,
@@ -279,6 +280,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "2/10/1989",
         question: "Jsi před vchodem do zahrádky restaurace White Horse? Nachází se na rohu Železné ulice.",
+        imageUrl: "assets/images/chapters/u_konicka.png",
         ambientTrack: TrackId.ambient_konicek,
       },
       nextChapter: ChapterId.prechod_1_5,
@@ -378,6 +380,10 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
             label: 'Samizdat Revue 88',
             url: "assets/images/materials/revue88.jpg",
           },
+          {
+            label: 'FF časopis Situace',
+            url: "assets/images/materials/situace.jpg",
+          },
         ],
         ambientTrack: TrackId.ambient_materialy_1,
       },
@@ -426,6 +432,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "2/10/1989",
         question: "Jsi uprostřed Mariánského náměstí?",
+        imageUrl: "assets/images/chapters/marianske.png",
         ambientTrack: TrackId.ambient_marianske,
       },
       nextChapter: ChapterId.prechod_2_1,
@@ -506,6 +513,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "10/10/1989",
         question: "Stojíš před DAMU?",
+        imageUrl: "assets/images/chapters/damu.png",
         ambientTrack: TrackId.ambient_damu,
       },
       nextChapter: ChapterId.interakce_damu_1,
@@ -709,6 +717,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         headerText: "10/10/1989",
         question: "Už jsi na místě? Eva sedí na rohu na zídce před stromem. Jdi k ní.",
         ambientTrack: TrackId.ambient_klementinum,
+        imageUrl: "assets/images/chapters/klementinum.png",
         mapUrl: "AAA", // TODO: Add map URL
         confirmationText: "Stojím u zídky",
       },
@@ -754,6 +763,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "18/10/1989",
         question: "Jsi na Betlémském náměstí kousek od vchodu do Betlémské kaple? Je tu strom a okolo něj lavička.",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: (state) => {
@@ -792,6 +802,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "18/10/1989",
         question: "Sedíš na zídce u stromu?",
+        imageUrl: "assets/images/chapters/klementinum.png",
         ambientTrack: TrackId.ambient_klementinum,
       },
       nextChapter: ChapterId.prechod_2B_3,
@@ -945,6 +956,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       data: {
         headerText: "18/10/1989",
         question: "Jsi na Betlémském náměstí kousek od vchodu do Betlémské kaple? Je tu strom a okolo něj lavička.",
+        imageUrl: "assets/images/chapters/betlemska_kaple.png",
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: ChapterId.materialy_2B,
@@ -1138,10 +1150,12 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
       component: CheckpointComponent,
       metadata: {
         title: "Kapitola 3.3",
+        direction: "Máš stát na rohu ulic Bartolomějská a Karoliny Světlé.",
       },
       data: {
         headerText: "2/11/1989",
         question: "Stojíš na rohu ulic Bartolomějská a Karoliny Světlé?",
+        imageUrl: "assets/images/chapters/kachlikarna.png",
         ambientTrack: TrackId.ambient_bartolomejska,
       },
       nextChapter: ChapterId.prechod_4_1,
@@ -1231,6 +1245,7 @@ export const story: Story<ChapterId, StoryState, ChapterMetadata> = {
         question:
           "Máš stát na rohu ulic Karoliny Světlé a Národní. Přejdi na druhou stranu Národní třídy k domu Dunaj. Tam se vydej po Národní doleva a dojdi až k památníku 17. listopadu.",
         confirmationText: "Ok",
+        imageUrl: "assets/images/chapters/narodni.png",
         ambientTrack: TrackId.ambient_betlemske,
       },
       nextChapter: ChapterId.prechod_5,

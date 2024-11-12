@@ -1,6 +1,4 @@
-<app-container align="center" justify="space-between">
-  <div></div>
-
+<app-container  justify="space-between">
   <app-question
     [question]="data.question"
     [options]="data.options"
@@ -8,7 +6,7 @@
     (select)="selectOption($event)"
   />
 
-  @if (selectedOption) {
+  @if (selectedOption && false) {
     <a (click)="end.emit()">Skip</a>
   }
 </app-container>

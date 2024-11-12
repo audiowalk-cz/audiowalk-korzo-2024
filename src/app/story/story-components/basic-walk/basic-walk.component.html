@@ -7,7 +7,9 @@
     @if (data.note) {
       <app-note [innerHTML]="data.note" class="pb-3"></app-note>
     }
-    <a (click)="end.emit()">Skip</a>
+    @if (false) {
+      <a (click)="end.emit()">Skip</a>
+    }
     <app-player [track]="data.track" [autoPlay]="true" [autoSave]="true" (stop)="end.emit()" [crossfade]="true" />
 
 

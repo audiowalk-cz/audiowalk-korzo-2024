@@ -1,6 +1,8 @@
 <app-box>
-  <app-type-text [text]="question" (end)="end.emit()" />
-  <div class="shadow-text">
-    {{ question }}
+  <div class="p-2">
+    <div>
+      <app-type-text [text]="question" (end)="end.emit()" />
+      <div class="shadow-text">{{ question }}</div>
+    </div>
   </div>
 </app-box>

@@ -1,9 +1,9 @@
 <app-container justify="space-between">
-  <div class="px-2 py-3 text-center">
+  <div>
     <app-header text="Ztratil jsem se" [showHelp]="false"></app-header>
 
     @if (currentChapter | async; as chapter) {
-      <div class="my-5">
+      <div class="my-5 text-center">
         <p
           *ngIf="chapter.metadata.direction"
           [innerHTML]="chapter.metadata.direction"
@@ -13,8 +13,11 @@
       </div>
     }
 
+    <app-header text="Reset aplikace" [showHelp]="false"></app-header>
+    <p class="px-3">
+      <a routerLink="/intro">Na hlavní stránku</a>
+    </p>
   </div>
-
   <app-page-footer>
     <app-button routerLink="/story/walk">Zpět do příběhu</app-button>
   </app-page-footer>
