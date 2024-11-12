@@ -29,7 +29,7 @@ export class WalkPageComponent {
       if (chapter?.metadata.image) this.image = chapter.metadata.image;
 
       this.mediaControls.setMetadata({
-        title: chapter?.metadata.title,
+        title: chapter?.metadata.title || "Audiowalk",
         album: "Sejdeme se u Koníčka?",
         artwork: this.image ? [{ src: this.image }] : undefined,
       });
