@@ -1,3 +1,8 @@
+## [1.0.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.1...v1.0.2) (2024-11-13)
+
+### Bug Fixes
+
+* correct the amount of data needed on landing page ([bea2d63](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/bea2d63d36637243bc1c7829bfc1eeb8ca2c5ef5))
 ## [1.0.1](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.0...v1.0.1) (2024-11-12)
 
 ### Bug Fixes
