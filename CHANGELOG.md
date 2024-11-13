@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.2...v1.0.3) (2024-11-13)
+
+### Features
+
+* enhance landing page layout and content structure ([b22ad9e](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/b22ad9e1587e85ac43c6ef8ed261be5e4a491a1b))
+
 ## [1.0.2](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.1...v1.0.2) (2024-11-13)
 
 ### Bug Fixes
