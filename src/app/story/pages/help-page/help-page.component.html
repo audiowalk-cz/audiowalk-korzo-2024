@@ -4,6 +4,7 @@
 
     @if (currentChapter | async; as chapter) {
       <div class="my-5 text-center">
+        <h2>Pokyn</h2>
         <p
           *ngIf="chapter.metadata.direction"
           [innerHTML]="chapter.metadata.direction"
@@ -15,10 +16,13 @@
       </div>
     }
 
-    <app-header text="Reset aplikace" [showHelp]="false"></app-header>
-    <p class="px-3">
-      <a routerLink="/intro">Vrátit se na začátek</a>
-    </p>
+    <div class="my-5 text-center">
+      <h2 class="mt-5">Reset audiowalku</h2>
+      <p class="px-3">
+        Příbeh lze pustit také od samého začátku před FF UK<br />
+        <a routerLink="/intro" class="text-warning">Spustit od začátku</a>
+      </p>
+    </div>
   </div>
   <app-page-footer>
     <app-button routerLink="/story/walk">Zpět do příběhu</app-button>

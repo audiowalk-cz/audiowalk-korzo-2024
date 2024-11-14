@@ -45,7 +45,7 @@ export class TypePipe implements PipeTransform {
       this.nextLetter();
     }
 
-    return this.currentValue + (this.cursor ? "_" : "");
+    return this.currentValue + (this.cursor ? "<span class=\"animate-ticking\">_</span>" : "");
   }
 
   nextLetter() {

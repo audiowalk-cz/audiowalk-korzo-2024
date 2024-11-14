@@ -1,6 +1,12 @@
-<app-container align="center">
-  <h1>Jejda!</h1>
-  <p class="mt-5">Příběh se přerušil. Ale to nevadí, můžete pokračovat v příběhu na místě, kde jste skončili.</p>
-  <app-button class="my-5" (click)="continueOldStory()">Pokračovat v příběhu</app-button>
-  <a routerLink="/intro" class="link">Začít příběh znovu</a>
+<app-container align="center" justify="space-between">
+  <div class="px-3 py-4">
+    <h1>Pokračujeme?</h1>
+    <p class="mt-5">Nic se nestalo, příběh se jen přerušil. Můžete pokračovat v&nbsp;příběhu tam, kde jste skončili.</p>
+    <p>Příběh lze pustit také od samého začátku před FF UK.
+      <br /><a routerLink="/intro" class="link text-warning">Spustit od začátku</a>
+    </p>
+  </div>
+  <app-page-footer>
+    <app-button class="" (click)="continueOldStory()">Pokračovat v příběhu</app-button>
+  </app-page-footer>
 </app-container>

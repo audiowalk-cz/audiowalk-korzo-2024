@@ -1,22 +1,29 @@
-<app-container align="center" justify="flex-start">
-  <div class="p-5">
-    <h1>Sejdeme se u Koníčka?</h1>
+<app-container align="center" justify="space-between">
+  <div class="px-2 py-4">
+    <h1 class="mb-4">Sejdeme se u&nbsp;Koníčka?</h1>
 
-    <p>Před začátkem si stáhni audiowalk, zůstane uložený i když zavřeš webový prohlížeč.</p>
-
-    <app-media-download-status></app-media-download-status>
 
     @if (isInAppBrowser) {
+      <p class="text-warning">
+        <i class="bi bi-exclamation-triangle-fill" style="font-size: 2rem;"></i><br />
+        Vypadá to, že jsi otevřel web v aplikaci (Instagram, Facebook
+        atd.).<br />Nemuselo by vše fungovat správně!
+      </p>
       <p>
-        ⚠️ Pozor, vypadá to, že si otevíráš audiowalk prostřednictvím prohlížeče jiné aplikace (Instagram, Facebook
-        atd.). Otevři si prosím adresu <code>{{ currentUrl }}</code> v normálním prohlížeči.
+        Otevři proto adresu:<br /><code>{{ currentUrl }}</code><br />v aplikaci prohlížeče internetu<br />(Chrome / Safari apod.).
       </p>
     }
 
+    @else { 
+      <p class="mt-4">Před začátkem si stáhni audiowalk, zůstane uložený i&nbsp;když zavřeš webový prohlížeč.</p>
+    }
+
+
+    <app-media-download-status></app-media-download-status>
+    
     @switch (mediaService.downloadStatus | async) {
       @case ("downloaded") {
-        <a (click)="delete()" class="text-danger">Smazat stažená data</a>
-        <br /><br />
+        <i class="bi bi-trash text-danger"></i>&nbsp;<a (click)="delete()" class="text-danger">Smazat stažená data</a>
       }
       @case ("downloading") {}
       @default {
@@ -24,14 +31,17 @@
       }
     }
 
+
+  </div>
+  <app-page-footer>
     @if ((mediaService.downloadStatus | async) === "downloaded") {
       @if (storyStateExists | async) {
-        <app-button (click)="startNewStory()">Spustit od začátku</app-button>
+        <app-button (click)="startNewStory()" class="text-warning">Spustit od začátku</app-button>
         <br /><br />
         <app-button (click)="continueOldStory()">Pokračovat v příběhu</app-button>
       } @else {
         <app-button (click)="startNewStory()">Spustit audiowalk</app-button>
       }
     }
-  </div>
+  </app-page-footer>
 </app-container>

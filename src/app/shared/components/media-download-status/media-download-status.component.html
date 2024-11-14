@@ -1,24 +1,31 @@
-<div class="mt-3" *ngIf="downloadStatus | async as state">
-  @switch (state) {
-    @case ("downloading") {
-      <p *ngIf="state === 'downloading'">
-        <i class="bi bi-hourglass-split"></i><br />Stahuji... {{ downloadProgress | async | percent }}
-      </p>
-    }
+<div class="" *ngIf="downloadStatus | async as state">
+    @switch (state) {
+      @case ("downloading") {
+        <p class="lead">
+          <i class="bi bi-hourglass-split" style="font-size: 2rem;"></i><br />
+          Stahuji... {{ downloadProgress | async | percent }}
+        </p>
+      }
 
-    @case ("checking") {
-      <p *ngIf="state === 'checking'"><i class="bi bi-hourglass-split"></i> Kontroluji...</p>
-    }
+      @case ("checking") {
+        <p class="lead"><i class="bi bi-hourglass-split" style="font-size: 2rem;"></i><br>
+          Kontroluji...</p>
+      }
+ 
+      @case ("downloaded") {
+        <p class="lead"><i class="bi bi-check-circle" style="font-size: 2rem;"></i><br>
+          Audiowalk máte stažený!</p>
+      }
 
-    @case ("downloaded") {
-      <p class="text-success"><i class="bi bi-check-circle"></i> Hotovo, audiowalk je stažen!</p>
-    }
+      @case ("error") {
+        <p class="text-warning lead">
+          <i class="bi bi-emoji-frown"></i>
+          Nastala Chyba při stahování.<br />
+        </p>
+      }
 
-    @case ("error") {
-      <p *ngIf="state === 'error'" class="text-warning mt-2">
-        <i class="bi bi-emoji-frown"></i>
-        Nastala Chyba při stahování.<br />
-      </p>
+      @default {
+        <p class="lead"><i class="bi bi-download" style="font-size: 2rem;"></i><br>Objem dat cca 80MB</p>
+      } 
     }
-  }
 </div>

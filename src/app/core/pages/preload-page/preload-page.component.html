@@ -1,6 +1,6 @@
 <app-container align="center" justify="space-between">
   <div class="p-5">
-    <h2>Stáhnout předem</h2>
+    <h2>Stáhnout předem d</h2>
 
     <p class="mt-3">Audiowalk si můžete stáhnout do mobilního zařízení předem, například doma na WiFi.</p>
     <p class="mt-1">
@@ -8,18 +8,21 @@
       abyste neměli audiowalk spuštěný ve vestavěném prohlížeči jiné aplikace (např. WhatsApp, Messenger), v takovém
       případě se po zavření může smazat.
     </p>
+    <div class="card">
+      <div class="card-body">
+        <app-media-download-status></app-media-download-status>
+    
+        @if ((downloadStatus | async) !== "downloaded") {
+          <app-button (click)="download()">Stáhnout</app-button>
+        }
+    
+        @if ((downloadStatus | async) === "downloaded") {
+          <a (click)="delete()" class="text-danger">Smazat stažená data</a>
+        }
+      </div>
+    </div>
   </div>
   <app-page-footer>
-    <app-media-download-status></app-media-download-status>
-
-    @if ((downloadStatus | async) !== "downloaded") {
-      <app-button (click)="download()">Stáhnout</app-button>
-    }
-
-    @if ((downloadStatus | async) === "downloaded") {
-      <a (click)="delete()" class="text-danger">Smazat stažená data</a>
-    }
-    <br /><br />
     <app-button routerLink="/" [queryParams]="{ loading: 'false' }">Zpět na úvodní stránku</app-button>
   </app-page-footer>
 </app-container>
