@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { StoryController } from "@audiowalk/sdk";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { ChapterId, StoryState } from "src/app/data/story";
+import { AnalyticsService } from "src/app/shared/services/analytics.service";
 import { MediaService } from "src/app/shared/services/media.service";
 
 @UntilDestroy()
@@ -16,6 +17,7 @@ export class StoryIntroPageComponent {
     private readonly storyController: StoryController<ChapterId, StoryState>,
     private router: Router,
     private readonly mediaService: MediaService,
+    private analytics: AnalyticsService,
   ) {}
 
   async startNewStory() {
@@ -24,6 +26,8 @@ export class StoryIntroPageComponent {
     // await this.storyController.updateState({
     //   storyStartedAt: new Date().toISOString(),
     // });
+
+    this.analytics.trackEvent("storyStart", {});
 
     this.router.navigate(["/story/walk"]);
   }
