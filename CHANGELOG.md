@@ -1,3 +1,13 @@
+## [1.0.5](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.3...v1.0.5) (2024-11-15)
+
+### Features
+
+* integrate analytics tracking for story events ([55c01b8](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/55c01b83b151097ab2f792756f4e19e25ba85244))
+* update text formatting and improve user interface elements ([2ea3671](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/2ea3671ed4350bfe8e7b53d4ebc88f4334ebaacf))
+
+### Bug Fixes
+
+* clarify props usage in analytics event tracking ([d7f25c6](https://github.com/audiowalk-cz/audiowalk-korzo-2024/commit/d7f25c6bedfa284c714950a7cf2bc5c79da6c53a))
 ## [1.0.4](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.3...v1.0.4) (2024-11-14)
 
 ### Features
