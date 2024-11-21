@@ -1,3 +1,7 @@
+## [1.0.6](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.3...v1.0.6) (2024-11-21)
+
+* ci: deploy cleanup, add correct git tag
+
 ## [1.0.5](https://github.com/audiowalk-cz/audiowalk-korzo-2024/compare/v1.0.3...v1.0.5) (2024-11-15)
 
 ### Features
